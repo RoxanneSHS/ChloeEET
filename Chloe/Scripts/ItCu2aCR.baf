@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW2",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW2",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW2",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW2",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW2",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW2",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW2"))
+     DisplayStringHead("RChloe",@1100) // ~I will only part with these swords when they drop from my dead-cold fingers. And I don't plan in letting that happen anytime soon~
+     Wait(4)
+     EndCutSceneMode()
+END

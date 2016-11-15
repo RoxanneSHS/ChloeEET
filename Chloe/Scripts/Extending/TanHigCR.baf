@@ -1,0 +1,18 @@
+IF
+   IsOverMe([ANYONE])
+   GlobalGT("ChLovetalksCR","GLOBAL",10)
+   Exists("icbone01")
+THEN
+   RESPONSE #100
+   ActionOverride("icbone01",DestroySelf())
+END
+
+IF
+   IsOverMe([ANYONE])
+   GlobalGT("ChLovetalksCR","GLOBAL",10)
+   Exists("tanthf01")
+THEN
+   RESPONSE #100
+   ActionOverride("tanthf01",DestroySelf())
+END
+

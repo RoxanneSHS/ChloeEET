@@ -1,0 +1,14 @@
+IF
+   Global("TakeTheFigurine","LOCALS",0)
+THEN
+   RESPONSE #100
+   SetGlobal("TakeTheFigurine","LOCALS",1)
+   PickUpItem("MISC4C")
+END
+
+IF
+   HasItem("MISC4C",Myself)
+THEN
+   RESPONSE #100
+   DestroySelf()
+END

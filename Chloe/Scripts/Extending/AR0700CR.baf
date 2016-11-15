@@ -1,0 +1,12 @@
+IF
+    Global("PostCutSpeak","AR0700",0)
+    Global("CutScene01","AR0700",5)
+    GlobalTimerExpired("CutScene01Timer","AR0700")
+    InParty("RChloe")
+    !Dead("RChloe")
+    !StateCheck("RChloe",STATE_SLEEPING)
+THEN
+    RESPONSE #100
+        SetGlobal("PostCutSpeak","AR0700",1)
+        ActionOverride("RChloe",StartDialog("RCHLOEJ",Player1))
+END

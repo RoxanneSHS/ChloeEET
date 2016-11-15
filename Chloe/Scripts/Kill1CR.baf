@@ -1,0 +1,20 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId(Player1)
+   MoveViewObject("MAN1CR",VERY_FAST)
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId("RChloe")
+   MoveToObject("MAN1CR")
+   DisplayStringHead("MAN1CR",@1250) // ~Ack!~
+   Attack("MAN1CR")
+   EndCutSceneMode()
+END
+
+

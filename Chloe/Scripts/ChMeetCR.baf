@@ -1,0 +1,26 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId(Player1)
+   GiveItemCreate("CHLOSW1","RChloe",0,0,0)
+   ActionOverride("RChloe",FillSlot(SLOT_WEAPON0))
+   ActionOverride("RChloe",EquipMostDamagingMelee())
+   ActionOverride("GolemCR",Attack("ShadCR1"))
+   MoveViewObject("GolemCR",VERY_FAST)
+   ActionOverride("RChloe",RunAwayFrom("GolemCR",10))
+   ActionOverride("RChloe",FaceObject("GolemCR"))
+   Wait(2)
+   ActionOverride("ShadCR1",ApplySpell(Myself,SLAVE_CHUNK))
+   DisplayStringHead("ShadCR2",@1010) // ~Ack!~
+   ActionOverride("GolemCR",Attack("ShadCR2"))
+   Wait(4)
+   ActionOverride("ShadCR2",ApplySpell(Myself,SLAVE_CHUNK))
+   ActionOverride("RChloe",RunAwayFrom("GolemCR",10))
+   ActionOverride("RChloe",FaceObject("GolemCR"))
+   ActionOverride("GolemCR",FaceObject("RChloe"))
+   Wait(2)
+   SetGlobal("MeetingFirstTalkCR","GLOBAL",1)
+   ActionOverride("RChloe",StartDialog("RChloe","RChloe"))
+   EndCutSceneMode()
+END

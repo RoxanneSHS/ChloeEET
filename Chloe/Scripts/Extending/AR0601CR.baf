@@ -1,0 +1,29 @@
+IF
+   InMyArea(Player1)
+   Global("MeetingChloeAreaThingiesCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("MeetingChloeAreaThingiesCR","GLOBAL",1)
+   StartCutSceneMode()
+   StartCutScene("ChMeetCR")
+END
+
+IF
+	Dead("GolemCR") // Stone Golem
+	Global("TheyHelpMeCR","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Wait(2)
+		SetGlobal("TheyHelpMeCR","GLOBAL",2)
+		StartDialog("RChloe",Player1)
+END
+
+IF
+	Dead("GolemCR") // Stone Golem
+	Global("TheyDontHelpMeCR","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Wait(2)
+		SetGlobal("TheyDontHelpMeCR","GLOBAL",2)
+		StartDialog("RChloe",Player1)
+END

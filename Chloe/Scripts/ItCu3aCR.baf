@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW3",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW3",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW3",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW3",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW3",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW3",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW3"))
+     DisplayStringHead("RChloe",@1130) // ~That sword was given to me by the gods themselves. So NO, thanks, I don't want to part with it~
+     Wait(4)
+     EndCutSceneMode()
+END

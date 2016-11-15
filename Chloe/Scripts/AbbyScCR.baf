@@ -1,0 +1,69 @@
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Shout(89)
+        Enemy()
+END
+
+IF
+    HitBy([GOODCUTOFF],CRUSHING)
+THEN
+    RESPONSE #100
+        Shout(89)
+        Continue()
+END
+
+IF
+    OR(5)
+        AttackedBy([PC],DEFAULT)
+        AttackedBy([FAMILIAR],DEFAULT)
+        AttackedBy([ALLY],DEFAULT)
+        AttackedBy([CONTROLLED],DEFAULT)
+        AttackedBy([CHARMED],DEFAULT)
+    Allegiance(Myself,ENEMY)
+    ActionListEmpty()
+THEN
+    RESPONSE #100
+        Shout(89)
+        Continue()
+END
+
+IF
+    Die()
+THEN
+    RESPONSE #100
+        ReallyForceSpellDead(Myself,VAMPIRE_GAS_FORM_CHANGE)
+END
+
+IF
+    TimeGT(5)
+    TimeLT(DUSK_END)
+    AreaType(OUTDOOR)
+THEN
+    RESPONSE #100
+        ReallyForceSpellDead(Myself,VAMPIRE_BAT_FORM_CHANGE)
+END
+
+IF
+    AttackedBy([GOODCUTOFF],DEFAULT)
+    Allegiance(Myself,NEUTRAL)
+THEN
+    RESPONSE #100
+        Enemy()
+END
+
+IF
+    See(NearestEnemyOf(Myself))
+THEN
+    RESPONSE #100
+        AttackReevaluate(NearestEnemyOf(Myself),30)
+END
+
+IF
+    AttackedBy([ANYONE],DEFAULT)
+THEN
+    RESPONSE #100
+        Attack(LastAttackerOf(Myself))
+END

@@ -1,0 +1,40 @@
+// All Pre-Camp events go here
+
+
+// ~~ Pre camp GTKU ~~
+
+IF
+  Global("Had18CR","GLOBAL",2)
+  RealGlobalTimerExpired("CampPrayersCR","GLOBAL")
+  Global("ChloeGTKUwhenCampingCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUwhenCampingCR","GLOBAL",1)
+    PlaySong(%ChGTKUCR%)
+    PlaySound("ChGTKUCR")
+    StartDialog("RCHLOEJ",Player1)
+END
+
+// ~~ Pre camp Imoen things ~~
+
+IF
+  InParty("RChloe")
+  InParty("Imoen2")
+  IsValidForPartyDialog("Imoen2")
+  Detect("Imoen2")
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ImoenChloeTimerCR","GLOBAL")
+  !StateCheck("Imoen2",STATE_SLEEPING)
+  OR(3)
+    Global("ImoenChloeLovetalksCR","GLOBAL",5)
+    Global("ImoenChloeLovetalksCR","GLOBAL",11)
+    Global("ImoenChloeLovetalksCR","GLOBAL",19)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
+    PlaySong(%ChImCR%)
+    PlaySound("ChImCR")
+    StartDialog("RCHLOEJ","Imoen2")
+END

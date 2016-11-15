@@ -1,0 +1,18 @@
+IF
+  True()
+THEN  
+  RESPONSE #100
+  CutSceneId(Player1)
+  ApplySpell("ChloeNut",SURE_SLEEP)
+  MoveViewObject("ChloeNut",VERY_FAST)
+  Wait(2)
+  CreateVisualEffect("SPBASERD",[1866.1443])
+  Wait(3)
+  CreateVisualEffect("SPDUSTY2",[1866.1443])
+  Wait(1)
+  ActionOverride("ChloeNut",DestroySelf())
+  Wait(2)
+  SetGlobal("PostDisintegrateCR","GLOBAL",1)
+  ActionOverride("Imoen2",Dialogue(Player1))
+  EndCutSceneMode()
+END

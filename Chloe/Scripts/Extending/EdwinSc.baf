@@ -1,0 +1,894 @@
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HPPercentLT(Myself,50)
+    !GlobalTimerNotExpired("POT","LOCALS")
+    HasItem("POTN55",Myself) // Potion of Superior Healing
+THEN
+    RESPONSE #100
+        SetGlobalTimer("POT","LOCALS",6)
+        DisplayStringHead(Myself,46150) // quaffs a potion
+        UseItem("POTN55",Myself) // Potion of Superior Healing
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HPPercentLT(Myself,60)
+    !GlobalTimerNotExpired("POT","LOCALS")
+    HasItem("POTN52",Myself) // Potion of Extra Healing
+THEN
+    RESPONSE #100
+        SetGlobalTimer("POT","LOCALS",6)
+        DisplayStringHead(Myself,46150) // quaffs a potion
+        UseItem("POTN52",Myself) // Potion of Extra Healing
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    Global("SNAFU","LOCALS",0)
+    StateCheck(Myself,STATE_SILENCED)
+THEN
+    RESPONSE #100
+        SetGlobal("SNAFU","LOCALS",1)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    Global("SNAFU","LOCALS",1)
+    !StateCheck(Myself,STATE_SILENCED)
+THEN
+    RESPONSE #100
+        SetGlobal("SNAFU","LOCALS",0)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !GlobalTimerNotExpired("CHE","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    GlobalLT("SCH","LOCALS",2)
+THEN
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_SPELL_TURNING)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+        ReallyForceSpell(Myself,WIZARD_BLUR)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_MANTLE)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_ENERGY)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_WEAPONS)
+        ReallyForceSpell(Myself,WIZARD_MINOR_SPELL_DEFLECTION)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_THE_ELEMENTS)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+        ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_MANTLE)
+        ReallyForceSpell(Myself,WIZARD_MINOR_GLOBE_OF_INVULNERABILITY)
+        ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_BLUE)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_IMPROVED_MANTLE)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+        ReallyForceSpell(Myself,WIZARD_SPIRIT_ARMOR)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+        ReallyForceSpell(Myself,2802)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #30
+        ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)
+        ReallyForceSpell(Myself,WIZARD_SHADOW_DOOR)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+    RESPONSE #50
+        ReallyForceSpell(Myself,WIZARD_TENSERS_TRANSFORMATION)
+        ReallyForceSpell(Myself,WIZARD_PHANTOM_BLADE)
+        SetGlobalTimer("CHE","LOCALS",60)
+        IncrementGlobal("SCH","LOCALS",1)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !See("RChloe")
+    !StateCheck("RChloe",4194320)
+THEN
+    RESPONSE #100
+        AttackReevaluate("RChloe",45)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    Delay(12)
+    !See([GOODCUTOFF])
+THEN
+    RESPONSE #50
+        RandomWalk()
+    RESPONSE #50
+        MoveToObject(Nearest(Myself))
+    RESPONSE #50
+        FaceObject("RChloe")
+    RESPONSE #20
+        MoveToObject("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_STONE_SKIN)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    CheckStatLT(Myself,1,STONESKINS)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_STONE_SKIN)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_VOCALIZE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    StateCheck(Myself,STATE_SILENCED)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_VOCALIZE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MANTLE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    OR(2)
+        Range("RChloe",6)
+        AttackedBy("RChloe",DEFAULT)
+    RandomNumLT(10,8)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_MANTLE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_SIMULACRUM)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    Global("CLON","LOCALS",0)
+    RandomNumLT(3,3)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_SIMULACRUM)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MISLEAD)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    Global("CLON","LOCALS",0)
+    RandomNumLT(100,67)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_MISLEAD)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_SHADOW_DOOR)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    !StateCheck(Myself,STATE_INVISIBLE)
+    !StateCheck(Myself,STATE_IMPROVEDINVISIBILITY)
+    !StateCheck(Myself,STATE_POISONED)
+    RandomNumLT(4,4)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_SHADOW_DOOR)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    OR(2)
+        Range("RChloe",6)
+        AttackedBy("RChloe",DEFAULT)
+    RandomNumLT(6,5)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_FIRE_SHIELD_RED)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    CheckStat(Myself,0,%State128%)
+    CheckStat(Myself,0,SHIELDGLOBE)
+    Range("RChloe",8)
+    RandomNumLT(14,9)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_FIRE_SHIELD_RED)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_PROTECTION_FROM_ELECTRICITY)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    OR(2)
+        HitBy([ANYONE],ELECTRICITY)
+        RandomNumLT(15,8)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_PROTECTION_FROM_ELECTRICITY)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MIRROR_IMAGE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Global("SNAFU","LOCALS",0)
+    OR(2)
+        Range("RChloe",10)
+        HitBy([ANYONE],MISSILE)
+    !StateCheck(Myself,STATE_MIRRORIMAGE)
+    RandomNumLT(17,10)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_MIRROR_IMAGE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    See("RChloe")
+    False()
+THEN
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    RandomNumLT(22,8)
+    !See("RChloe")
+    False()
+THEN
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    RandomNumLT(25,6)
+    See("RChloe")
+    False()
+THEN
+    RESPONSE #100
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+        Global("SNAFU","LOCALS",1)
+THEN
+    RESPONSE #100
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    OR(3)
+        HasItem("MELFMET",Myself) // Melf's Minute Meteor
+        HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+        HasItem("PHANBLAD",Myself) // Phantom Blade
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #75
+        AttackOneRound("RChloe")
+    RESPONSE #25
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    StateCheck(Myself,STATE_INVISIBLE)
+    Delay(8)
+THEN
+    RESPONSE #80
+        AttackReevaluate("RChloe",30)
+    RESPONSE #20
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    StateCheck(Myself,STATE_INVISIBLE)
+THEN
+    RESPONSE #70
+        NoAction()
+    RESPONSE #30
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #90
+        EquipRanged()
+        AttackReevaluate("RChloe",30)
+    RESPONSE #25
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",8)
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #90
+        EquipMostDamagingMelee()
+        AttackReevaluate("RChloe",30)
+    RESPONSE #50
+        EquipMostDamagingMelee()
+        AttackReevaluate("RChloe",30)
+    RESPONSE #25
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    GlobalTimerNotExpired("BPT","LOCALS")
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #90
+        EquipMostDamagingMelee()
+        AttackReevaluate("RChloe",30)
+    RESPONSE #25
+        Continue()
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+        !Range("RChloe",5)
+    !HaveAnySpells()
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #100
+        EquipRanged()
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !HaveAnySpells()
+    HPPercentGT(Myself,35)
+    !Range("RChloe",8)
+THEN
+    RESPONSE #90
+        EquipMostDamagingMelee()
+        AttackOneRound("RChloe")
+    RESPONSE #40
+        EquipMostDamagingMelee()
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !HaveAnySpells()
+    HPPercentGT(Myself,35)
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_TIME_STOP)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",10)
+    RandomNumLT(37,29)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_TIME_STOP)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_POWER_WORD_KILL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    HPLT("RChloe",60)
+    RandomNumLT(38,25)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_POWER_WORD_KILL)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_POWER_WORD_STUN)
+    !StateCheck("RChloe",STATE_HELPLESS)
+    !Range("RChloe",5)
+    HPLT("RChloe",90)
+    RandomNumLT(39,26)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_POWER_WORD_STUN)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_NPC_SYMBOL_STUN)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !StateCheck("RChloe",STATE_STUNNED)
+    !Range("RChloe",5)
+    RandomNumLT(39,26)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_NPC_SYMBOL_STUN)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_NPC_SYMBOL_FEAR)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    !StateCheck("RChloe",STATE_PANIC)
+    RandomNumLT(42,28)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_NPC_SYMBOL_FEAR)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(43,29)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_ABI_DALZIMS_HORRID_WILTING)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_INCENDIARY_CLOUD)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",15)
+    RandomNumLT(44,28)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_INCENDIARY_CLOUD)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_PRISMATIC_SPRAY)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(45,27)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_PRISMATIC_SPRAY)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_IMPRISONMENT)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(46,22)
+THEN
+    RESPONSE #100
+        Spell("RChloe",WIZARD_IMPRISONMENT)
+        SetGlobalTimer("BPT","LOCALS",6)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MAZE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    HPGT("RChloe",50)
+    RandomNumLT(47,31)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_MAZE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_FLESH_TO_STONE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    RandomNumLT(48,26)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_FLESH_TO_STONE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_DISINTEGRATE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(49,27)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_DISINTEGRATE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_DELAYED_BLAST_FIREBALL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",12)
+    RandomNumLT(53,29)
+THEN
+    RESPONSE #100
+        Spell("RChloe",WIZARD_DELAYED_BLAST_FIREBALL)
+        SetGlobalTimer("BPT","LOCALS",6)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_FINGER_OF_DEATH)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    RandomNumLT(54,30)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_FINGER_OF_DEATH)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_DEATH_SPELL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    RandomNumLT(55,33)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_DEATH_SPELL)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_CHAOS)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !HasBounceEffects("RChloe")
+    !StateCheck("RChloe",STATE_CONFUSED)
+    !Range("RChloe",10)
+    RandomNumLT(56,32)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_CHAOS)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_CHAIN_LIGHTNING)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",10)
+    RandomNumLT(57,33)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_CHAIN_LIGHTNING)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_SUMMON_FIEND)
+    HaveSpell(WIZARD_PROTECTION_FROM_EVIL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    NumCreatureLT([EVILCUTOFF.0.0.0.0.SUMMONED],7)
+    RandomNumLT(58,28)
+THEN
+    RESPONSE #100
+        Spell(Myself,WIZARD_PROTECTION_FROM_EVIL)
+        Spell("RChloe",WIZARD_SUMMON_FIEND)
+        SetGlobalTimer("BPT","LOCALS",4)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_WYVERN_CALL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    NumCreatureLT([EVILCUTOFF.0.0.0.0.SUMMONED],7)
+    RandomNumLT(59,29)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_WYVERN_CALL)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_SUN_FIRE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Range("RChloe",10)
+    !Range(NearestMyGroupOfType,10)
+    RandomNumLT(60,34)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_SUN_FIRE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_EMOTION_HOPELESSNESS)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !StateCheck("RChloe",STATE_SLEEPING)
+    !StateCheck("RChloe",STATE_HELPLESS)
+    RandomNumLT(61,35)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_EMOTION_HOPELESSNESS)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_GREATER_MALISON)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(62,35)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_GREATER_MALISON)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_DOMINATION)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !StateCheck("RChloe",STATE_CHARMED)
+    RandomNumLT(63,33)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_DOMINATION)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_FIREBALL)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",12)
+    RandomNumLT(64,34)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_FIREBALL)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MELF_METEOR)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !GlobalTimerNotExpired("PEST","LOCALS")
+    !Range("RChloe",5)
+    !HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+    !HasItem("PHANBLAD",Myself) // Phantom Blade
+    !HasItem("MELFMET",Myself) // Melf's Minute Meteor
+    RandomNumLT(65,33)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_MELF_METEOR)
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_SPIDER_SPAWN)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",5)
+    NumCreatureLT([EVILCUTOFF.0.0.0.0.SUMMONED],7)
+    RandomNumLT(66,32)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_SPIDER_SPAWN)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_BLACK_BLADE_OF_DISASTER)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Range("RChloe",5)
+    !HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+    !HasItem("PHANBLAD",Myself) // Phantom Blade
+    !HasItem("MELFMET",Myself) // Melf's Minute Meteor
+    RandomNumLT(67,34)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_BLACK_BLADE_OF_DISASTER)
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_LIGHTNING_BOLT)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    !Range("RChloe",6)
+    RandomNumLT(68,35)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_LIGHTNING_BOLT)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_FLAME_ARROW)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(69,33)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_FLAME_ARROW)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_AGANNAZAR_SCORCHER)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(70,27)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_AGANNAZAR_SCORCHER)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MELF_ACID_ARROW)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(71,29)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_MELF_ACID_ARROW)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_MAGIC_MISSILE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    RandomNumLT(72,37)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell("RChloe",WIZARD_MAGIC_MISSILE)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_PHANTOM_BLADE)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    Range("RChloe",5)
+    !HasItem("GHOULT",Myself) // Ghoul Touch
+    !HasItem("PHANBLAD",Myself) // Phantom Blade
+    RandomNumLT(73,37)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_PHANTOM_BLADE)
+        AttackOneRound("RChloe")
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    HaveSpell(WIZARD_VAMPIRIC_TOUCH)
+    !GlobalTimerNotExpired("BPT","LOCALS")
+    HPPercentLT(Myself,75)
+    RandomNumLT(74,47)
+THEN
+    RESPONSE #100
+        SetGlobalTimer("BPT","LOCALS",6)
+        Spell(Myself,WIZARD_VAMPIRIC_TOUCH)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !HaveAnySpells()
+    !HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+    !HasItem("PHANBLAD",Myself) // Phantom Blade
+    !Range("RChloe",5)
+THEN
+    RESPONSE #100
+        EquipRanged()
+        AttackReevaluate("RChloe",45)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    !Range("RChloe",8)
+    OR(3)
+        HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+        HasItem("PHANBLAD",Myself) // Phantom Blade
+        !HaveAnySpells()
+THEN
+    RESPONSE #90
+        EquipMostDamagingMelee()
+        AttackReevaluate("RChloe",45)
+    RESPONSE #40
+        EquipMostDamagingMelee()
+        AttackReevaluate(LastTargetedBy(Myself),45)
+END
+
+IF
+    Global("EdwinChloeToDeathCR","GLOBAL",1)
+    OR(3)
+        HasItem("BLAKBLAD",Myself) // Black Blade of Disaster
+        HasItem("PHANBLAD",Myself) // Phantom Blade
+        !HaveAnySpells()
+THEN
+    RESPONSE #100
+        EquipMostDamagingMelee()
+        AttackReevaluate("RChloe",45)
+END
+
+IF
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+   !Dead("Edwin")
+   Dead("RChloe")
+   !StateCheck("Edwin",STATE_SLEEPING)
+   Global("EdwinWonChloeCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("EdwinChloeToDeathCR","GLOBAL",2)
+   SetGlobal("EdwinWonChloeCR","GLOBAL",1)
+   Dialogue(Player1)
+END
+

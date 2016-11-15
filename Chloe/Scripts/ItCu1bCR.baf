@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW1",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW1",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW1",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW1",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW1",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW1",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW1"))
+     DisplayStringHead("RChloe",@1080) // ~(Chloe throws you a withering glare when you try to touch her weapons)~
+     Wait(4)
+     EndCutSceneMode()
+END

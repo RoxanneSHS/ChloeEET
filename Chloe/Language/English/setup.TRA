@@ -1,0 +1,165 @@
+@0    = ~Chloe NPC mod~
+@1    = ~(Chloe throws you a withering glare when she takes her weapon back from you)~
+@2    = ~Take that from the ground NOW and give it back~
+@3    = ~Better to keep this in MY inventory~
+@4    = ~That sword was given to me by the gods themselves. So NO, thanks, I don't want to leave it on the ground~
+@5    = ~Don't. Touch. My swords. NEVER!~
+@6    = ~For some strange reason you seem to think this sword is yours to play with~
+@7    = ~I think *this* belongs to ME~
+@8    = ~Don't play with that, naughty <PRO_GIRLBOY>~
+@9    = ~Keep those curious fingers away from my sword~
+@10   = ~Hahah! Are you serious!?~
+@11   = ~Don't touch the sword. It bites!~
+@12   = ~What do you think you are doing? Give it back!~
+@13   = ~Aran Linvail's daughter has been abducted.
+   
+   I found a small nest of vampires north of the Balthis Estate. This must be where Abagail was taken. Now to see if she is still here.~
+@14   = ~Sir!~
+@15   = ~Mercy! I dun wanta die!!~
+@16   = ~You want ME to lead? All right, if you say so...~ [CHLOEB]
+@17   = ~Chloe~
+@18   = ~TakerCR~
+@19   = ~Abagail~
+@20   = ~Akadia~
+@21   = ~Slaver Commander~
+@22   = ~Stone Golem~
+@23   = ~Slaver Guard~
+@24   = ~Slaver Mage~
+@25   = ~Extremely ugly man~
+@26   = ~Scruffy-looking man~
+@27   = ~Slaver Priest~
+@28   = ~Shadow Thief~
+@29   = ~Slaver Subcommander~
+@30   = ~Slaver Wizard~
+@31   = ~Vampire~
+@32   = ~Vampire Elder~
+@33   = ~Kensai~
+@34   = ~KENSAI: This class is also known as the 'Sword Saint', and consists of a warrior who has been specially trained to be one with his sword.  They are deadly and fast and trained to fight without encumbrance.
+
+Advantages:
+-  Bonus +1 to hit and +1 damage for every 3 levels
+-  Bonus -2 to AC
+-  Bonus -1 to speed factor for every 4 levels
+-  May use 'kai' ability one time per day for every 4 levels (starts at 1st level with one use): this ability lasts 10 seconds and makes all attacks do maximum damage.
+
+Disadvantages:
+-  May not use missile weapons
+-  May not wear armor
+-  May not wear gauntlets or bracers~
+@35   = ~(Sigh) I'm about to fall asleep here. We need to make camp soon.~ [CHLOEC]
+@36   = ~Can we PLEASE do something other than stand like idiots?~ [CHLOED]
+@37   = ~You cannot defeat an Yr'Kai!~ [CHLOE8]
+@38   = ~You shall receive no mercy from me!~ [CHLOE9]
+@39   = ~Feel Akadia's wrath!~ [CHLOEA]
+@40   = ~Angh...~ [CHLOEL]
+@41   = ~Akadia... I return to you...~ [CHLOEM]
+@42   = ~Anngh... need a little help here, priest...~ [CHLOEE]
+@43   = ~Aaahh... smell that fresh air... feel those bugbites... yes, that's a walk around the forest, such a GREAT idea...~ [CHLOEN]
+@44   = ~Cities fascinate me. Always an opportunity around every corner... and a thief to take it away.~ [CHLOEO]
+@45   = ~It's pretty dark in here... I so wish my divine heritage included nightvision...!~ [CHLOEP]
+@46   = ~Daylight. Such a blessing... thank you, Lathandar.~ [CHLOEQ]
+@47   = ~Can't someone light a lantern or something? I can't see past my nose...~ [CHLOER]
+@48   = ~I'm listening. What do you want?~ [CHLOE0]
+@49   = ~Is there something you wanted?~ [CHLOEF]
+@50   = ~Yes?~ [CHLOEG]
+@51   = ~Quit poking me and just tell me what you want.~ [CHLOEH]
+@52   = ~Sure... what do you want me to do again?~ [CHLOES]
+@53   = ~All right. I'll get right on it.~ [CHLOEI]
+@54   = ~You sure that's what you want? Ok, ok...~ [CHLOEJ]
+@55   = ~I'll handle it, don't worry.~ [CHLOEK]
+@56   = ~Dammit, I'm a warrior, not a servant! Stop ordering me around.~ [CHLOE_]
+@57   = ~Zha'liis! Send in the Yr'kai... a great idea.~ [CHLOET]
+@58   = ~I'll get right on that.~ [CHLOEU]
+@59   = ~Ok... but next time YOU do it.~ [CHLOEV]
+@60   = ~What is it THIS time!?~ [CHLOEX]
+@61   = ~Lucy says "hi"!~ [CHLOEY]
+@62   = ~Take THAT nil'la fiem!~ [CHLOEZ]
+@63   = ~Shal'lach siev! I missed!?~ [CHLOE1]
+@64   = ~S'tekzhai's invulnerable!~ [CHLOE2]
+@65   = ~Don't you think I have enough crap already? I'm not a pack mule.~ [CHLOE3]
+@66   = ~I'm bored.~
+@67   = ~I'm really, really bored.~
+@68   = ~You'll regret breaking my concentration.~
+@69   = ~No, really, I'm BORED.~
+@70   = ~You bastards! I'll kill you all!!~ [CHLOEW]
+@71   = ~Chloe grew up near Neverwinter in a small orphanage. She claims to be the bastard offspring of Akadia --goddess of air and speed of movement-- and a mortal man. Though she has no proof of her heritage, her supernatural speed and skill certainly give it some credibility. Chloe is driven by some inner urge to improve her skills constantly, spending hours a day practicing whenever she can. You wonder how she manages to fight so well when most would be fatigued from this constant practice, but she simply gives you a friendly smile and says it's simply due to daily practice and not to her divine heritage. She feels a certain kinship to you and Imoen, due to your similar divine parentage.~
+@72   = ~Angh... I'll kill you for that!~ [CHLOEL]
+@73   = ~Slavers' Note~
+@74   = ~My dear slavers,
+
+You apparently hold in your possession a boy that I and my army are looking for. We will offer you 200 gold coins for this boy. Take the money, or our next offer will be your corpses littering the floor. We destroyed La'risadiim, an entire village, for this boy and we will have him. Please take the money and give the boy to Illa-sera here and forget you ever met him.
+             
+             -Y.S.~
+@75   = ~My dear slavers,
+
+You apparently hold in your possession a boy that I and my army are looking for. We will offer you 200 gold coins for this boy. Take the money, or our next offer will be your corpses littering the floor. We destroyed La'risadiim, an entire village, for this boy and we will have him. Please take the money and give the boy to Illa-sera here and forget you ever met him. 
+             
+             -Y.S.~
+@76   = ~Strange metal lump~
+@77   = ~Glowing Metal Alloy: You received this metal alloy from Abagail. It is softly glowing and looks like it could be forged into a weapon. However, you are fairly sure that the magic needs some type of focus for its power. Perhaps you will find something to use along the way?~
+@78   = ~Wrath of Akadia~
+@79   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Wrath of Akadia
+Weapon type: scimitar
+Speed factor: 3
+Thac0 and damage bonus: +3 hits as +3 weapon
+Damage: (1d8) slashing +3 +(1d2 electrical damage)
+Equipped Effect: Immunity to Blindness
+Effect: Blur once daily
+~
+@80   = ~Rage of Akadia~
+@81   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Rage of Akadia
+Weapon type: scimitar
+Speed factor: 2
+Thac0 and damage bonus: +4 hits as +4 weapon
+Damage: (1d8) slashing +4 + (1d4 electrical) +10% of stun
+Equipped Effect: Immunity to blindness, confusion
+Effect: Improved Haste Once daily, Blur 3 times daily
+~
+@82   = ~Fury of Akadia~
+@83   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Fury of Akadia
+Weapon type: scimitar
+Speed factor: 1
+Thac0 and damage bonus: +6 hits as +6 weapon
+Damage: (1d8) slashing +6 + (1d6 electrical) +10% chance of electroshock 1d12 damage and stun
+Equipped Effect: Immunity to blind, confusion, and hold
+Effect: Improved Haste 3 times daily, blur 3 times daily
+~
+@84   = ~Lathandar's Flame~
+@85   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Lathandar's Flame
+Weapon type: short sword
+Speed factor: 2
+Thac0 and damage bonus: +2 hits as +2 weapon
+Damage: (1d6) piercing +2 + (1d2 fire)
+Equipped Effect: 25% Fire resistance
+Effect: Flame Arrow once daily, Protection from the Negative Plane once daily
+~
+@86   = ~Lathandar's Blaze~
+@87   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Lathandar's Blaze
+Weapon type: short sword
+Speed factor: 1
+Thac0 and damage bonus: +3 hits as +3 weapon
+Damage: (1d6) piercing +3 + (1d4 fire) + 10% of blinding opponent
+Equipped Effect: Negative Plane Protection, 50% fire resistance
+Effect: Flame strike once daily
+~
+@88   = ~Lathandar's Inferno~
+@89   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
+
+Lathandar's Inferno
+Weapon type: short sword
+Speed Factor: 0
+Thac0 and damage bonus: +5 hits as +5 weapon
+Damage: (1d6) piercing +5 + (1d6 fire) + 15% chance of 1d12 fire and blinding opponent
+Equipped Effect: Negative Planes Protection, 100% Fire resistance, Luck
+Effect: False Dawn once daily, Sunray once daily
+~

@@ -1,0 +1,37 @@
+
+ OGGDEC.EXE - Copyright (c) 2002 John Edwards
+
+ Usage: oggdec [options] input.ogg [...]
+
+ OPTIONS (upto THREE options ONLY may be used)
+ -h,  --help       Prints this help information.
+ -a,  --album      Use ReplayGain Album/Audiophile gain settings, OR
+ -r,  --radio      Use ReplayGain Track/Radio gain settings.
+ -d,  --dither X   Dither output, where X =.
+               0   for       dither OFF (default).
+               1   for       dither without Noise Shaping.
+               2   for       dither with Light Noise Shaping.
+               3   for       dither with Medium Noise Shaping.
+               4   for       dither with Heavy Noise Shaping.
+ -p,  --play       Plays ogg files thru the soundcard using Windows audio, OR
+ -s,  --shuffle    Shuffles and then plays ogg files using Windows audio.
+ -o,  --stdout     Writes output to stdout in 16 bit ONLY. The format
+                   options are ignored with this option.
+ PLAYBACK PRIORITY OPTIONS (ONE option ONLY may be used)
+ -c,  --class X    Set playback priority class, where X =
+              0    for       NORMAL priority.
+              1    for       HIGH priority (default).
+              2    for       REALTIME priority.
+ FORMAT OPTIONS (ONE option ONLY may be used)
+ -b,  --bits  X    Set output sample format, where X =
+              1    for        8 bit PCM data.
+              2    for       16 bit PCM data (default).
+              3    for       24 bit PCM data.
+              4    for       32 bit PCM data.
+              5    for       32 bit floats.
+
+ INPUT FILES
+ OggDec input files must be Ogg Vorbis I files with
+ a sample rate of 48000Hz, 44100Hz, 32000Hz, 24000Hz,
+ 22050Hz, 16000Hz, 12000Hz, 11025Hz or 8000Hz.
+ Wildcards (?, *) can be used in the filename.

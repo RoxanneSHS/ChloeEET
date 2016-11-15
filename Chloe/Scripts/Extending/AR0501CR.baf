@@ -1,0 +1,31 @@
+IF
+   OnCreation()
+   Exists("Tanner")
+   GGT("ChLovetalksCR",11)
+THEN
+   RESPONSE #100
+   ActionOverride("Tanner",DestroySelf())
+   TriggerActivation("Tran0502",TRUE)
+   TriggerActivation("BlockedStairs",FALSE)
+   SetGlobal("StairsActive","AR0501",2)
+END
+
+IF
+    GlobalTimerExpired("TannerGuards","GLOBAL")
+    !GlobalGT("TannerExposed","GLOBAL",0)
+    Global("TannerGuard","AR0501",1)
+    GGT("ChLovetalksCR",11)
+THEN
+    RESPONSE #100
+        SetGlobal("TannerGuard","AR0501",10)
+        ActionOverride("TANTUG01",DestroySelf())
+        ActionOverride("TANTUG02",DestroySelf())
+        ActionOverride("TANTUG03",DestroySelf())
+      ActionOverride("Tanner",DestroySelf())
+   TriggerActivation("Tran0502",TRUE)
+   TriggerActivation("BlockedStairs",FALSE)
+   SetGlobal("StairsActive","AR0501",2)
+END
+
+
+

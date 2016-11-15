@@ -1,0 +1,38 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId("RChloe")
+   Wait(1)
+   DisplayStringHead("RChloe",@1270) // ~COWARDS!!~
+   MoveToPoint([390.400])
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId(Player1)
+   ActionOverride("COMMANCR",CreateItem("SLNOTECR",0,0,0))
+   ActionOverride("COMMANCR",DropItem("SLNOTECR",[424.490]))
+   CreateVisualEffectObject("SPDIMNDR","WIZMANCR")
+   CreateVisualEffectObject("SPDIMNDR","COMMANCR")
+   CreateVisualEffectObject("SPDIMNDR","SPMAN5")
+   CreateVisualEffectObject("SPDIMNDR","SPMAN6")
+   Wait(3)
+   ActionOverride("WIZMANCR",DestroySelf())
+   ActionOverride("COMMANCR",DestroySelf())
+   ActionOverride("SLMAN5CR",DestroySelf())
+   ActionOverride("SLMAN6CR",DestroySelf())
+   Wait(2)
+   SetGlobal("ChLovetalksQuestCR","GLOBAL",7)
+   ActionOverride("RChloe",StartDialog("RCHLOEJ",Player1))
+   EndCutSceneMode()
+END
+
+
+   
+
+   
+   
+

@@ -1,0 +1,8 @@
+IF
+   RealGlobalTimerExpired("ImoenBitchesOutPlayerCR","GLOBAL")
+   Global("BitchingOutCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("BitchingOutCR","GLOBAL",1)
+   StartDialog("IMOEN2J",Player1)
+END

@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW4",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW4",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW4",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW4",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW4",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW4",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW4"))
+     DisplayStringHead("RChloe",@1160) // ~You really want to see me angry, don't you? Don't touch my sword again, <CHARNAME>~
+     Wait(4)
+     EndCutSceneMode()
+END

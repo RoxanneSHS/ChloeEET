@@ -1,0 +1,253 @@
+@0    = ~Mod du PNJ Chloe~
+@1    = ~(Chloé vous foudroie du regard en récupérant son arme)~
+@2    = ~Ramasse ça TOUT DE SUITE et rends-la moi !~
+@3    = ~Gardons ça dans MON inventaire.~
+@4    = ~Cette épée m'a été donnée par les dieux eux-mêmes. Alors, NON MERCI, je ne désire pas la laisser traîner par terre.~
+@5    = ~Ne... touche... pas... mes épées... JAMAIS !~
+@6    = ~Pour je ne sais quelle étrange raison, tu sembles croire que cette épée est ton jouet.~
+@7    = ~Je pense que *ceci* est à MOI.~
+@8    = ~Ne joue pas avec ça, petit(e) vilain(e).~
+@9    = ~Éloigne tes mains baladeuses de mon épée.~
+@10   = ~Ha ha ha ! Tu veux rire ?!~
+@11   = ~Ne touche pas à l’épée. Elle mord !~
+@12   = ~Tu crois pouvoir t’en tirer ainsi ? Rends-la moi !~
+@13   = ~La fille d'Aran Linvail a été enlevée.
+   
+   J'ai débusqué un petit nid de vampires au nord du domaine Balthis. C'est là-bas qu'Abagail a dû être emmenée. Maintenant voyons si elle s’y trouve toujours.~
+@14   = ~Monsieur !~
+@15   = ~Pitié ! J'veux pô mourir !!~
+@16   = ~Tu veux que ce soit MOI qui prenne la tête du groupe ? Très bien, si c’est ta décision...~ [CHLOEB]
+@17   = ~Chloé~
+@18   = ~TakerCR~
+@19   = ~Abagail~
+@20   = ~Akadie~
+@21   = ~Commandant Esclavagiste~
+@22   = ~Golem de pierre~
+@23   = ~Garde Esclavagiste~
+@24   = ~Magicien esclavagiste~
+@25   = ~Homme repoussant~
+@26   = ~Homme à l'air négligé~
+@27   = ~Prêtre Esclavagiste~
+@28   = ~Voleur de l'Ombre~
+@29   = ~Capitaine Esclavagiste~
+@30   = ~Mage Esclavagiste~
+@31   = ~Vampire~
+@32   = ~Vampire Ancien~
+@33   = ~Kensai~
+@34   = ~KENSAI : Connu aussi sous le nom de "Seigneur de l'épée", ce guerrier s'entraîne pour ne plus faire qu'un avec son arme. Il est d'une terrible efficacité, rapide et entraîné pour combattre sans être encombré. 
+
+Avantages :
+- Bonus de -1 au TAC0 et +1 aux dégâts tous les 3 niveaux
+- Bonus de -2 à la CA
+- Bonus de -1 au facteur de vitesse tous les 4 niveaux
+- Peut utiliser la capacité spéciale 'kaï' une fois par jour tous les 4 niveaux (une utilisation dès le premier niveau) : toutes les attaques infligent le maximum de dégâts pendant 10 secondes.
+
+Inconvénients :
+- Ne peut pas utiliser les armes à projectiles
+- Ne peut pas porter d'armure
+- Ne peut porter ni gantelets ni bracelets~
+@35   = ~(Soupir) Je vais m'endormir sur place. Nous devons installer notre campement au plus tôt.~ [CHLOEC]
+@36   = ~Pourrais-tu S'IL TE PLAIT nous dire pourquoi nous restons plantés là comme des idiots ?~ [CHLOED]
+@37   = ~Les Yr'Kai sont invincibles !~ [CHLOE8]
+@38   = ~Vous ne recevrez aucune pitié de ma part !~ [CHLOE9]
+@39   = ~Subis les foudres d'Akadie !~ [CHLOEA]
+@40   = ~Argh...~ [CHLOEL]
+@41   = ~Akadie... je te rejoins...~ [CHLOEM]
+@42   = ~Arrgh... On a besoin d'aide par ici, un prêtre...~ [CHLOEE]
+@43   = ~Aaahh... sentez-moi ce bon air frais... Ressentez ces piqûres d’insectes... Quelle MERVEILLEUSE idée de faire un crochet par la forêt ...~ [CHLOEN]
+@44   = ~Les villes me fascinent. Le moindre coin de rue recèle une bonne occasion... et un voleur pour la saisir.~ [CHLOEO]
+@45   = ~Il fait plutôt sombre ici... j'aimerais tant que mon héritage divin m’ait également rendue nyctalope...!~ [CHLOEP]
+@46   = ~La lumière du jour. C'est une telle bénédiction... Merci Lathandre.~ [CHLOEQ]
+@47   = ~Est-ce que quelqu'un aurait une lanterne ou de la lumière ? Je ne vois pas plus loin que le bout de mon nez...~ [CHLOER]
+@48   = ~J'écoute. Que veux-tu ?~ [CHLOE0]
+@49   = ~Qu’y a-t-il pour ton service ?~ [CHLOEF]
+@50   = ~Oui ?~ [CHLOEG]
+@51   = ~Cesse donc de me donner des coups de coude et dis-moi simplement ce que tu veux.~ [CHLOEH]
+@52   = ~Bien sûr ! Heu... que dois-je faire, déjà ?~ [CHLOES]
+@53   = ~D'accord. Je vais m'en charger.~ [CHLOEI]
+@54   = ~T’es sûr de ce que tu me demandes ? D'accord, d'accord...~ [CHLOEJ]
+@55   = ~J'ai la situation en main, pas d'inquiétude.~ [CHLOEK]
+@56   = ~Bon sang ! Je suis une guerrière, pas une esclave ! Cesse donc de me donner des ordres à tout va.~ [CHLOE_]
+@57   = ~Zha'liis ! Envoyer une Yr'Kai... quelle bonne idée.~ [CHLOET]
+@58   = ~Je m'en charge.~ [CHLOEU]
+@59   = ~D'accord... Mais la prochaine fois c'est TOI qui t’en charges.~ [CHLOEV]
+@60   = ~Encore !! De quoi s’agit-il cette fois ?~ [CHLOEX]
+@61   = ~Lucy dit "salut" !~ [CHLOEY]
+@62   = ~Prends ça, nil'la fiem !~ [CHLOEZ]
+@63   = ~Shal'lach siev ! J'ai raté mon coup !?~ [CHLOE1]
+@64   = ~S'tekzhai est invulnérable !~ [CHLOE2]
+@65   = ~Tu ne penses pas que je trimballe assez de camelote comme ça ? Je ne suis pas une bête de somme.~ [CHLOE3]
+@66   = ~Je m'ennuie.~
+@67   = ~Je m'ennuie énormément.~
+@68   = ~Tu vas regretter d'avoir brisé ma concentration.~
+@69   = ~Ce n’est pas pour dire, mais je m'ennuie VRAIMENT.~
+@70   = ~Sales bâtards ! Je vais tous vous crever !!~ [CHLOEW]
+@71   = ~Chloé a grandi dans un petit orphelinat près de Padhiver. Elle prétend être issue de l'union d’Akadie - déesse de l'Air et de la Rapidité – avec un mortel. Bien qu'elle n'ait aucune preuve de ce qu’elle avance, sa rapidité et ses talents surnaturels accréditent cette affirmation. Chloé semble motivée par une force intérieure qui la pousse à améliorer ses compétences en permanence, passant le plus clair de ses journées à s'entraîner. Vous vous demandez comment elle fait pour se battre aussi bien alors que la plupart seraient épuisés par un tel sacerdoce, mais elle se contente d’un sourire complice et déclare que c’est tout simplement dû à son entraînement quotidien, non à son héritage divin. Elle se sent proche d’Imoen et de vous, qui partagez également des ascendances divines.~
+@72   = ~Argh... tu as signé ton arrêt de mort !~ [CHLOEL]
+@73   = ~Note des esclavagistes~
+@74   = ~Chers esclavagistes,
+
+Vous semblez détenir un garçon que mon armée et moi-même recherchons. Nous vous offrons 200 pièces d'or pour le récupérer. Préférez l'argent à notre prochaine proposition, car celle-ci consistera à retapisser le sol avec vos corps. Nous avons entièrement détruit le village de La'risadiim pour trouver ce garçon, et nous l'aurons. Veuillez prendre l'argent et remettre le garçon à Illasera ici présente, puis oubliez jusqu’à son existence.
+             
+             -Y.S.~
+@75   = ~Chers esclavagistes,
+
+Vous semblez détenir un garçon que mon armée et moi-même recherchons. Nous vous offrons 200 pièces d'or pour le récupérer. Préférez l'argent à notre prochaine proposition, car celle-ci consistera à retapisser le sol avec vos corps. Nous avons entièrement détruit le village de La'risadiim pour trouver ce garçon, et nous l'aurons. Veuillez prendre l'argent et remettre le garçon à Illasera ici présente, puis oubliez jusqu’à son existence.
+             
+             -Y.S.~
+@76   = ~Bloc de métal étrange~
+@77   = ~Alliage de métal scintillant : vous avez reçu cet alliage de métal d'Abagail. Il rougeoie légèrement et semble pouvoir être utilisé pour forger une arme. Cependant, vous êtes à peu près sûr que la magie qu'il contient nécessite un catalyseur pour activer ses pouvoirs. Peut-être trouverez-vous quelque chose qui fasse l'affaire en cours de route ?~
+@78   = ~Courroux d'Akadie~
+@79   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Courroux d'Akadie
+
+PARAMETRES :
+
+Capacité d'équipement : immunité à la cécité
+Capacité spéciale : Flou 1 fois par jour
+
+TAC0 : +3
+Dégâts : 1D8 +3, +1D2 d'électricité
+Type de dégâts : tranchant
+Facteur de vitesse : 3
+Type de compétence : cimeterre/wakizashi/ninja-To
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+@80   = ~Rage d'Akadie~
+@81   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Rage d'Akadie
+
+PARAMETRES :
+
+Capacités d'équipement : immunité à la cécité et à la confusion
+Capacités spéciales : Hâte améliorée 1 fois par jour, Flou 3 fois par jour
+
+TAC0 : +4
+Dégâts : 1D8 +4, +1D4 d'électricité, +10 % de chances d'étourdir la cible
+Type de dégâts : tranchant
+Facteur de vitesse : 2
+Type de compétence : cimeterre/wakizashi/ninja-To
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+@82   = ~Fureur d'Akadie~
+@83   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Fureur d'Akadie
+
+PARAMETRES :
+
+Capacités d'équipement : immunité à la cécité, à la confusion et à l’immobilisation
+Capacités spéciales : Hâte améliorée 3 fois par jour, Flou 3 fois par jour
+
+TAC0 : +6
+Dégâts : 1D8 +6, +1D6 d'électricité, +10 % de chances d’électriser la cible (1D12 de dégâts et d'étourdissement)
+Type de dégâts : tranchant
+Facteur de vitesse : 1
+Type de compétence : cimeterre/wakizashi/ninja-To
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+@84   = ~Flamme de Lathandre~
+@85   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Flamme de Lathandre
+
+PARAMETRES :
+
+Capacité d'équipement : 25 % de résistance au feu
+Capacités spéciales : Flèche de feu 1 fois par jour, Protection contre le plan négatif 1 fois par jour
+
+TAC0 : +2
+Dégâts : 1D6 +2, +1D2 de feu
+Type de dégâts : perforant
+Facteur de vitesse : 2
+Type de compétence : épée courte
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+@86   = ~Brasier de Lathandre~
+@87   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Brasier de Lathandre
+
+PARAMETRES :
+
+Capacités d'équipement : Protection contre le plan négatif en permanence, 50 % de résistance au feu
+Capacité spéciale : Colonne de feu 1 fois par jour
+
+TAC0 : +3
+Dégâts : 1D6 +3, +1D4 de feu, +10 % de chances d'aveugler l'adversaire
+Type de dégâts : perforant
+Facteur de vitesse : 1
+Type de compétence : épée courte
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+@88   = ~Incendie de Lathandre~
+@89   = ~Chloé maugrée un peu lorsque vous tentez d'examiner son arme, mais elle accepte – non sans rechigner – de vous en dire plus à son sujet :
+
+Incendie de Lathandre
+
+PARAMETRES :
+
+Capacités d'équipement : Protection contre le plan négatif en permanence, 100% de résistance au feu, Chance
+Capacités spéciales : Aube illusoire 1 fois par jour, Rayon de soleil 1 fois par jour
+
+TAC0 : +5
+Dégâts : 1D6 +5, +1D6 de feu, +15 % de chances d'infliger 1D12 dégâts de feu et d'aveugler l'adversaire
+Type de dégâts : perforant
+Facteur de vitesse : 0
+Type de compétence : épée courte
+Type : arme à 1 main
+
+Utilisable uniquement par :
+ Chloé~
+
+// WeiDU prompts
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
+
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
+
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
+
+@-1009= "Entrez une partie du nom du module : "
+
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
+
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["

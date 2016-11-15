@@ -1,0 +1,789 @@
+// FIRE FIRE FIRE!! Hehehehe, FIRE, yeah FRY 'EM!
+
+
+// SW 1
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW1","RChloe")
+   HasItemEquiped("CHLOSW1",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+   Kill(Player6)
+END
+
+// SW2
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW2","RChloe")
+   HasItemEquiped("CHLOSW2",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+   Kill(Player6)
+END
+
+// SW 3
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW3","RChloe")
+   HasItemEquiped("CHLOSW3",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1300) // ~Only a chosen of Akadia can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+   Kill(Player6)
+END
+
+// SW 4
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW4","RChloe")
+   HasItemEquiped("CHLOSW4",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+   Kill(Player6)
+END
+
+// SW 5
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW5","RChloe")
+   HasItemEquiped("CHLOSW5",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+   Kill(Player6)
+END
+
+// SW 6
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player1)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player1,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player1)
+   CreateVisualEffectObject("SPHOLYWD",Player1)
+   CreateVisualEffectObject("SPHOLYMT",Player1)
+   CreateVisualEffectObject("SPGENHLA",Player1)
+   CreateVisualEffectObject("SKYBOLT",Player1)
+   CreateVisualEffectObject("SPFIREPI",Player1)
+   CreateVisualEffectObject("SPFIRSDI",Player1)
+   ActionOverride(Player1,ReallyForceSpell(Player1,WIZARD_FIREBALL))
+   Kill(Player1)
+END
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player2)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player2,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player2)
+   CreateVisualEffectObject("SPHOLYWD",Player2)
+   CreateVisualEffectObject("SPHOLYMT",Player2)
+   CreateVisualEffectObject("SPGENHLA",Player2)
+   CreateVisualEffectObject("SKYBOLT",Player2)
+   CreateVisualEffectObject("SPFIREPI",Player2)
+   CreateVisualEffectObject("SPFIRSDI",Player2)
+   ActionOverride(Player2,ReallyForceSpell(Player2,WIZARD_FIREBALL))
+   Kill(Player2)
+END
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player3)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player3,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player3)
+   CreateVisualEffectObject("SPHOLYWD",Player3)
+   CreateVisualEffectObject("SPHOLYMT",Player3)
+   CreateVisualEffectObject("SPGENHLA",Player3)
+   CreateVisualEffectObject("SKYBOLT",Player3)
+   CreateVisualEffectObject("SPFIREPI",Player3)
+   CreateVisualEffectObject("SPFIRSDI",Player3)
+   ActionOverride(Player3,ReallyForceSpell(Player3,WIZARD_FIREBALL))
+   Kill(Player3)
+END
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player4)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player4,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player4)
+   CreateVisualEffectObject("SPHOLYWD",Player4)
+   CreateVisualEffectObject("SPHOLYMT",Player4)
+   CreateVisualEffectObject("SPGENHLA",Player4)
+   CreateVisualEffectObject("SKYBOLT",Player4)
+   CreateVisualEffectObject("SPFIREPI",Player4)
+   CreateVisualEffectObject("SPFIRSDI",Player4)
+   ActionOverride(Player4,ReallyForceSpell(Player4,WIZARD_FIREBALL))
+   Kill(Player4)
+END
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player5)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player5,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player5)
+   CreateVisualEffectObject("SPHOLYWD",Player5)
+   CreateVisualEffectObject("SPHOLYMT",Player5)
+   CreateVisualEffectObject("SPGENHLA",Player5)
+   CreateVisualEffectObject("SKYBOLT",Player5)
+   CreateVisualEffectObject("SPFIREPI",Player5)
+   CreateVisualEffectObject("SPFIRSDI",Player5)
+   ActionOverride(Player5,ReallyForceSpell(Player5,WIZARD_FIREBALL))
+   Kill(Player5)
+END
+
+IF
+   !HasItemEquiped("CHLOSW6","RChloe")
+   HasItemEquiped("CHLOSW6",Player6)
+THEN
+   RESPONSE #100
+   DisplayStringHead(Player6,@1301) // ~Only a chosen of Lathander can wield this weapon. You have commited sacriledge~
+   CreateVisualEffectObject("SPSCHGI",Player6)
+   CreateVisualEffectObject("SPHOLYWD",Player6)
+   CreateVisualEffectObject("SPHOLYMT",Player6)
+   CreateVisualEffectObject("SPGENHLA",Player6)
+   CreateVisualEffectObject("SKYBOLT",Player6)
+   CreateVisualEffectObject("SPFIREPI",Player6)
+   CreateVisualEffectObject("SPFIRSDI",Player6)
+   ActionOverride(Player6,ReallyForceSpell(Player6,WIZARD_FIREBALL))
+END
+
+// Controling players when RChloe and Edwin are fighting.
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER2)
+   Name("Edwin",PLAYER3)
+   OR(2)
+   Name("RChloe",PLAYER2)
+   Name("RChloe",PLAYER3)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER4)
+   ClearActions(PLAYER5)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER2)
+   Name("Edwin",PLAYER4)
+   OR(2)
+   Name("RChloe",PLAYER2)
+   Name("RChloe",PLAYER4)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER3)
+   ClearActions(PLAYER5)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER2)
+   Name("Edwin",PLAYER5)
+   OR(2)
+   Name("RChloe",PLAYER2)
+   Name("RChloe",PLAYER5)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER3)
+   ClearActions(PLAYER4)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER2)
+   Name("Edwin",PLAYER6)
+   OR(2)
+   Name("RChloe",PLAYER2)
+   Name("RChloe",PLAYER6)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER4)
+   ClearActions(PLAYER5)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER3)
+   Name("Edwin",PLAYER4)
+   OR(2)
+   Name("RChloe",PLAYER3)
+   Name("RChloe",PLAYER4)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER5)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER3)
+   Name("Edwin",PLAYER5)
+   OR(2)
+   Name("RChloe",PLAYER3)
+   Name("RChloe",PLAYER5)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER4)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER3)
+   Name("Edwin",PLAYER6)
+   OR(2)
+   Name("RChloe",PLAYER3)
+   Name("RChloe",PLAYER6)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER4)
+   ClearActions(PLAYER5)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER4)
+   Name("Edwin",PLAYER5)
+   OR(2)
+   Name("RChloe",PLAYER4)
+   Name("RChloe",PLAYER5)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER3)
+   ClearActions(PLAYER6)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER4)
+   Name("Edwin",PLAYER6)
+   OR(2)
+   Name("RChloe",PLAYER4)
+   Name("RChloe",PLAYER6)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER3)
+   ClearActions(PLAYER5)
+END
+
+IF
+   OR(2)
+   Name("Edwin",PLAYER5)
+   Name("Edwin",PLAYER6)
+   OR(2)
+   Name("RChloe",PLAYER5)
+   Name("RChloe",PLAYER6)
+   Global("EdwinChloeToDeathCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   ClearActions(PLAYER1)
+   ClearActions(PLAYER2)
+   ClearActions(PLAYER3)
+   ClearActions(PLAYER4)
+END
+
+

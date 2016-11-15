@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW5",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW5"))
+     DisplayStringHead("RChloe",@1200) // ~You must have a problem with the concept "property". Let me clear it up: this sword if MY property, and that means that only *I* carry it. Understood?~
+     Wait(4)
+     EndCutSceneMode()
+END

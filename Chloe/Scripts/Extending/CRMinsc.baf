@@ -1,0 +1,18 @@
+IF
+   OR(2)
+   Global("MinscWitch","LOCALS",1)
+   Global("MinscWitch","GLOBAL",1)
+   !Global("MinscWitchCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   SetGlobal("MinscWitchCR","GLOBAL",1)
+END
+
+IF 
+   !Global("MinscWitch","LOCALS",1)
+   !Global("MinscWitch","GLOBAL",1)
+   Global("MinscWitchCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   SetGlobal("MinscWitchCR","GLOBAL",0)
+END

@@ -1,0 +1,31 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId("RChloe")
+   MoveToPoint([535.488])
+   Face(5)
+   DisplayStringWait(Myself,@1280) // ~(Takes note from the ground and reads it)~
+   DisplayStringHead(Myself,@1281) // ~(Chloe's eyes widen as she reads. The paper slips from her fingers to the ground)~
+   Wait(2)
+   MoveToPoint([565.505])
+   SmallWait(10)
+   MoveToPoint([595.525])
+   DisplayStringHead(Myself,@1282) // ~This... this can't be...~
+   SmallWait(10)
+   MoveToPoint([635.540])
+   Face(14)
+   SetGlobal("ChLovetalksQuestCR","GLOBAL",9)
+   Wait(1)
+   StartDialog("RCHLOEJ",Player1)
+   EndCutSceneMode()
+END
+
+
+
+
+   
+
+   
+   
+

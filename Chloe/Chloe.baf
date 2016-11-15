@@ -1,0 +1,3897 @@
+// ||| RChloe Questions and Flirts |||
+
+IF
+AreaCheck("ar0601")
+Global("AssigningImoenScriptCR","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("AssigningImoenScriptCR","GLOBAL",2)
+END
+
+IF
+  GGT("ChloeGTKUCR",1)
+  Global("ChloeQuestionsCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeQuestionsCR","GLOBAL",1)
+    RealSetGlobalTimer("TimerForQuestionsCR","GLOBAL",3000)
+END
+
+IF
+  GGT("ChloeQuestionsCR",0)
+  RealGlobalTimerExpired("TimerForQuestionsCR","GLOBAL")
+  !GGT("ChloeQuestionsCR",14)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChloeQuestionsCR","GLOBAL",1)
+    RealSetGlobalTimer("TimerForQuestionsCR","GLOBAL",3000)
+END
+
+IF
+  GGT("ChLovetalksCR",1)
+  Global("ChloeMildFlirtsCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeMildFlirtsCR","GLOBAL",1)
+END
+
+IF
+  GGT("ChLovetalksCR",7)
+  Global("ChloeMildFlirtsCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeMildFlirtsCR","GLOBAL",2)
+END
+
+
+// ||| RChloe's Kick out thingies |||
+
+IF
+  InParty("RChloe")  // RChloe
+  Global("ChloeJoinedCR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeJoinedCR","LOCALS",1)
+    SetGlobal("ChloeKickedOutCR","LOCALS",0)
+END
+
+IF
+  !InParty("RChloe")  // RChloe
+  Global("ChloeJoinedCR","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeJoinedCR","LOCALS",0)
+    SetGlobal("ChloeKickedOutCR","LOCALS",1)
+END
+
+
+// ||| Imoen doesn't have her script assigned |||
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Global("AssigningImoenScriptCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AssigningImoenScriptCR","GLOBAL",1)
+    ActionOverride("Imoen2",ChangeAIScript("Imoen2",OVERRIDE))
+END
+
+
+// ||| Akadia shows up |||
+
+IF
+  InParty("RChloe")  // RChloe
+  AreaCheck("AR1512")
+  Global("AkadiaPreShowCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AkadiaPreShowCR","GLOBAL",1)
+    RealSetGlobalTimer("AkadiaShowBeginsCR","GLOBAL",10)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("AkadiaShowBeginsCR","GLOBAL")
+  OR(2)
+    InParty("Imoen2")  // Imoen2
+    !Detect("Imoen2")  // Imoen2
+  AreaCheck("AR1512")
+  Global("AkadiaPreShowCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("AkadiaPreShowCR","GLOBAL",3)
+    SetGlobal("AkadiaRulesAllCR","GLOBAL",1)
+    StartCutSceneMode()
+    StartCutScene("AkCut1")
+END
+
+
+// ||| RChloe's Undroppable weapons |||
+
+// ~~ First, let's stabilish which "level" of the swords is she wielding ~~
+
+IF
+  HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  Global("IHaveSW1CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW1CR","LOCALS",1)
+END
+
+IF
+  HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  Global("IHaveSW4CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW4CR","LOCALS",1)
+END
+
+IF
+  HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  Global("IHaveSW1CR","LOCALS",1)
+  Global("IHaveSW2CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW1CR","LOCALS",0)
+    SetGlobal("IHaveSW2CR","LOCALS",1)
+END
+
+IF
+  HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  Global("IHaveSW4CR","LOCALS",1)
+  Global("IHaveSW5CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW4CR","LOCALS",0)
+    SetGlobal("IHaveSW5CR","LOCALS",1)
+END
+
+IF
+  HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  Global("IHaveSW2CR","LOCALS",1)
+  Global("IHaveSW3CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW2CR","LOCALS",0)
+    SetGlobal("IHaveSW3CR","LOCALS",1)
+END
+
+IF
+  HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  Global("IHaveSW5CR","LOCALS",1)
+  Global("IHaveSW6CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IHaveSW5CR","LOCALS",0)
+    SetGlobal("IHaveSW6CR","LOCALS",1)
+END
+
+// ~~ That done, now it can be known when the weapons are dropped instead of replaced by new ones ~~
+
+
+// SW 1
+
+IF
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  OR(6)
+    HasItem("CHLOSW1",Player1)  // ~Wrath of Akadia~
+    HasItem("CHLOSW1",Player2)  // ~Wrath of Akadia~
+    HasItem("CHLOSW1",Player3)  // ~Wrath of Akadia~
+    HasItem("CHLOSW1",Player4)  // ~Wrath of Akadia~
+    HasItem("CHLOSW1",Player5)  // ~Wrath of Akadia~
+    HasItem("CHLOSW1",Player6)  // ~Wrath of Akadia~
+  !HasItemEquiped("CHLOSW1",Player1)
+  !HasItemEquiped("CHLOSW1",Player2)
+  !HasItemEquiped("CHLOSW1",Player3)
+  !HasItemEquiped("CHLOSW1",Player4)
+  !HasItemEquiped("CHLOSW1",Player5)
+  !HasItemEquiped("CHLOSW1",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    ActionOverride(Player2,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    ActionOverride(Player3,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    ActionOverride(Player4,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    ActionOverride(Player5,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    ActionOverride(Player6,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
+    DisplayStringHead(Myself,@1) // ~(Chloe throws you a withering glare when she takes her weapon back from you)~
+END
+
+IF
+  !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
+  Global("IHaveSW1CR","LOCALS",1)
+  !HasItem("CHLOSW1",Player1)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW1",Player2)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW1",Player3)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW1",Player4)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW1",Player5)  // ~Wrath of Akadia~
+  !HasItem("CHLOSW1",Player6)  // ~Wrath of Akadia~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW1"))
+    ActionOverride(Player2,PickUpItem("CHLOSW1"))
+    ActionOverride(Player3,PickUpItem("CHLOSW1"))
+    ActionOverride(Player4,PickUpItem("CHLOSW1"))
+    ActionOverride(Player5,PickUpItem("CHLOSW1"))
+    ActionOverride(Player6,PickUpItem("CHLOSW1"))
+    DisplayStringHead(Myself,@2) // ~Take that from the ground NOW and give it back~
+END
+
+// SW 2
+
+IF
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  OR(6)
+    HasItem("CHLOSW2",Player1)  // ~Rage of Akadia~
+    HasItem("CHLOSW2",Player2)  // ~Rage of Akadia~
+    HasItem("CHLOSW2",Player3)  // ~Rage of Akadia~
+    HasItem("CHLOSW2",Player4)  // ~Rage of Akadia~
+    HasItem("CHLOSW2",Player5)  // ~Rage of Akadia~
+    HasItem("CHLOSW2",Player6)  // ~Rage of Akadia~
+  !HasItemEquiped("CHLOSW2",Player1)
+  !HasItemEquiped("CHLOSW2",Player2)
+  !HasItemEquiped("CHLOSW2",Player3)
+  !HasItemEquiped("CHLOSW2",Player4)
+  !HasItemEquiped("CHLOSW2",Player5)
+  !HasItemEquiped("CHLOSW2",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    ActionOverride(Player2,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    ActionOverride(Player3,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    ActionOverride(Player4,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    ActionOverride(Player5,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    ActionOverride(Player6,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
+    DisplayStringHead(Myself,@3) // ~Better to keep this in MY inventory~
+END
+
+IF
+  !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
+  Global("IHaveSW2CR","LOCALS",1)
+  !HasItem("CHLOSW2",Player1)  // ~Rage of Akadia~
+  !HasItem("CHLOSW2",Player2)  // ~Rage of Akadia~
+  !HasItem("CHLOSW2",Player3)  // ~Rage of Akadia~
+  !HasItem("CHLOSW2",Player4)  // ~Rage of Akadia~
+  !HasItem("CHLOSW2",Player5)  // ~Rage of Akadia~
+  !HasItem("CHLOSW2",Player6)  // ~Rage of Akadia~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW2"))
+    ActionOverride(Player2,PickUpItem("CHLOSW2"))
+    ActionOverride(Player3,PickUpItem("CHLOSW2"))
+    ActionOverride(Player4,PickUpItem("CHLOSW2"))
+    ActionOverride(Player5,PickUpItem("CHLOSW2"))
+    ActionOverride(Player6,PickUpItem("CHLOSW2"))
+    DisplayStringHead(Myself,@4) // ~That sword was given to me by the gods themselves. So NO, thanks, I don't want to leave it on the ground~
+END
+
+// SW 3
+
+IF
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  OR(6)
+    HasItem("CHLOSW3",Player1)  // ~Fury of Akadia~
+    HasItem("CHLOSW3",Player2)  // ~Fury of Akadia~
+    HasItem("CHLOSW3",Player3)  // ~Fury of Akadia~
+    HasItem("CHLOSW3",Player4)  // ~Fury of Akadia~
+    HasItem("CHLOSW3",Player5)  // ~Fury of Akadia~
+    HasItem("CHLOSW3",Player6)  // ~Fury of Akadia~
+  !HasItemEquiped("CHLOSW3",Player1)
+  !HasItemEquiped("CHLOSW3",Player2)
+  !HasItemEquiped("CHLOSW3",Player3)
+  !HasItemEquiped("CHLOSW3",Player4)
+  !HasItemEquiped("CHLOSW3",Player5)
+  !HasItemEquiped("CHLOSW3",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    ActionOverride(Player2,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    ActionOverride(Player3,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    ActionOverride(Player4,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    ActionOverride(Player5,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    ActionOverride(Player6,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
+    DisplayStringHead(Myself,@5) // ~Don't. Touch. My swords. NEVER!~
+END
+
+IF
+  !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
+  Global("IHaveSW3CR","LOCALS",1)
+  !HasItem("CHLOSW3",Player1)  // ~Fury of Akadia~
+  !HasItem("CHLOSW3",Player2)  // ~Fury of Akadia~
+  !HasItem("CHLOSW3",Player3)  // ~Fury of Akadia~
+  !HasItem("CHLOSW3",Player4)  // ~Fury of Akadia~
+  !HasItem("CHLOSW3",Player5)  // ~Fury of Akadia~
+  !HasItem("CHLOSW3",Player6)  // ~Fury of Akadia~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW3"))
+    ActionOverride(Player2,PickUpItem("CHLOSW3"))
+    ActionOverride(Player3,PickUpItem("CHLOSW3"))
+    ActionOverride(Player4,PickUpItem("CHLOSW3"))
+    ActionOverride(Player5,PickUpItem("CHLOSW3"))
+    ActionOverride(Player6,PickUpItem("CHLOSW3"))
+    DisplayStringHead(Myself,@6) // ~For some strange reason you seem to think this sword is yours to play with~
+END
+
+// SW 4
+
+IF
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  OR(6)
+    HasItem("CHLOSW4",Player1)  // ~Lathandar's Flame~
+    HasItem("CHLOSW4",Player2)  // ~Lathandar's Flame~
+    HasItem("CHLOSW4",Player3)  // ~Lathandar's Flame~
+    HasItem("CHLOSW4",Player4)  // ~Lathandar's Flame~
+    HasItem("CHLOSW4",Player5)  // ~Lathandar's Flame~
+    HasItem("CHLOSW4",Player6)  // ~Lathandar's Flame~
+  !HasItemEquiped("CHLOSW4",Player1)
+  !HasItemEquiped("CHLOSW4",Player2)
+  !HasItemEquiped("CHLOSW4",Player3)
+  !HasItemEquiped("CHLOSW4",Player4)
+  !HasItemEquiped("CHLOSW4",Player5)
+  !HasItemEquiped("CHLOSW4",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    ActionOverride(Player2,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    ActionOverride(Player3,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    ActionOverride(Player4,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    ActionOverride(Player5,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    ActionOverride(Player6,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
+    DisplayStringHead(Myself,@7) // ~I think *this* belongs to ME~
+END
+
+IF
+  !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
+  Global("IHaveSW4CR","LOCALS",1)
+  !HasItem("CHLOSW4",Player1)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW4",Player2)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW4",Player3)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW4",Player4)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW4",Player5)  // ~Lathandar's Flame~
+  !HasItem("CHLOSW4",Player6)  // ~Lathandar's Flame~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW4"))
+    ActionOverride(Player2,PickUpItem("CHLOSW4"))
+    ActionOverride(Player3,PickUpItem("CHLOSW4"))
+    ActionOverride(Player4,PickUpItem("CHLOSW4"))
+    ActionOverride(Player5,PickUpItem("CHLOSW4"))
+    ActionOverride(Player6,PickUpItem("CHLOSW4"))
+    DisplayStringHead(Myself,@8) // ~Don't play with that, naughty <PRO_GIRLBOY>~
+END
+
+// SW 5
+
+IF
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  OR(6)
+    HasItem("CHLOSW5",Player1)  // ~Lathandar's Blaze~
+    HasItem("CHLOSW5",Player2)  // ~Lathandar's Blaze~
+    HasItem("CHLOSW5",Player3)  // ~Lathandar's Blaze~
+    HasItem("CHLOSW5",Player4)  // ~Lathandar's Blaze~
+    HasItem("CHLOSW5",Player5)  // ~Lathandar's Blaze~
+    HasItem("CHLOSW5",Player6)  // ~Lathandar's Blaze~
+  !HasItemEquiped("CHLOSW5",Player1)
+  !HasItemEquiped("CHLOSW5",Player2)
+  !HasItemEquiped("CHLOSW5",Player3)
+  !HasItemEquiped("CHLOSW5",Player4)
+  !HasItemEquiped("CHLOSW5",Player5)
+  !HasItemEquiped("CHLOSW5",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    ActionOverride(Player2,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    ActionOverride(Player3,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    ActionOverride(Player4,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    ActionOverride(Player5,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    ActionOverride(Player6,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
+    DisplayStringHead(Myself,@9) // ~Keep those curious fingers away from my sword~
+END
+
+IF
+  !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
+  Global("IHaveSW5CR","LOCALS",1)
+  !HasItem("CHLOSW5",Player1)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW5",Player2)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW5",Player3)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW5",Player4)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW5",Player5)  // ~Lathandar's Blaze~
+  !HasItem("CHLOSW5",Player6)  // ~Lathandar's Blaze~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW5"))
+    ActionOverride(Player2,PickUpItem("CHLOSW5"))
+    ActionOverride(Player3,PickUpItem("CHLOSW5"))
+    ActionOverride(Player4,PickUpItem("CHLOSW5"))
+    ActionOverride(Player5,PickUpItem("CHLOSW5"))
+    ActionOverride(Player6,PickUpItem("CHLOSW5"))
+    DisplayStringHead(Myself,@10) // ~Hahah! Are you serious!?~
+END
+
+// SW 6
+
+IF
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  OR(6)
+    HasItem("CHLOSW6",Player1)  // ~Lathandar's Inferno~
+    HasItem("CHLOSW6",Player2)  // ~Lathandar's Inferno~
+    HasItem("CHLOSW6",Player3)  // ~Lathandar's Inferno~
+    HasItem("CHLOSW6",Player4)  // ~Lathandar's Inferno~
+    HasItem("CHLOSW6",Player5)  // ~Lathandar's Inferno~
+    HasItem("CHLOSW6",Player6)  // ~Lathandar's Inferno~
+  !HasItemEquiped("CHLOSW6",Player1)
+  !HasItemEquiped("CHLOSW6",Player2)
+  !HasItemEquiped("CHLOSW6",Player3)
+  !HasItemEquiped("CHLOSW6",Player4)
+  !HasItemEquiped("CHLOSW6",Player5)
+  !HasItemEquiped("CHLOSW6",Player6)
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    ActionOverride(Player2,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    ActionOverride(Player3,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    ActionOverride(Player4,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    ActionOverride(Player5,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    ActionOverride(Player6,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
+    DisplayStringHead(Myself,@11) // ~Don't touch the sword. It bites!~
+END
+
+IF
+  !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
+  Global("IHaveSW6CR","LOCALS",1)
+  !HasItem("CHLOSW6",Player1)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW6",Player2)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW6",Player3)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW6",Player4)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW6",Player5)  // ~Lathandar's Inferno~
+  !HasItem("CHLOSW6",Player6)  // ~Lathandar's Inferno~
+THEN
+  RESPONSE #100
+    ActionOverride(Player1,PickUpItem("CHLOSW6"))
+    ActionOverride(Player2,PickUpItem("CHLOSW6"))
+    ActionOverride(Player3,PickUpItem("CHLOSW6"))
+    ActionOverride(Player4,PickUpItem("CHLOSW6"))
+    ActionOverride(Player5,PickUpItem("CHLOSW6"))
+    ActionOverride(Player6,PickUpItem("CHLOSW6"))
+    DisplayStringHead(Myself,@12) // ~What do you think you are doing? Give it back!~
+END
+
+IF
+  NumItemsGT("CHLOSW1","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW1")  // ~Wrath of Akadia~
+END
+
+IF
+  NumItemsGT("CHLOSW2","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW2")  // ~Rage of Akadia~
+END
+
+IF
+  NumItemsGT("CHLOSW3","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW3")  // ~Fury of Akadia~
+END
+
+IF
+  NumItemsGT("CHLOSW4","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW4")  // ~Lathandar's Flame~
+END
+
+IF
+  NumItemsGT("CHLOSW5","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW5")  // ~Lathandar's Blaze~
+END
+
+IF
+  NumItemsGT("CHLOSW6","RChloe",1)  // RChloe
+THEN
+  RESPONSE #100
+    DestroyItem("CHLOSW6")  // ~Lathandar's Inferno~
+END
+
+// ||| On Abagail quest |||
+
+IF
+  Dead("Vamp1CR")  // ~Vampire~
+  Dead("Vamp2CR")  // ~Vampire~
+  Dead("VElderCR")  // ~Vampire Elder~
+  Global("InAbagailQuestCR","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("InAbagailQuestCR","GLOBAL",3)
+    AddJournalEntry(@13,INFO) // ~Aran Linvail's daughter has been abducted. I found a small nest of vampires north of the Balthis Estate. This must be where Abagail was taken. Now to see if she is still here.~
+END
+
+IF
+  Global("InAbagailQuestCR","GLOBAL",1)
+  Global("VampireCreationGlobalCR","GLOBAL",0)
+  AreaCheck("AR0500")
+THEN
+  RESPONSE #100
+    SetGlobal("VampireCreationGlobalCR","GLOBAL",1)
+    CreateCreature("Vamp1CR",[2700.800],13)  // ~Vampire~
+    CreateCreature("Vamp2CR",[2700.800],9)  // ~Vampire~
+    CreateCreature("VElderCR",[2700.800],14)  // ~Vampire Elder~
+    ActionOverride("Vamp1CR",EquipMostDamagingMelee())
+    ActionOverride("Vamp2CR",EquipMostDamagingMelee())
+    ActionOverride("VelderCR",EquipMostDamagingMelee())
+    ActionOverride("Vamp1CR",MoveBetweenAreas("AR0527",[500.200],13))
+    ActionOverride("Vamp2CR",MoveBetweenAreas("AR0527",[620.230],9))
+    ActionOverride("VelderCR",MoveBetweenAreas("AR0527",[375.275],14))
+    SetGlobal("AbbyIsHumanYouAreALuckyPersonCR","GLOBAL",1)
+    CreateCreature("AbbyHuCR",[2700.800],14)  // ~Abagail~
+    ActionOverride("AbbyHuCR",MoveBetweenAreas("AR0528",[480.275],6))
+  RESPONSE #100
+    SetGlobal("VampireCreationGlobalCR","GLOBAL",1)
+    CreateCreature("Vamp1CR",[2700.800],13)  // ~Vampire~
+    CreateCreature("Vamp2CR",[2700.800],9)  // ~Vampire~
+    CreateCreature("VElderCR",[2700.800],14)  // ~Vampire Elder~
+    ActionOverride("Vamp1CR",EquipMostDamagingMelee())
+    ActionOverride("Vamp2CR",EquipMostDamagingMelee())
+    ActionOverride("VelderCR",EquipMostDamagingMelee())
+    ActionOverride("Vamp1CR",MoveBetweenAreas("AR0527",[500.200],13))
+    ActionOverride("Vamp2CR",MoveBetweenAreas("AR0527",[620.230],9))
+    ActionOverride("VelderCR",MoveBetweenAreas("AR0527",[375.275],14))
+    SetGlobal("AbbyIsVampireToughLuckCR","GLOBAL",1)
+    CreateCreature("AbbyVaCR",[2700.800],14)  // ~Abagail~
+    ActionOverride("AbbyVaCR",MoveBetweenAreas("AR0528",[480.275],6))
+END
+
+IF
+  OR(2)
+    Global("InAbagailQuestCR","GLOBAL",2)
+    Global("InAbagailQuestCR","GLOBAL",3)
+  AreaCheck("AR0528")
+THEN
+  RESPONSE #100
+    SetGlobal("InAbagailQuestCR","GLOBAL",4)
+    ActionOverride("AbbyHuCR",SetDialogue("AbbyCR"))
+    ActionOverride("AbbyVaCR",SetDialogue("AbbyCR"))
+    Wait(1)
+    ActionOverride("AbbyHuCR",FaceObject(Player1))
+    ActionOverride("AbbyVaCR",FaceObject(Player1))
+    Wait(2)
+    ActionOverride("AbbyHuCR",StartDialogue("AbbyCR",Player1))
+    ActionOverride("AbbyVaCR",StartDialogue("AbbyCR",Player1))
+END
+
+IF
+  Dead("AbbyHuCR")  // ~Abagail~
+  Global("AbbyIsHumanYouAreALuckyPersonCR","GLOBAL",1)
+  Global("KilledAbbyBarbarianCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KilledAbbyBarbarianCR","GLOBAL",1)
+END
+
+IF
+  Dead("AbbyVaCR")  // ~Abagail~
+  Global("AbbyIsVampireToughLuckCR","GLOBAL",1)
+  Global("KilledAbbyVampireSlayerCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KilledAbbyVampireSlayerCR","GLOBAL",1)
+END
+
+// ||| Meeting RChloe |||
+
+IF
+  AreaCheck("AR0601")
+  Detect(Player1)
+  Global("NiceToMeetYouCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NiceToMeetYouCR","GLOBAL",1)
+    SetDialogue("RChloe")
+END
+
+IF
+  Dead("GolemCR")  // ~Stone Golem~
+  Global("TheyHelpMeCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Wait(2)
+    SetGlobal("TheyHelpMeCR","GLOBAL",2)
+    StartDialogue("RChloe",Player1)
+END
+
+IF
+  Dead("GolemCR")  // ~Stone Golem~
+  Global("TheyDontHelpMeCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Wait(2)
+    SetGlobal("TheyDontHelpMeCR","GLOBAL",2)
+    StartDialogue("RChloe",Player1)
+END
+
+IF
+  AreaCheck("AR0709")
+  !InParty("RChloe")  // RChloe
+  Global("FakeMercenaryCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("FakeMercenaryCR","GLOBAL",2)
+    SetNumTimesTalkedTo(0)
+END
+
+IF
+  InParty(Myself)
+  Global("FirstTimeIJoinCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("FirstTimeIJoinCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// ||| Assigning the Dialogue files |||
+
+IF
+  InParty("RChloe")  // RChloe
+  Global("IAmInThePartyCR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IAmInThePartyCR","LOCALS",1)
+    SetDialogue("RCHLOEJ")
+END
+
+IF
+  !InParty("RChloe")  // RChloe
+  Global("IAmInThePartyCR","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("IAmInThePartyCR","LOCALS",0)
+    SetDialogue("RCHLOEP")
+END
+
+
+
+// ||| Getting to know you |||
+
+// order: 1, 2, 3 <-> 4, 5, 6 <-> 7 <-> 8, 9, 10 <-> 12 <-> 13, 14, 15 ; GTKU 11 happens at rest somewhere between 9 and 15.
+// the <-> thingie is that they can change order at random.
+// Yup, if you take a look to the code it takes a lot of blocks to make these things random...!
+
+
+IF
+  InParty("RChloe")  // RChloe
+  Global("FirstTimerThingCR","LOCALS",0)
+  GGT("Chapter",13)
+THEN
+  RESPONSE #100
+    SetGlobal("FirstTimerThingCR","LOCALS",1)
+    SetGlobal("ChloeGTKUCR","GLOBAL",1)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",1000)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  OR(14)
+    Global("ChloeGTKUCR","GLOBAL",1)
+    Global("ChloeGTKUCR","GLOBAL",3)
+    Global("ChloeGTKUCR","GLOBAL",5)
+    Global("ChloeGTKUCR","GLOBAL",7)
+    Global("ChloeGTKUCR","GLOBAL",9)
+    Global("ChloeGTKUCR","GLOBAL",11)
+    Global("ChloeGTKUCR","GLOBAL",13)
+    Global("ChloeGTKUCR","GLOBAL",15)
+    Global("ChloeGTKUCR","GLOBAL",17)
+    Global("ChloeGTKUCR","GLOBAL",19)
+    Global("ChloeGTKUCR","GLOBAL",21)
+    Global("ChloeGTKUCR","GLOBAL",23)
+    Global("ChloeGTKUCR","GLOBAL",25)
+    Global("ChloeGTKUCR","GLOBAL",27)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChloeGTKUCR","GLOBAL",1)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",7)
+    PlaySong(%ChLoveCR%)
+    PlaySound("ChGTKUCR")
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeIsAngryCR","GLOBAL",1)
+  !GGT("Chapter",15)
+  OR(14)
+    Global("ChloeGTKUCR","GLOBAL",1)
+    Global("ChloeGTKUCR","GLOBAL",3)
+    Global("ChloeGTKUCR","GLOBAL",5)
+    Global("ChloeGTKUCR","GLOBAL",7)
+    Global("ChloeGTKUCR","GLOBAL",9)
+    Global("ChloeGTKUCR","GLOBAL",11)
+    Global("ChloeGTKUCR","GLOBAL",13)
+    Global("ChloeGTKUCR","GLOBAL",15)
+    Global("ChloeGTKUCR","GLOBAL",17)
+    Global("ChloeGTKUCR","GLOBAL",19)
+    Global("ChloeGTKUCR","GLOBAL",21)
+    Global("ChloeGTKUCR","GLOBAL",23)
+    Global("ChloeGTKUCR","GLOBAL",25)
+    Global("ChloeGTKUCR","GLOBAL",27)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",900)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeIsAngryCR","GLOBAL",1)
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+  OR(14)
+    Global("ChloeGTKUCR","GLOBAL",1)
+    Global("ChloeGTKUCR","GLOBAL",3)
+    Global("ChloeGTKUCR","GLOBAL",5)
+    Global("ChloeGTKUCR","GLOBAL",7)
+    Global("ChloeGTKUCR","GLOBAL",9)
+    Global("ChloeGTKUCR","GLOBAL",11)
+    Global("ChloeGTKUCR","GLOBAL",13)
+    Global("ChloeGTKUCR","GLOBAL",15)
+    Global("ChloeGTKUCR","GLOBAL",17)
+    Global("ChloeGTKUCR","GLOBAL",19)
+    Global("ChloeGTKUCR","GLOBAL",21)
+    Global("ChloeGTKUCR","GLOBAL",23)
+    Global("ChloeGTKUCR","GLOBAL",25)
+    Global("ChloeGTKUCR","GLOBAL",27)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",300)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  !GGT("Chapter",15)
+  OR(2)
+    Global("ChloeGTKUCR","GLOBAL",2)
+    Global("ChloeGTKUCR","GLOBAL",26)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChloeGTKUCR","GLOBAL",1)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+  OR(2)
+    Global("ChloeGTKUCR","GLOBAL",2)
+    Global("ChloeGTKUCR","GLOBAL",26)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChloeGTKUCR","GLOBAL",1)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  Global("ChloeGTKUCR","GLOBAL",-1)
+  !Global("GTKUfinishedCR","GLOBAL",1)
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("GTKUfinishedCR","GLOBAL",1)
+END
+
+// Randomization for 3 and 4
+
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",4)
+  !GGT("Chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",5)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",7)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",4)
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",5)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",7)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",6)
+  Global("WeHad8CR","GLOBAL",1)
+  !GGT("Chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",9)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",6)
+  Global("WeHad8CR","GLOBAL",1)
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",9)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",6)
+  !Global("WeHad8CR","GLOBAL",1)
+  !GGT("Chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",7)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",6)
+  !Global("WeHad8CR","GLOBAL",1)
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",7)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",8)
+  !Global("WeHad6CR","GLOBAL",1)
+  !GGT("Chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",5)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",8)
+  !Global("WeHad6CR","GLOBAL",1)
+  GGT("Chapter",15)
+  !GGT("Chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",5)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",8)
+  Global("WeHad6CR","GLOBAL",1)
+  !GGT("Chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",9)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",8)
+  Global("WeHad6CR","GLOBAL",1)
+  GGT("Chapter",16)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",9)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+
+// Randomization for 6, 7 and 8
+
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",10)
+  !Global("WeHad12","GLOBAL",1)
+  !Global("WeHad14","GLOBAL",1)
+  !Global("WeHad16","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",10)
+  !Global("WeHad12","GLOBAL",1)
+  !Global("WeHad14","GLOBAL",1)
+  !Global("WeHad16","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  !Global("WeHad14CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  !Global("WeHad14CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  !Global("WeHad14CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  !Global("WeHad14CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  Global("WeHad14CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  Global("WeHad14CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  Global("WeHad14CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",12)
+  Global("WeHad14CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  !Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  !Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  !Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  !Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",15)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",14)
+  Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad16CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  !Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad14CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  !Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad14CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  !Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad14CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  !Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad14CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",11)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad14CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  Global("WeHad12CR","GLOBAL",1)
+  !Global("WeHad14CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",13)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad14CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",16)
+  Global("WeHad12CR","GLOBAL",1)
+  Global("WeHad14CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",17)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+
+
+// Randomization for 10, 12 and 13
+
+
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",18)
+  !Global("WeHad20","GLOBAL",1)
+  !Global("WeHad22","GLOBAL",1)
+  !Global("WeHad24","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",18)
+  !Global("WeHad20","GLOBAL",1)
+  !Global("WeHad22","GLOBAL",1)
+  !Global("WeHad24","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  !Global("WeHad22CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  !Global("WeHad22CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  !Global("WeHad22CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  !Global("WeHad22CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  Global("WeHad22CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  Global("WeHad22CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  Global("WeHad22CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",20)
+  Global("WeHad22CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  !Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  !Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  !Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  !Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",23)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",22)
+  Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad24CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  !Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad22CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  !Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad22CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  !Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad22CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  !Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad22CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",19)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad22CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  Global("WeHad20CR","GLOBAL",1)
+  !Global("WeHad22CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",21)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad22CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",3400)
+END
+
+IF
+  RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
+  Global("ChloeGTKUCR","GLOBAL",24)
+  Global("WeHad20CR","GLOBAL",1)
+  Global("WeHad22CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUCR","GLOBAL",25)
+    RealSetGlobalTimer("GTKUTimerCR","GLOBAL",600)
+END
+
+// Camp GTKU (the rest in ChloeD)
+
+
+IF
+  Global("Had18CR","GLOBAL",1)
+  !GGT("chapter",15)
+THEN
+  RESPONSE #100
+    SetGlobal("Had18CR","GLOBAL",2)
+    RealSetGlobalTimer("CampPrayersCR","GLOBAL",4500)
+END
+
+IF
+  Global("Had18CR","GLOBAL",1)
+  GGT("chapter",15)
+  !GGT("chapter",16)
+THEN
+  RESPONSE #100
+    SetGlobal("Had18CR","GLOBAL",2)
+    RealSetGlobalTimer("CampPrayersCR","GLOBAL",7)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  PartyRested()
+  RealGlobalTimerExpired("CampPrayersCR","GLOBAL")
+  Global("ChloeGTKUwhenCampingCR","GLOBAL",0)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeGTKUwhenCampingCR","GLOBAL",1)
+END
+
+// ||| Lovetalks |||
+  
+// The RChloe match...
+
+IF
+  !GGT("chapter",15)
+  Global("GTKUfinishedCR","GLOBAL",1)
+  Gender(Player1,FEMALE)
+  CheckStatGT(Player1,9,CHR)
+  CheckStatGT(Player1,8,INT)
+  OR(3)
+    Race(Player1,ELF)
+    Race(Player1,HALF_ELF)
+    Race(Player1,HUMAN)
+  GGT("ChloeInterest",8)
+  GLT("ChloeInterest",17)
+  Global("ChLovetalksCR","GLOBAL",0)
+  Global("ChloeRomanceActiveCR","GLOBAL",0)
+  Global("NeverDoItAgainChloe1CR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NeverDoItAgainChloe1CR","LOCALS",1)
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",1)
+    SetGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",3300)
+END
+
+IF
+  GGT("chapter",15)
+  !GGT("chapter",16)
+  Global("GTKUfinishedCR","GLOBAL",1)
+  Gender(Player1,FEMALE)
+  CheckStatGT(Player1,9,CHR)
+  CheckStatGT(Player1,8,INT)
+  OR(3)
+    Race(Player1,ELF)
+    Race(Player1,HALF_ELF)
+    Race(Player1,HUMAN)
+  GGT("ChloeInterest",8)
+  GLT("ChloeInterest",17)
+  Global("ChLovetalksCR","GLOBAL",0)
+  Global("ChloeRomanceActiveCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",1)
+    SetGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",550)
+END
+
+IF
+  Global("GTKUfinishedCR","GLOBAL",1)
+  !GGT("ChloeInterest",8)
+  !Global("ChloeRomanceActiveCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+IF
+  Global("GTKUfinishedCR","GLOBAL",1)
+  !CheckStatGT(Player1,9,CHR)
+  !Global("ChloeRomanceActiveCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+IF
+  Global("GTKUfinishedCR","GLOBAL",1)
+  !CheckStatGT(Player1,8,INT)
+  !Global("ChloeRomanceActiveCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+IF
+  Gender(Player1,MALE)
+  !Global("ChloeRomanceActiveCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+IF
+  !Race(Player1,ELF)
+  !Race(Player1,HALF_ELF)
+  !Race(Player1,HUMAN)
+  !Global("ChloeRomanceActiveCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+// ~~ Other romance "compatibilities" ~~
+
+// Anomen
+
+IF
+  Global("AnomenRomanceActive","GLOBAL",2)
+  OR(2)
+    Global("ChloeRomanceActiveCR","GLOBAL",1)
+    Global("ChloeRomanceActiveCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+// Imoen
+
+IF
+  Global("ImoenRomanceActive","GLOBAL",2)
+  OR(2)
+    Global("ChloeRomanceActiveCR","GLOBAL",1)
+    Global("ChloeRomanceActiveCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+    SetGlobal("ImoenChloeRomanceActiveCR","GLOBAL",3)
+END
+
+// Kelsey
+
+IF
+  Global("J#KelseyRomanceActive","GLOBAL",2)
+  OR(2)
+    Global("ChloeRomanceActiveCR","GLOBAL",1)
+    Global("ChloeRomanceActiveCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChloeRomanceActiveCR","GLOBAL",3)
+END
+
+IF
+  Global("FWImoenRomanceActive","GLOBAL",2)
+  OR(2)
+    Global("ImoenChloeRomanceActiveCR","GLOBAL",1)
+    Global("ImoenChloeRomanceActiveCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenChloeRomanceActiveCR","GLOBAL",3)
+END
+
+// Standard stuff
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  OR(2)
+    Global("ChLovetalksCR","GLOBAL",1)
+    Global("ChLovetalksCR","GLOBAL",3)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    PlaySong(%ChGTKUCR%)
+    PlaySound("ChLoveCR")
+    StartDialogue("RCHLOEJ",Player1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",7)
+END
+
+IF
+  !GGT("chapter",15)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  OR(2)
+    Global("ChLovetalksCR","GLOBAL",2)
+    Global("ChLovetalksCR","GLOBAL",4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",3000)
+END
+
+IF
+  GGT("chapter",15)
+  !GGT("chapter",16)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  OR(2)
+    Global("ChLovetalksCR","GLOBAL",2)
+    Global("ChLovetalksCR","GLOBAL",4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",550)
+END
+
+IF
+  !GGT("chapter",15)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChLovetalksCR","GLOBAL",6)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",2000)
+END
+
+IF
+  GGT("chapter",15)
+  !GGT("chapter",16)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChLovetalksCR","GLOBAL",6)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",400)
+END
+
+IF
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChLovetalksCR","GLOBAL",8)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",4100)
+END
+
+IF
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChLovetalksCR","GLOBAL",10)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",10)
+END
+
+IF
+  !InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  PartyRested()
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  Global("ChLovetalksCR","GLOBAL",5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    PlaySong(%ChGTKUCR%)
+    PlaySound("ChLoveCR")
+    StartDialogue("RCHLOEJ",Player1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",7)
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  Global("ChLovetalksCR","GLOBAL",5)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",2)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",600)
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  OR(2)
+    Global("ChLovetalksCR","GLOBAL",7)
+    Global("ChLovetalksCR","GLOBAL",9)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ChLovetalksCR","GLOBAL",1)
+    PlaySong(%ChGTKUCR%)
+    PlaySound("ChLoveCR")
+    StartDialogue("RCHLOEJ",Player1)
+    RealSetGlobalTimer("ChLovetalksTimerCR","GLOBAL",7)
+END
+
+// Now the "complex" lovetalks, which are events in fact.
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  Global("ChLovetalksCR","GLOBAL",11)
+  Global("InterruptInAWhileCR","GLOBAL",0)
+  OR(4)
+    AreaCheck("AR0300")
+    AreaCheck("AR0700")
+    AreaCheck("AR0400")
+    AreaCheck("AR0500")
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("InterruptInAWhileTimerCR","GLOBAL",5)
+    SetGlobal("InterruptInAWhileCR","GLOBAL",1)
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
+  RealGlobalTimerExpired("InterruptInAWhileTimerCR","GLOBAL")
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+  !Global("ChloeIsAngryCR","GLOBAL",1)
+  Global("ChLovetalksCR","GLOBAL",11)
+  Global("InterruptInAWhileCR","GLOBAL",1)
+  OR(4)
+    AreaCheck("AR0300")
+    AreaCheck("AR0700")
+    AreaCheck("AR0400")
+    AreaCheck("AR0500")
+THEN
+  RESPONSE #100
+    SetGlobal("ChLovetalksCR","GLOBAL",12)
+    CreateCreatureObjectOffScreen("MAN1CR","RChloe",5,0,0)  // ~Extremely ugly man~
+    CreateCreatureObject("MAN2CR","MAN1CR",15,0,0)  // ~Scruffy-looking man~
+    Continue()
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  CombatCounter(0)
+  See("MAN1CR")  // ~Extremely ugly man~
+  See("MAN2CR")  // ~Scruffy-looking man~
+  Global("DontRepeatEhCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("DontRepeatEhCR","GLOBAL",1)
+    MoveViewObject("RChloe",INSTANT)
+    ActionOverride("MAN1CR",FaceObject("MAN2CR"))
+    ActionOverride("MAN2CR",FaceObject("MAN1CR"))
+    ActionOverride("MAN1CR",StartDialogue("MAN1CR","MAN2CR"))
+END
+
+IF
+  Dead("MAN1CR")  // ~Extremely ugly man~
+  Global("NoRepeatDammitCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NoRepeatDammitCR","GLOBAL",1)
+    StartCutSceneMode()
+    DisplayStringHead("MAN2CR",@14) // ~Sir!~
+    FaceObject("MAN2CR")
+    SmallWait(23)
+    EndCutSceneMode()
+    StartDialogue("RCHLOEJ","MAN2CR")
+END
+
+IF
+  Dead("MAN2CR")  // ~Scruffy-looking man~
+  Global("NoRepeatDammitCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("NoRepeatDammitCR","GLOBAL",2)
+    Wait(1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  RealGlobalTimerExpired("ChloeComplainCR","GLOBAL")
+  !GGT("ChLovetalksQuestCR",0)
+THEN
+  RESPONSE #100
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// Tanner house first level
+
+IF
+  Global("YouMustBeStupidManCR","GLOBAL",2)
+  AreaCheck("AR0500")
+THEN
+  RESPONSE #100
+    SetGlobal("YouMustBeStupidManCR","GLOBAL",3)
+    CreateCreature("SUBMANCR",[1000.1000],3)  // ~Slaver Subcommander~
+    CreateCreature("MAGMANCR",[1000.1000],3)  // ~Slaver Mage~
+    CreateCreature("PRIMANCR",[1000.1000],3)  // ~Slaver Priest~
+    CreateCreature("SLAMANCR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("GUAMANCR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("SLMAN1CR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("SLMAN2CR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("SLMAN3CR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("SLMAN4CR",[1000.1000],3)  // ~Slaver Guard~
+    CreateCreature("WIZMANCR",[1000.1000],11)  // ~Slaver Wizard~
+    CreateCreature("COMMANCR",[1000.1000],3)  // ~Slaver Commander~
+    CreateCreature("SLMAN6CR",[1000.1000],2)  // ~Slaver Guard~
+    CreateCreature("SLMAN5CR",[1000.1000],13)  // ~Slaver Guard~
+    ActionOverride("SUBMANCR",MoveBetweenAreas("AR0501",[391.404],3))
+    ActionOverride("MAGMANCR",MoveBetweenAreas("AR0501",[590.218],3))
+    ActionOverride("PRIMANCR",MoveBetweenAreas("AR0501",[370.211],3))
+    ActionOverride("SLAMANCR",MoveBetweenAreas("AR0501",[325.295],3))
+    ActionOverride("GUAMANCR",MoveBetweenAreas("AR0502",[470.609],3))
+    ActionOverride("SLMAN1CR",MoveBetweenAreas("AR0502",[690.582],3))
+    ActionOverride("SLMAN2CR",MoveBetweenAreas("AR0502",[615.495],3))
+    ActionOverride("SLMAN3CR",MoveBetweenAreas("AR0502",[465.745],3))
+    ActionOverride("SLMAN4CR",MoveBetweenAreas("AR0502",[265.435],3))
+    ActionOverride("WIZMANCR",MoveBetweenAreas("AR0503",[424.490],11))
+    ActionOverride("COMMANCR",MoveBetweenAreas("AR0503",[535.488],3))
+    ActionOverride("SLMAN6CR",MoveBetweenAreas("AR0503",[615.355],2))
+    ActionOverride("SLMAN5CR",MoveBetweenAreas("AR0503",[350.380],13))
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  AreaCheck("AR0501")
+  GGT("ChLovetalksCR",11)
+  Global("ChLovetalksQuestCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ChLovetalksQuestCR","GLOBAL",1)
+    Wait(2)
+    ActionOverride("SUBMANCR",StartDialogue("SUBMANCR","RChloe"))
+END
+
+IF
+  Global("ScreamForMercyDogCR","GLOBAL",0)
+  !HPPercentGT("SUBMANCR",95)  // ~Slaver Subcommander~
+  !Dead("RChloe")  // RChloe
+THEN
+  RESPONSE #100
+    SetGlobal("ScreamForMercyDogCR","GLOBAL",1)
+    DisplayStringHead("SUBMANCR",@15) // ~Mercy! I dun wanta die!!~
+END
+
+IF
+  Dead("SUBMANCR")  // ~Slaver Subcommander~
+  Dead("SLAMANCR")  // ~Slaver Guard~
+  Dead("PRIMANCR")  // ~Slaver Priest~
+  Dead("MAGMANCR")  // ~Slaver Mage~
+  !Dead("RChloe")  // RChloe
+  Global("KilledFirstSlaversCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KilledFirstSlaversCR","GLOBAL",1)
+    Wait(1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// Second level
+
+IF
+  AreaCheck("AR0502")
+  GGT("ChLovetalksCR",11)
+  Global("ChLovetalksQuestCR","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("ChLovetalksQuestCR","GLOBAL",3)
+    StartCutSceneMode()
+    Wait(2)
+    ActionOverride("GUAMANCR",FaceObject("RCHLOEJ"))
+    SmallWait(7)
+    ActionOverride("SLMAN1CR",FaceObject("RCHLOEJ"))
+    ActionOverride("SLMAN2CR",FaceObject("RCHLOEJ"))
+    ActionOverride("SLMAN3CR",FaceObject("RCHLOEJ"))
+    SmallWait(7)
+    ActionOverride("SLMAN4CR",FaceObject("RCHLOEJ"))
+    SmallWait(20)
+    EndCutSceneMode()
+    ActionOverride("GUAMANCR",StartDialogue("GUAMANCR","RChloe"))
+END
+
+IF
+  Dead("GUAMANCR")  // ~Slaver Guard~
+  Dead("SLMAN1CR")  // ~Slaver Guard~
+  Dead("SLMAN2CR")  // ~Slaver Guard~
+  Dead("SLMAN3CR")  // ~Slaver Guard~
+  Dead("SLMAN4CR")  // ~Slaver Guard~
+  !Dead("RChloe")  // RChloe
+  Global("KilledSecondSlaversCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KilledSecondSlaversCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// Third level
+
+IF
+  AreaCheck("AR0503")
+  GGT("ChLovetalksCR",11)
+  Global("ChLovetalksQuestCR","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("KilledSecondSlaversCR","GLOBAL",2)
+    SetGlobal("ChLovetalksQuestCR","GLOBAL",5)
+    StartCutSceneMode()
+    SmallWait(20)
+    ActionOverride("COMMANCR",StartDialogue("COMMANCR","WIZMANCR"))
+    EndCutSceneMode()
+END
+
+// Complain about not going to the inn
+
+IF
+  InParty("Imoen2")  // Imoen2
+  RealGlobalTimerExpired("IgottaRestSweetyCR","GLOBAL")
+  OR(2)
+    Global("ComplainingAboutRestCR","GLOBAL",0)
+    Global("ComplainingAboutRestCR","GLOBAL",2)
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  !AreaCheck("AR0509")
+  !AreaCheck("AR0511")
+  !GGT("ChLovetalksCR",15)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ComplainingAboutRestCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+  InParty("Imoen2")  // Imoen2
+  Global("ChLovetalksCR","GLOBAL",15)
+  InParty("RChloe")  // RChloe
+  PartyRested()
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  OR(8)
+    AreaCheck("AR0021")
+    AreaCheck("AR0509")
+    AreaCheck("AR0522")
+    AreaCheck("AR0406")
+    AreaCheck("AR0514")
+    AreaCheck("AR0704")
+    AreaCheck("AR0709")
+    AreaCheck("AR0313")
+THEN
+  RESPONSE #100
+    SetGlobal("ChLovetalksCR","GLOBAL",16)
+    RealSetGlobalTimer("ComplainingAboutRestCR","GLOBAL",1000)
+    SetGlobal("FeelingSickLikeHellCR","LOCALS",0)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// |||  In-Party Banters |||
+
+
+// Oh well, the totally random system couldn't make it in. Now, it's pseudo random, meaning that it's not really random but it seems so...!
+
+IF
+  Global("ImmyJonnyboyCR","LOCALS",0)
+  InParty("Imoen")  // ~Imoen~
+  InParty("RChloe")  // RChloe
+THEN
+  RESPONSE #100
+    SetGlobal("ImmyJonnyboyCR","LOCALS",1)
+    RealSetGlobalTimer("ImmyJonnyboyTimerCR","GLOBAL",600)
+END
+
+IF
+  Global("WarriorIDCR","LOCALS",0)
+  InParty("RChloe")  // RChloe
+  Class(Player1,FIGHTER)
+THEN
+  RESPONSE #100
+    SetGlobal("WarriorIDCR","LOCALS",1)
+    RealSetGlobalTimer("WarriorIsWhatTimerCR","GLOBAL",8000)
+END
+
+IF
+  Global("BanterFirstThingCR","LOCALS",0)
+  GGT("Chapter",13)
+  NumInPartyGT(2)
+THEN
+  RESPONSE #100
+    SetGlobal("BanterFirstThingCR","LOCALS",1)
+    RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2000)
+END
+
+// ~~ If it stays too much time in 1, there is something wrong! Set it back to 0!! ~~
+
+
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Global("IAmGonnaFixThisThingCR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IAmGonnaFixThisThingCR","LOCALS",1)
+    RealSetGlobalTimer("GoBackToRandomDudeCR","GLOBAL",60)
+END
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Global("IAmGonnaFixThisThingCR","LOCALS",1)
+  RealGlobalTimerExpired("GoBackToRandomDudeCR","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",0)
+    SetGlobal("IAmGonnaFixThisThingCR","LOCALS",0)
+    RealSetGlobalTimer("BanteringTimerCR","GLOBAL",1000)
+END
+
+
+
+// ~~ ONE!!! Check if there is someone available to have a banter! ~~
+
+
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("ImmyJonnyboyTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Imoen")  // ~Imoen~
+  See("Imoen")  // ~Imoen~
+  !Dead("Imoen")  // ~Imoen~
+  Global("ImoenYouDontLookSoGoodCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ","Imoen")
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("WarriorIsWhatTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  Global("WhatAreYouCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("WhatAreYouCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  !Global("NoMoreImoenBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  !Global("NoMoreJaheiraBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Minsc")  // Minsc
+  See("Minsc")  // Minsc
+  !Dead("Minsc")  // Minsc
+  !Global("NoMoreMinscBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Edwin")  // Edwin
+  See("Edwin")  // Edwin
+  !Dead("Edwin")  // Edwin
+  !Global("NoMoreEdwinBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  !Global("NoMoreViconiaBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  !Global("NoMoreAerieBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  !Global("NoMoreKorganBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Valygar")  // Valygar
+  See("Valygar")  // Valygar
+  !Dead("Valygar")  // Valygar
+  !Global("NoMoreValygarBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Anomen")  // Anomen
+  See("Anomen")  // Anomen
+  !Dead("Anomen")  // Anomen
+  !Global("NoMoreAnomenBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Cernd")  // Cernd
+  See("Cernd")  // Cernd
+  !Dead("Cernd")  // Cernd
+  !Global("NoMoreCerndBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Jan")  // Jan
+  See("Jan")  // Jan
+  !Dead("Jan")  // Jan
+  !Global("NoMoreJanBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Yoshimo")  // Yoshimo
+  See("Yoshimo")  // Yoshimo
+  !Dead("Yoshimo")  // Yoshimo
+  !Global("NoMoreYoshimoBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  !Global("NoMoreNaliaBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Keldorn")  // Keldorn
+  See("Keldorn")  // Keldorn
+  !Dead("Keldorn")  // Keldorn
+  !Global("NoMoreKeldornBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Mazzy")  // Mazzy
+  See("Mazzy")  // Mazzy
+  !Dead("Mazzy")  // Mazzy
+  !Global("NoMoreMazzyBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+IF
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("BanteringCR","GLOBAL",0)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("BanteringTimerCR","GLOBAL")
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("HaerDalis")  // HaerDalis
+  See("HaerDalis")  // HaerDalis
+  !Dead("HaerDalis")  // HaerDalis
+  !Global("NoMoreHaerDalisBantersCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("BanteringCR","GLOBAL",1)
+END
+
+
+
+
+
+
+
+//  TWO!! Now go checking until you find the banter you are looking for!
+
+
+// ~~ First Row of Banters ~~
+
+// Imoen
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Global("ImoenBanter1CR","GLOBAL",0)
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Imoen2")
+END
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Global("ImoenBanter1CR","GLOBAL",0)
+  !Global("ChloeRomanceActiveCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBanter1CR","GLOBAL",2)
+    SetGlobal("ImoenBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Imoen2")
+END
+
+// Jaheira
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Jaheira")  // Jaheira
+  InParty("RChloe")  // RChloe
+  InParty("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  Global("JaheiraBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JaheiraBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Jaheira")
+END
+
+// Minsc
+
+IF
+  InParty("RChloe")  // RChloe
+  Detect("Minsc")  // Minsc
+  Global("BanteringCR","GLOBAL",1)
+  InParty("Minsc")  // Minsc
+  See("Minsc")  // Minsc
+  !Dead("Minsc")  // Minsc
+  Global("MinscBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MinscBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Minsc")
+END
+
+// Edwin
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Edwin")  // Edwin
+  InParty("RChloe")  // RChloe
+  InParty("Edwin")  // Edwin
+  See("Edwin")  // Edwin
+  !Dead("Edwin")  // Edwin
+  Global("EdwinBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("EdwinBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Edwin")
+END
+
+// Viconia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Viconia")  // Viconia
+  InParty("RChloe")  // RChloe
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  Global("ViconiaBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ViconiaBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Viconia")
+END
+
+// Aerie
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Aerie")  // ~Aerie~
+  InParty("RChloe")  // RChloe
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  Global("AerieBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AerieBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Aerie")
+END
+
+// Korgan
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Korgan")  // Korgan
+  InParty("RChloe")  // RChloe
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  Global("KorganBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KorganBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Korgan",StartDialogue("KORGANJ","RChloe"))
+END
+
+// Valygar
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Valygar")  // Valygar
+  InParty("RChloe")  // RChloe
+  InParty("Valygar")  // Valygar
+  See("Valygar")  // Valygar
+  !Dead("Valygar")  // Valygar
+  Global("ValygarBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ValygarBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Valygar")
+END
+
+// Anomen
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Anomen")  // Anomen
+  InParty("RChloe")  // RChloe
+  InParty("Anomen")  // Anomen
+  See("Anomen")  // Anomen
+  !Dead("Anomen")  // Anomen
+  Global("AnomenBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AnomenBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Anomen",StartDialogue("ANOMENJ","RChloe"))
+END
+
+// Cernd
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Cernd")  // Cernd
+  InParty("RChloe")  // RChloe
+  InParty("Cernd")  // Cernd
+  See("Cernd")  // Cernd
+  !Dead("Cernd")  // Cernd
+  Global("CerndBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CerndBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Cernd")
+END
+
+// Jan
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Jan")  // Jan
+  InParty("RChloe")  // RChloe
+  InParty("Jan")  // Jan
+  See("Jan")  // Jan
+  !Dead("Jan")  // Jan
+  Global("JanBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JanBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Jan")
+END
+
+// Yoshimo
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Yoshimo")  // Yoshimo
+  InParty("RChloe")  // RChloe
+  InParty("Yoshimo")  // Yoshimo
+  See("Yoshimo")  // Yoshimo
+  !Dead("Yoshimo")  // Yoshimo
+  Global("YoshimoBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("YoshimoBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Yoshimo")
+END
+
+// Nalia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Nalia")  // Nalia
+  InParty("RChloe")  // RChloe
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  Global("NaliaBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NaliaBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Nalia")
+END
+
+// Keldorn
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  InParty("Keldorn")  // Keldorn
+  See("Keldorn")  // Keldorn
+  !Dead("Keldorn")  // Keldorn
+  Global("KeldornBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KeldornBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Keldorn",StartDialogue("KELDORJ","RChloe"))
+END
+
+// Mazzy
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Mazzy")  // Mazzy
+  InParty("RChloe")  // RChloe
+  InParty("Mazzy")  // Mazzy
+  See("Mazzy")  // Mazzy
+  !Dead("Mazzy")  // Mazzy
+  Global("MazzyBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MazzyBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Mazzy")
+END
+
+// Haer'Dalis
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("HaerDalis")  // HaerDalis
+  InParty("RChloe")  // RChloe
+  InParty("HaerDalis")  // HaerDalis
+  See("HaerDalis")  // HaerDalis
+  !Dead("HaerDalis")  // HaerDalis
+  Global("HaerDalisBanter1CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("HaerDalisBanter1CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("HaerDalis",StartDialogue("HAERDAJ","RChloe"))
+END
+
+
+
+// ~~ Second row of banters ~~
+
+// Imoen
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Global("ImoenBanter1CR","GLOBAL",2)
+  Global("ImoenBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Imoen2")
+END
+
+// Jaheira
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("Jaheira")  // Jaheira
+  InParty("RChloe")  // RChloe
+  Detect("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  Global("JaheiraBanter1CR","GLOBAL",2)
+  Global("JaheiraBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JaheiraBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Jaheira")
+END
+
+// Minsc
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("Minsc")  // Minsc
+  InParty("RChloe")  // RChloe
+  Detect("Minsc")  // Minsc
+  See("Minsc")  // Minsc
+  !Dead("Minsc")  // Minsc
+  Global("MinscBanter1CR","GLOBAL",2)
+  Global("MinscBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MinscBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Minsc",StartDialogue("MINSCJ","RChloe"))
+END
+
+// Edwin
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  Detect("Edwin")  // Edwin
+  InParty("Edwin")  // Edwin
+  See("Edwin")  // Edwin
+  !Dead("Edwin")  // Edwin
+  Global("EdwinBanter1CR","GLOBAL",2)
+  Global("EdwinBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("EdwinBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Edwin",StartDialogue("EDWINJ","RChloe"))
+END
+
+// Viconia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  Detect("Viconia")  // Viconia
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  Global("ViconiaBanter1CR","GLOBAL",2)
+  Global("ViconiaBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ViconiaBanter2CR","GLOBAL",1)
+    RealSetGlobalTimer("HadViconia2TimerCR","GLOBAL",1600)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Viconia",StartDialogue("VICONIJ","RChloe"))
+END
+
+// Aerie
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Aerie")  // ~Aerie~
+  InParty("RChloe")  // RChloe
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  Global("AerieBanter1CR","GLOBAL",2)
+  Global("AerieBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AerieBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Aerie",StartDialogue("AERIEJ","RChloe"))
+END
+
+// Korgan
+
+IF
+  Global("KorganBanter1CR","GLOBAL",2)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("HadKorgan1TimerCR","GLOBAL")
+  !CombatCounter(0)
+  Global("PreKorganBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("PreKorganBanter2CR","GLOBAL",1)
+END
+
+IF
+  Global("PreKorganBanter2CR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  Global("KorganBanter1CR","GLOBAL",2)
+  Global("KorganBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KorganBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Korgan")
+END
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Korgan")  // Korgan
+  InParty("RChloe")  // RChloe
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  Global("KorganBanter1CR","GLOBAL",2)
+  Global("KorganBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KorganBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Korgan")
+END
+
+// Valygar
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Valygar")  // Valygar
+  InParty("RChloe")  // RChloe
+  InParty("Valygar")  // Valygar
+  See("Valygar")  // Valygar
+  !Dead("Valygar")  // Valygar
+  Global("ValygarBanter1CR","GLOBAL",2)
+  Global("ValygarBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ValygarBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Valygar",StartDialogue("VALYGARJ","RChloe"))
+END
+
+// Anomen (PC-Anomen romance specific)
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Anomen")  // Anomen
+  InParty("RChloe")  // RChloe
+  InParty("Anomen")  // Anomen
+  See("Anomen")  // Anomen
+  !Dead("Anomen")  // Anomen
+  OR(2)
+    Global("AnomenRomanceActive","GLOBAL",1)
+    Global("AnomenRomanceActive","GLOBAL",2)
+  Global("AnomenBanter1CR","GLOBAL",2)
+  Global("AnomenBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AnomenBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Anomen")
+END
+
+// If there is no romance, jump to the next
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Anomen")  // Anomen
+  InParty("RChloe")  // RChloe
+  InParty("Anomen")  // Anomen
+  See("Anomen")  // Anomen
+  !Dead("Anomen")  // Anomen
+  !Global("AnomenRomanceActive","GLOBAL",1)
+  !Global("AnomenRomanceActive","GLOBAL",2)
+  Global("AnomenBanter1CR","GLOBAL",2)
+  Global("AnomenBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AnomenBanter2CR","GLOBAL",2)
+    SetGlobal("AnomenBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Anomen")
+END
+
+// Cernd
+
+IF
+  Global("BanteringCR","GLOBAL",2)
+  Detect("Cernd")  // Cernd
+  InParty("RChloe")  // RChloe
+  InParty("Cernd")  // Cernd
+  See("Cernd")  // Cernd
+  !Dead("Cernd")  // Cernd
+  Global("CerndBanter1CR","GLOBAL",2)
+  Global("CerndBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CerndBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Cernd")
+END
+
+// Jan
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Jan")  // Jan
+  InParty("RChloe")  // RChloe
+  InParty("Jan")  // Jan
+  See("Jan")  // Jan
+  !Dead("Jan")  // Jan
+  Global("JanBanter1CR","GLOBAL",2)
+  Global("JanBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JanBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Jan",StartDialogue("JANJ","RChloe"))
+END
+
+// Yoshimo
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Yoshimo")  // Yoshimo
+  InParty("RChloe")  // RChloe
+  InParty("Yoshimo")  // Yoshimo
+  See("Yoshimo")  // Yoshimo
+  !Dead("Yoshimo")  // Yoshimo
+  Global("YoshimoBanter1CR","GLOBAL",2)
+  Global("YoshimoBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("YoshimoBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Yoshimo",StartDialogue("YOSHJ","RChloe"))
+END
+
+// Nalia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Nalia")  // Nalia
+  InParty("RChloe")  // RChloe
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  Global("NaliaBanter1CR","GLOBAL",2)
+  Global("NaliaBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NaliaBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Nalia")
+END
+
+// Keldorn
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  InParty("Keldorn")  // Keldorn
+  See("Keldorn")  // Keldorn
+  !Dead("Keldorn")  // Keldorn
+  Global("KeldornBanter1CR","GLOBAL",2)
+  Global("KeldornBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KeldornBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Keldorn")
+END
+
+// Mazzy
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Mazzy")  // Mazzy
+  InParty("RChloe")  // RChloe
+  InParty("Mazzy")  // Mazzy
+  See("Mazzy")  // Mazzy
+  !Dead("Mazzy")  // Mazzy
+  Global("MazzyBanter1CR","GLOBAL",2)
+  Global("MazzyBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MazzyBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Mazzy",StartDialogue("MAZZYJ","RChloe"))
+END
+
+// Haer'Dalis
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("HaerDalis")  // HaerDalis
+  InParty("HaerDalis")  // HaerDalis
+  InParty("RChloe")  // RChloe
+  See("HaerDalis")  // HaerDalis
+  !Dead("HaerDalis")  // HaerDalis
+  Global("HaerDalisBanter1CR","GLOBAL",2)
+  Global("HaerDalisBanter2CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("HaerDalisBanter2CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("HaerDalis",StartDialogue("HAERDAJ","RChloe"))
+END
+
+
+// ~~ Third Row of Banters ~~
+
+// Imoen
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Detect("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBanter1CR","GLOBAL",2)
+  Global("ImoenBanter2CR","GLOBAL",2)
+  Global("ImoenBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Imoen2")
+END
+
+// Jaheira
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  Detect("Jaheira")  // Jaheira
+  InParty("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  Global("JaheiraBanter1CR","GLOBAL",2)
+  Global("JaheiraBanter2CR","GLOBAL",2)
+  Global("JaheiraBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JaheiraBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Jaheira")
+END
+
+// Viconia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  Detect("Viconia")  // Viconia
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  Global("ViconiaBanter1CR","GLOBAL",2)
+  Global("ViconiaBanter2CR","GLOBAL",2)
+  Global("ViconiaBanter3CR","GLOBAL",2)
+  Global("ViconiaBanter4CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ViconiaBanter4CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Viconia",StartDialogue("VICONIJ","RChloe"))
+END
+
+// Aerie
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Aerie")  // ~Aerie~
+  InParty("RChloe")  // RChloe
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  Global("AerieBanter1CR","GLOBAL",2)
+  Global("AerieBanter2CR","GLOBAL",2)
+  Global("AerieBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AerieBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Aerie")
+END
+
+// Korgan
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Korgan")  // Korgan
+  InParty("RChloe")  // RChloe
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  Global("KorganBanter1CR","GLOBAL",2)
+  Global("KorganBanter2CR","GLOBAL",2)
+  Global("KorganBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KorganBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Korgan")
+END
+
+// Anomen
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Anomen")  // Anomen
+  InParty("RChloe")  // RChloe
+  InParty("Anomen")  // Anomen
+  See("Anomen")  // Anomen
+  !Dead("Anomen")  // Anomen
+  Global("AnomenBanter1CR","GLOBAL",2)
+  Global("AnomenBanter2CR","GLOBAL",2)
+  Global("AnomenBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AnomenBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Anomen")
+END
+
+// Nalia
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Nalia")  // Nalia
+  InParty("RChloe")  // RChloe
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  Global("NaliaBanter1CR","GLOBAL",2)
+  Global("NaliaBanter3CR","GLOBAL",2)
+  Global("NaliaBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("NaliaBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Nalia",StartDialogue("NALIAJ","RChloe"))
+END
+
+// Keldorn
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  InParty("Keldorn")  // Keldorn
+  See("Keldorn")  // Keldorn
+  !Dead("Keldorn")  // Keldorn
+  Global("KeldornBanter1CR","GLOBAL",2)
+  Global("KeldornBanter2CR","GLOBAL",2)
+  Global("KeldornBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KeldornBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    ActionOverride("Keldorn",StartDialogue("KELDORJ","RChloe"))
+END
+
+// Haer'Dalis
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("HaerDalis")  // HaerDalis
+  InParty("RChloe")  // RChloe
+  InParty("HaerDalis")  // HaerDalis
+  See("HaerDalis")  // HaerDalis
+  !Dead("HaerDalis")  // HaerDalis
+  Global("HaerDalisBanter1CR","GLOBAL",2)
+  Global("HaerDalisBanter2CR","GLOBAL",2)
+  Global("HaerDalisBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("HaerDalisBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","HaerDalis")
+END
+
+// ~~ Fourth row of Banters ~~
+
+// Korgan
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Korgan")  // Korgan
+  InParty("RChloe")  // RChloe
+  InParty("Korgan")  // Korgan
+  See("Korgan")  // Korgan
+  !Dead("Korgan")  // Korgan
+  Global("KorganBanter1CR","GLOBAL",2)
+  Global("KorganBanter2CR","GLOBAL",2)
+  Global("KorganBanter3CR","GLOBAL",2)
+  Global("KorganBanter4CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KorganBanter4CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Korgan")
+END
+
+// Keldorn
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  InParty("Keldorn")  // Keldorn
+  See("Keldorn")  // Keldorn
+  !Dead("Keldorn")  // Keldorn
+  Global("KeldornBanter1CR","GLOBAL",2)
+  Global("KeldornBanter2CR","GLOBAL",2)
+  Global("KeldornBanter3CR","GLOBAL",2)
+  Global("KeldornBanter4CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("KeldornBanter4CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Keldorn")
+END
+
+// Haer'Dalis
+
+IF
+  Global("BanteringCR","GLOBAL",1)
+  Detect("HaerDalis")  // HaerDalis
+  InParty("RChloe")  // RChloe
+  InParty("HaerDalis")  // HaerDalis
+  See("HaerDalis")  // HaerDalis
+  !Dead("HaerDalis")  // HaerDalis
+  Global("HaerDalisBanter1CR","GLOBAL",2)
+  Global("HaerDalisBanter2CR","GLOBAL",2)
+  Global("HaerDalisBanter3CR","GLOBAL",2)
+  Global("HaerDalisBanter4CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("HaerDalisBanter4CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","HaerDalis")
+END
+
+// ~~ Strange Talks that don't FIT in the WHOLE ~~
+
+
+// Fourth of Jaheira 
+
+IF
+  Global("JaheiraBanter3CR","GLOBAL",2)
+  InParty("RChloe")  // RChloe
+  Global("PreJaheiraBanter4CR","GLOBAL",0)
+  Global("ChloeRomanceActiveCR","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("PreJaheiraBanter4CR","GLOBAL",1)
+    RealSetGlobalTimer("PreJaheiraBanter4TimerCR","GLOBAL",3000)
+END
+
+IF
+  RealGlobalTimerExpired("PreJaheiraBanter4TimerCR","GLOBAL")
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  Detect("Jaheira")  // Jaheira
+  InParty("Jaheira")  // Jaheira
+  CombatCounter(0)
+  InParty("RChloe")  // RChloe
+  !Detect([ENEMY])
+  Global("JaheiraBanter4CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("JaheiraBanter4CR","GLOBAL",1)
+    ActionOverride("Jaheira",StartDialogue("JAHEIRAJ","RChloe"))
+END
+
+// Third one of Edwin; it requires Edwin to be female
+
+IF
+  Gender("Edwin",FEMALE)  // Edwin
+  InParty("RChloe")  // RChloe
+  Global("PreFemaleEdwinBanterCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("PreFemaleEdwinBanterCR","GLOBAL",1)
+    RealSetGlobalTimer("FemaleEdwinBanterCR","GLOBAL",600)
+END
+
+IF
+  Gender("Edwin",FEMALE)  // Edwin
+  Detect("Edwin")  // Edwin
+  See("Edwin")  // Edwin
+  !Dead("Edwin")  // Edwin
+  InParty("RChloe")  // RChloe
+  InParty("Edwin")  // Edwin
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("FemaleEdwinBanterCR","GLOBAL")
+  Global("EdwinBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("EdwinBanter3CR","GLOBAL",1)
+    StartDialogue("RCHLOEJ","Edwin")
+END
+
+// Third one of Viconia ~~ After battle
+
+IF
+  Global("ViconiaBanter2CR","GLOBAL",2)
+  InParty("RChloe")  // RChloe
+  RealGlobalTimerExpired("HadViconia2TimerCR","GLOBAL")
+  !CombatCounter(0)
+  Global("PreViconiaBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("PreViconiaBanter3CR","GLOBAL",1)
+END
+
+IF
+  Global("PreViconiaBanter3CR","GLOBAL",1)
+  InParty("RChloe")  // RChloe
+  CombatCounter(0)
+  !Detect([ENEMY])
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  Global("ViconiaBanter1CR","GLOBAL",2)
+  Global("ViconiaBanter2CR","GLOBAL",2)
+  Global("ViconiaBanter3CR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ViconiaBanter3CR","GLOBAL",1)
+    SetGlobal("BanteringCR","GLOBAL",0)
+    StartDialogue("RCHLOEJ","Viconia")
+END
+
+
+////////////////////////////////////////////////////////////////////////
+  
+// ||| Imoen - RChloe romance |||
+
+// ~~ RChloe - Imoen match ~~
+
+IF
+  Global("ChloeRomanceActiveCR","GLOBAL",3)
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenChloeLovetalksCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",1800)
+END
+
+// ~~ Standard Stuff ~~
+
+IF
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Detect("Imoen2")  // Imoen2
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ImoenChloeTimerCR","GLOBAL")
+  !StateCheck("Imoen2",STATE_SLEEPING)  // Imoen2
+  OR(6)
+    Global("ImoenChloeLovetalksCR","GLOBAL",1)
+    Global("ImoenChloeLovetalksCR","GLOBAL",3)
+    Global("ImoenChloeLovetalksCR","GLOBAL",7)
+    Global("ImoenChloeLovetalksCR","GLOBAL",9)
+    Global("ImoenChloeLovetalksCR","GLOBAL",17)
+    Global("ImoenChloeLovetalksCR","GLOBAL",23)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
+    PlaySong(%ChImCR%)
+    PlaySound("ChImCR")
+    StartDialogue("RCHLOEJ","Imoen2")
+END
+
+IF
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Detect("Imoen2")  // Imoen2
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ImoenChloeTimerCR","GLOBAL")
+  !StateCheck("Imoen2",STATE_SLEEPING)  // Imoen2
+  Global("ImoenChloeLovetalksCR","GLOBAL",15)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
+    PlaySong(%ChImCR%)
+    PlaySound("ChImCR")
+    ActionOverride("Imoen2",StartDialogue("IMOEN2J","RChloe"))
+END
+
+// One of them is after camping
+
+IF
+  PartyRested()
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Detect("Imoen2")  // Imoen2
+  !Detect([ENEMY])
+  CombatCounter(0)
+  Global("ImoenChloeLovetalksCR","GLOBAL",13)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
+    PlaySong(%ChImCR%)
+    PlaySound("ChImCR")
+    ActionOverride("Imoen2",StartDialogue("IMOEN2J","RChloe"))
+END
+
+// Imoen asks the PC about her relationship, but will kinda do whatever she wants.
+
+IF
+  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  // Imoen2
+  See("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  Detect("Imoen2")  // Imoen2
+  !Detect([ENEMY])
+  CombatCounter(0)
+  RealGlobalTimerExpired("ImoenChloeTimerCR","GLOBAL")
+  Global("ImoenChloeLovetalksCR","GLOBAL",21)
+THEN
+  RESPONSE #100
+    IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
+    RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
+    PlaySong(%ChImCR%)
+    PlaySound("ChImCR")
+    ActionOverride("Imoen2",StartDialogue("IMOEN2J",Player1))
+END
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+// ||| For the Dialogue that Shouldn't have a Flag! |||
+
+
+IF
+  Gender(Player1,FEMALE)
+  InParty("RChloe")  // RChloe
+  !Dead("RChloe")  // RChloe
+  InParty("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  Global("EasterGlobalCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("EasterTimerCR","GLOBAL",300)
+    SetGlobal("EasterGlobalCR","GLOBAL",1)
+END
+
+IF
+  Gender(Player1,FEMALE)
+  InParty("RChloe")  // RChloe
+  !Dead("RChloe")  // RChloe
+  InParty("Jaheira")  // Jaheira
+  See("Jaheira")  // Jaheira
+  !Dead("Jaheira")  // Jaheira
+  InParty("Viconia")  // Viconia
+  See("Viconia")  // Viconia
+  !Dead("Viconia")  // Viconia
+  InParty("Aerie")  // ~Aerie~
+  See("Aerie")  // ~Aerie~
+  !Dead("Aerie")  // ~Aerie~
+  InParty("Nalia")  // Nalia
+  See("Nalia")  // Nalia
+  !Dead("Nalia")  // Nalia
+  Global("EasterGlobalCR","GLOBAL",1)
+  RealGlobalTimerExpired("EasterTimerCR","GLOBAL")
+  !StateCheck(Player1,STATE_SLEEPING)
+  !Detect([ENEMY])
+  CombatCounter(0)
+  Detect(Player1)
+  Global("GirlPartyCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("GirlPartyCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+// ||| Keldorn Training |||
+
+IF
+  Global("KeldornTrainingWithChloeCR","GLOBAL",1)
+  InParty("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  PartyRested()
+  !GGT("KeldornTrainingSessionsCR",24)
+THEN
+  RESPONSE #100
+    IncrementGlobal("KeldornTrainingSessionsCR","GLOBAL",1)
+END
+
+IF
+  Global("KeldornTrainingWithChloeCR","GLOBAL",1)
+  InParty("Keldorn")  // Keldorn
+  InParty("RChloe")  // RChloe
+  PartyRested()
+  GGT("KeldornTrainingSessionsCR",24)
+  !CheckStatGT("Keldorn",24,DEX)  // Keldorn
+THEN
+  RESPONSE #100
+    SetGlobal("KeldornTrainingSessionsCR","GLOBAL",0)
+    ActionOverride("Keldorn",CreateItem("KELDEXCR",0,0,0))  // <Invalid Strref 86815>
+    ActionOverride("Keldorn",UseItem("KELDEXCR",Myself))  // <Invalid Strref 86815>
+    ActionOverride("Keldorn",DestroyItem("KELDEXCR"))  // <Invalid Strref 86815>
+END
+
+////////////////////////////////////////////////////////////////////////////////
+
+// ||| If Imoen leaves you are screwed! |||
+
+IF
+  InParty("Imoen2")  // Imoen2
+  GGT("Chapter",14)
+  Global("ImoenIsInPartyCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenIsInPartyCR","GLOBAL",1)
+END
+
+IF
+  !InParty("Imoen2")  // Imoen2
+  !Dead("Imoen2")  // Imoen2
+  !See("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Detect(Player1)
+  !StateCheck(Player1,STATE_SLEEPING)
+  Global("ImoenIsInPartyCR","GLOBAL",1)
+  Global("YouMustBeStupidDroppingImoenCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("YouMustBeStupidDroppingImoenCR","GLOBAL",1)
+    StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+  Global("KillImoenCR","GLOBAL",1)
+  Exists("Imoen2")  // Imoen2
+THEN
+  RESPONSE #100
+    ActionOverride("Imoen2",DestroySelf())
+END
+
+// Edwin and RChloe to death
+
+IF
+  Global("EdwinChloeToDeathCR","GLOBAL",1)
+  !Dead("Edwin")  // Edwin
+  !Dead("RChloe")  // RChloe
+  Global("FirstGlobalForEdwinCR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("FirstGlobalForEdwinCR","LOCALS",1)
+    RealSetGlobalTimer("ATFEBCR","GLOBAL",4)
+    Attack("Edwin")
+END
+
+IF
+  Global("EdwinChloeToDeathCR","GLOBAL",1)
+  !Dead("Edwin")  // Edwin
+  !Dead("RChloe")  // RChloe
+  !StateCheck("RChloe",STATE_SLEEPING)  // RChloe
+  RealGlobalTimerExpired("ATFEBCR","GLOBAL")
+THEN
+  RESPONSE #100
+    RealSetGlobalTimer("ATFEBCR","GLOBAL",4)
+    Attack("Edwin")
+END
+
+IF
+  Global("EdwinChloeToDeathCR","GLOBAL",1)
+  Dead("Edwin")  // Edwin
+  !Dead("RChloe")  // RChloe
+  !StateCheck("RChloe",STATE_SLEEPING)  // RChloe
+  Global("ChloeWonEdwinCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("EdwinChloeToDeathCR","GLOBAL",2)
+    SetGlobal("ChloeWonEdwinCR","GLOBAL",1)
+    Dialog(Player1)
+END
+
+
+// A piece "borrowed" from Kelsey-ToB mod. I don't really know if it IS necessary, since it's set already in the install, but just in case!
+
+IF
+  Global("ChloeSoundsCR","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetPlayerSound(Myself,@16,LEADER) // ~You want ME to lead? All right, if you say so...~ [CHLOEB]
+    SetGlobal("ChloeSoundsCR","LOCALS",1)
+END
+

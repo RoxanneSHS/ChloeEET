@@ -1,0 +1,38 @@
+IF
+   Global("TheDoorIsOpenedCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("TheDoorIsOpenedCR","GLOBAL",1)
+   Unlock("DOOR0601")
+   OpenDoor("DOOR0601")
+END
+
+IF
+   Global("TheItemIsNotThere","GLOBAL",0)
+THEN  
+   RESPONSE #100
+   SetGlobal("TheItemIsNotThere","GLOBAL",1)
+   ActionOverride("Shelf2",DestroyItem("MISC4C"))
+END
+
+IF
+   Global("CreatingChloeCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("CreatingChloeCR","GLOBAL",1)
+   CreateCreature("CHLOE7",[2000.305],10)
+   CreateCreature("ShadCR1",[2000.300],8)
+   CreateCreature("ShadCR2",[2000.310],7)
+   CreateCreature("GolemCR",[2005.305],13)
+   ActionOverride("RChloe",SetDialog("RChloe"))
+   ActionOverride("RChloe",ChangeAIScript("Chloe",OVERRIDE))
+   ActionOverride("RChloe",ChangeAIScript("WTASIGHT",DEFAULT))
+   GiveItemCreate("CHLOSW4","RChloe",0,0,0)
+   ActionOverride("RChloe",FillSlot(SLOT_SHIELD))
+   GiveItemCreate("MISC4C","RChloe",0,0,0)
+   ActionOverride("RChloe",MoveBetweenAreas("AR0601",[2175.1630],7))
+   ActionOverride("ShadCR1",MoveBetweenAreas("AR0601",[2110.1615],10))
+   ActionOverride("ShadCR2",MoveBetweenAreas("AR0601",[2190.1595],8))
+   ActionOverride("GolemCR",MoveBetweenAreas("AR0601",[2100.1550],11))
+END
+

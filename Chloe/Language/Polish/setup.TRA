@@ -1,0 +1,171 @@
+@0    = ~Chloe NPC mod~
+@1    = ~(Chloe rzuca ci mia¿d¿¹ce spojrzenie odbieraj¹c z powrotem swoj¹ broñ)~
+@2    = ~Podnoœ to z ziemi i NATYCHMIAST oddaj!~
+@3    = ~Lepiej niech to zostanie U MNIE.~
+@4    = ~Ten miecz podarowali mi sami bogowie. Wiêc NIE, dziêkujê, ale raczej nie zostawiê go tu na ziemi.~
+@5    = ~Nie. Dotykaj. Moich mieczy. NIGDY!~
+@6    = ~Z jakiegoœ dziwnego powodu wydajesz siê s¹dziæ, ¿e mój miecz to twoja zabawka.~
+@7    = ~Myœlê, ¿e *to* nale¿y do MNIE.~
+@8    = ~Nie baw siê tym, niegrzeczny ch³opcze.~ ~Nie baw siê tym, niegrzeczna dziewczyno.~
+@9    = ~Trzymaj swoje ciekawskie palce z dala od mojego miecza.~
+@10   = ~Haha! Powa¿nie!?~
+@11   = ~Nie dotykaj miecza. On gryzie!~
+@12   = ~Co ty wyprawiasz? Oddawaj to!~
+@13   = ~Córka Arana Linvaila zosta³a porwana.
+
+   ZnaleŸliœmy ma³e gniazdo wampirów na pó³noc od posiad³oœci Balthisów. Zapewne tam uprowadzono Abagail. Pozostaje tylko sprawdziæ, czy jeszcze siê tam znajduje.~
+@14   = ~Sir!~
+@15   = ~Litoœci! Ja nie chcem umieraæ!!~
+@16   = ~Chcesz, abym JA prowadzi³a dru¿ynê? Dobrze, skoro tak mówisz...~ [CHLOEB]
+@17   = ~Chloe~
+@18   = ~PorywaczCR~
+@19   = ~Abagail~
+@20   = ~Akadia~
+@21   = ~Dowódca Handlarzy Niewolników~
+@22   = ~Kamienny Golem~
+@23   = ~Stra¿nik Handlarzy Niewolników~
+@24   = ~Mag Handlarzy Niewolników~
+@25   = ~Bardzo brzydki mê¿czyzna~
+@26   = ~Parszywie wygl¹daj¹cy mê¿czyzna~
+@27   = ~Kap³an Handlarzy Niewolników~
+@28   = ~Z³odziej Cienia~
+@29   = ~Zastêpca Dowódcy~
+@30   = ~Czarodziej Handlarzy Niewolników~
+@31   = ~Wampir~
+@32   = ~Starszy Wampire~
+@33   = ~Kensai~
+@34   = ~KENSAI: Ta klasa bywa tak¿e nazywana 'Œwiêtymi Miecza'. Nale¿¹ do niej wojownicy, którzy zostali specjalnie wytrenowani tak, by staæ siê jednoœci¹ ze swoim mieczem. S¹ œmiertelnie szybcy i skuteczni. Szkoleni s¹ do walki bez obci¹¿enia.
+
+Zalety:
+-  Premia +1 do trafienia i +1 do obra¿eñ na ka¿de 3 poziomy
+-  Premia -2 do KP
+-  Premia -1 do opóŸnienia za ka¿de 4 poziomy
+-  Mo¿liwoœæ u¿ycia raz dziennie na 4 poziomy zdolnoœci 'kai' (zaczynaj¹c od 1 poziomu z mo¿liwoœci¹ jednego u¿ycia). Zdolnoœæ ta trwa 10 sekund i powoduje, ¿e wszystkie ataki zadaj¹ maksymalne obra¿enia.
+
+Wady:
+-  Nie mo¿e u¿ywaæ broni dystansowych
+-  Nie mo¿e u¿ywaæ zbroi
+-  Nie mo¿e u¿ywaæ rêkawic ani bransolet~
+@35   = ~(Westchniêcie) Zaraz zasnê na stoj¹co. Powinniœmy wkrótce odpocz¹æ.~ [CHLOEC]
+@36   = ~Czy mo¿emy wreszcie COŒ zrobiæ, zamiast staæ tutaj jak g³upcy?~ [CHLOED]
+@37   = ~Nie zdo³asz pokonaæ Yr'Kai!~ [CHLOE8]
+@38   = ~U mnie nie znajdziesz litoœci!~ [CHLOE9]
+@39   = ~Poczuj gniew Akadii!~ [CHLOEA]
+@40   = ~Angh...~ [CHLOEL]
+@41   = ~Akadio... Powracam do ciebie...~ [CHLOEM]
+@42   = ~Anngh... Kap³anie, potrzebne mi niewielka pomoc...~ [CHLOEE]
+@43   = ~Aaahh... weŸ g³êboki oddech œwie¿ego powietrza... poczuj uk¹szenia owadów... tak, to zdecydowanie przechadzka w puszczy, WSPANIA£Y poys³...~ [CHLOEN]
+@44   = ~Miasta mnie fascynuj¹. Za ka¿dym rogiem czeka okazja... i z³odziej by j¹ schwyciæ.~ [CHLOEO]
+@45   = ~Tu jest raczej ciemno... Tak bym chcia³a, by moje boskie dziedzictwo obejmowa³o widzenie w ciemnoœciach...!~ [CHLOEP]
+@46   = ~Œwiat³o dzienne. Co za b³ogos³awieñstwo... Dziêkujê ci, Lathandarze.~ [CHLOEQ]
+@47   = ~Czy ktoœ móg³by zapaliæ latarniê lub coœ takiego? Nie widzê dalej ni¿ koniec mojego nosa...~ [CHLOER]
+@48   = ~S³ucham. Czego chcesz?~ [CHLOE0]
+@49   = ~Czy jest coœ, czego chcia³eœ?~ [CHLOEF]
+@50   = ~Tak?~ [CHLOEG]
+@51   = ~Przestañ mnie tr¹caæ i po prostu powiedz, czego chcesz.~ [CHLOEH]
+@52   = ~Jasne... co znowu chcesz, bym zrobi³a?~ [CHLOES]
+@53   = ~Dobrze, ju¿ siê do tego biorê.~ [CHLOEI]
+@54   = ~Na pewno tego chcesz? Dobrze, ju¿ dobrze...~ [CHLOEJ]
+@55   = ~Nie martw siê, poradzê sobie.~ [CHLOEK]
+@56   = ~Do licha, jestem wojownikiem nie s³u¿¹c¹! Przestañ mi ci¹gle rozkazywaæ.~ [CHLOE_]
+@57   = ~Zha'liis! Poœlij Yr'kai... wspania³y pomys³.~ [CHLOET]
+@58   = ~Zaraz siê do tego wezmê.~ [CHLOEU]
+@59   = ~Œwietnie... ale nastêpny razem TY to zrobisz.~ [CHLOEV]
+@60   = ~Co znowu TYM razem!?~ [CHLOEX]
+@61   = ~Lucy mówi "Czeœæ"!~ [CHLOEY]
+@62   = ~Spróbuj TEGO, ty nil'la fiem!~ [CHLOEZ]
+@63   = ~Shal'lach siev! Spud³owa³am!?~ [CHLOE1]
+@64   = ~Ten s'tekzhai jest niewra¿liwy na moje ciosy!~ [CHLOE2]
+@65   = ~Nie s¹dzisz, ¿e niosê ju¿ doœæ badziewia? Nie jestem jucznym mu³em.~ [CHLOE3]
+@66   = ~Nudzê siê.~
+@67   = ~Naprawdê, naprawdê siê nudzê.~
+@68   = ~Po¿a³ujesz przerwania mojej koncentracji.~
+@69   = ~Nie, jestem naprawdê ZNUDZONA.~
+@70   = ~Wy bêkarty! Pozabijam was wszystkich!!~ [CHLOEW]
+@71   = ~Chloe wyros³a w pobli¿u Neverwinter w ma³ym sierociñcu. Twierdzi, ¿e jest bêkarcim potomkiem Akadii -- bogini powietrza i szybkoœci ruchów -- oraz œmiertelnika. Choæ nie posiada ona ¿adnych dowodów potwierdzaj¹cych jej dziedzictwo, jej nadnaturalna szybkoœæ oraz umiejêtnoœci z pewnoœci¹ przysparzaj¹ tym twierdzeniom wiarygodnoœci. Chloe kieruje siê wewnêtrznym pragnieniem sta³ej poprawy swoich zdolnoœci, ka¿dego dnia poœwiêcaj¹c ca³e godziny na æwiczeniach, o ile tylko ma tak¹ mo¿liwoœæ. Zastanawiasz siê, jak udaje jej siê walczyæ tak dobrze, podczas gdy wiêkszoœæ ludzi by³aby zmêczona codziennym treningiem, ale ona uœmiecha siê tylko przyjacielsko i mówi, ¿e zawdziêcza to w³aœnie æwiczeniom, a nie boskiemu dziedzictwu. Chloe czuje pewn¹ wiêŸ wobec ciebie i Imoen ze wzglêdu na podobne, boskie pochodzenie.~
+@72   = ~Angh... Zabijê ciê za to!~ [CHLOEL]
+@73   = ~List Handlarzy Niewolników~
+@74   = ~Moi drodzy handlarze niewolników,
+
+NajwyraŸniej posiadacie pewnego ch³opca, którego szukam ja i moja armia. Oferujemy 200 sztuk z³ota w zamian za ch³opca. Przyjmijcie pieni¹dze albo nasz¹ kolejn¹ ofert¹ bêd¹ wasze cia³a le¿¹ce na pod³odze. Szukaj¹c tego ch³opca zniszczyliœmy ca³¹ wioskê La'risadiim i w koñcu go dostaniemy. Proszê, weŸcie pieni¹dze i oddajcie ch³opca pani Illa-sera, zapominaj¹c, ¿e kiedykolwiek mieliœcie go w posiadaniu.
+
+             -Y.S.~
+@75   = ~Moi drodzy handlarze niewolników,
+
+NajwyraŸniej posiadacie pewnego ch³opca, którego szukam ja i moja armia. Oferujemy 200 sztuk z³ota w zamian za ch³opca. Przyjmijcie pieni¹dze albo nasz¹ kolejn¹ ofert¹ bêd¹ wasze cia³a le¿¹ce na pod³odze. Szukaj¹c tego ch³opca zniszczyliœmy ca³¹ wioskê La'risadiim i w koñcu go dostaniemy. Proszê, weŸcie pieni¹dze i oddajcie ch³opca pani Illa-sera, zapominaj¹c, ¿e kiedykolwiek mieliœcie go w posiadaniu.
+
+             -Y.S.~
+@76   = ~Dziwna bry³a metalu~
+@77   = ~Œwiec¹cy stop metalu: Otrzyma³eœ ten stop od Abagail. Œwieci sie on delikatny blaskiem i wyglada na to, ¿e da siê wykuæ z niego jak¹œ broñ. Wydaje siê jednak pewne, ¿e ta magia potrzebowaæ bêdzie jakiegoœ punktu skupienia. Byæ mo¿e znajdziesz coœ po drodze?~
+@78   = ~Gniew Akadii~
+@79   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+Gniew Akadii
+Typ broni: sejmitar
+OpóŸnienie: 3
+TraK0 i dodatkowe obra¿enia: +3
+Obra¿enia: (1K8)+3 sieczne +(1K2 obra¿eñ od elektrycznoœci)
+Sta³y efekt: Odpornoœæ na Œlepotê
+Specjalne: Rozmycie raz dziennie
+
+Mo¿e u¿ywaæ: Chloe~
+@80   = ~Wœciek³oœæ Akadii~
+@81   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+Wœciek³oœæ Akadii
+Typ broni: sejmitar
+OpóŸnienie: 2
+TraK0 i dodatkowe obra¿enia: +4
+Obra¿enia: (1K8)+4 sieczne +(1K4 obra¿eñ od elektrycznoœci) + 10% szansy na og³uszenie przeciwnika
+Sta³y efekt: Odpornoœæ na Œlepotê i Zamêt
+Specjalne: Ulepszone przyspieszenie ruchów raz dziennie, Rozmycie 3 razy dziennie
+
+Mo¿e u¿ywaæ: Chloe~
+@82   = ~Furia Akadii~
+@83   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+Furia Akadii
+Typ broni: sejmitar
+OpóŸnienie: 1
+TraK0 i dodatkowe obra¿enia: +6
+Obra¿enia: (1K8)+6 sieczne +(1K6 obra¿eñ od elektrycznoœci) + 10% szansy na pora¿enie elektrycznoœci¹ 1K12 obra¿eñ i og³uszenie przeciwnika
+Sta³y efekt: Odpornoœæ na Œlepotê, Zamêt i Unieruchomienie
+Specjalne: Ulepszone przyspieszenie ruchów 3 razy dziennie, Rozmycie 3 razy dziennie
+
+Mo¿e u¿ywaæ: Chloe~
+@84   = ~P³omieñ Lathandara~
+@85   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+P³omieñ Lathandara
+Typ broni: krótki miecz
+OpóŸnienie: 2
+TraK0 i dodatkowe obra¿enia: +2
+Obra¿enia: (1K6) +2 k³ute + (1K2 obra¿eñ od ognia)
+Sta³y efekt: +25% odpornoœci na ogieñ
+Specjalne: Ognista Strza³a raz dziennie, Ochrona przed negatywn¹ energi¹ raz dziennie
+
+Mo¿e u¿ywaæ: Chloe~
+@86   = ~Ogieñ Lathandara~
+@87   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+Ogieñ Lathandara
+Typ broni: krótki miecz
+OpóŸnienie: 1
+TraK0 i dodatkowe obra¿enia: +3
+Obra¿enia: (1K6) +3 k³ute + (1K4 obra¿eñ od ognia) + 10% szansy na oœlepienie przeciwnika
+Sta³y efekt: +50% odpornoœci na ogieñ, Ochrona przed negatywn¹ energi¹
+Specjalne: S³up ognia raz dziennie
+
+Mo¿e u¿ywaæ: Chloe~
+@88   = ~Piek³o Lathandara ~
+@89   = ~Chloe warczy na ciebie, kiedy próbujesz przyjrzeæ siê jej broni, ale niechêtnie zgadza siê, by powiedzieæ ci jakie s¹ jej moce:
+
+Piek³o Lathandara
+Typ broni: krótki miecz
+OpóŸnienie: 0
+TraK0 i dodatkowe obra¿enia: +5
+Obra¿enia: (1K6) +5 k³ute + (1K6 obra¿eñ od ognia) + 15% szansy na 1K12 obra¿eñ od ognia i oœlepienie przeciwnika
+Sta³y efekt: +100% odpornoœci na ogieñ, Ochrona przed negatywn¹ energi¹, Szczêœcie
+Specjalne: Fa³szywy œwit raz dziennie, Promieñ s³oñca raz dziennie
+
+Mo¿e u¿ywaæ: Chloe~

@@ -1,0 +1,33 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId("RChloe")
+   MoveViewObject(Myself,3)
+   DisplayStringWait(Myself,@1000) // ~Wait... there is something in the air...~
+   MoveToPoint([1705.1728])
+   Face(14)
+   DisplayStringWait(Myself,@1001) // ~This sensation... I've felt it before...~
+   Wait(1)
+   CreateVisualEffect("SPSUMMON",[1806.1645])
+   Wait(3)
+   Face(10)
+   Wait(1)
+   CreateVisualEffect("SPSUMP",[1806.1645])
+   Wait(3)
+   CreateCreature("AkadiaCR",[1795.1655],2)
+   GiveItemCreate("SHINERCR","AkadiaCR",0,0,0)
+   ActionOverride("AkadiaCR",FillSlot(SLOT_RING_LEFT))
+   Wait(2)
+   ActionOverride("AkadiaCR",StartDialogInterrupt("AkadiaCR","RChloe"))
+   EndCutSceneMode()
+END
+
+IF
+   True()
+THEN  
+   RESPONSE #100
+   CutSceneId(Player1)
+   Wait(5)
+   MoveViewPoint([1755.1728],FAST)
+END

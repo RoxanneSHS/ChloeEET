@@ -1,0 +1,16 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+     CutSceneId(Player1)
+     DropItem("CHLOSW5",[-1.-1])
+     ActionOverride(Player2,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player3,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player4,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player5,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride(Player6,DropItem("CHLOSW5",[-1.-1]))
+     ActionOverride("RChloe",PickUpItem("CHLOSW5"))
+     DisplayStringHead("RChloe",@12) // ~What do you think you are doing? Give it back!~
+     Wait(4)
+     EndCutSceneMode()
+END

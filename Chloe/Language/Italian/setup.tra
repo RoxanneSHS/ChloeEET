@@ -1,0 +1,169 @@
+@0    = ~Chloe NPC mod~
+@1    = ~(Chloe ti lancia un'occhiata fulminante mentre riprende indietro la sua arma)~
+@2    = ~Raccoglila da terra IMMEDIATAMENTE e riportala qui.~
+@3    = ~Meglio tenere questa nel MIO inventario~
+@4    = ~Questa spada mi è stata data dagli Dei stessi. Per cui NO, grazie, non la voglio lasciare a terra.~
+@5    = ~Non. Toccare. Le mie spade. MAI!~
+@6    = ~Per qualche strana ragione ti viene da pensare che questa spada sia qui per farti giocare con essa~
+@7    = ~Credo che *questa* appartenga a ME.~
+@8    = ~Non giocare con quella, <PRO_GIRLBOY> impertinente~
+@9    = ~Tieni quelle dita curiose lontano dalla mia spada.~
+@10   = ~Ah ah ah! Dici sul serio!?~
+@11   = ~Non toccare la spada. Morde!~
+@12   = ~Cosa stai pensando di fare? Ridammela!~
+@13   = ~La figlia di Aran Linvail è stata rapita.
+   
+   Ho trovato una piccola tana di vampiri a nord della magione di Balthis. Potrebbe essere lì che Abagail è stata presa. Resta da vedere se lei è ancora lì.~
+@14   = ~Signore!~
+@15   = ~Pietà! Non voglio morire!!~
+@16   = ~Vuoi che sia io a comandare? Ok, se lo dici tu...~ [CHLOEB]
+@17   = ~Chloe~
+@18   = ~TakerCR~
+@19   = ~Abagail~
+@20   = ~Akadia~
+@21   = ~Comandante Schiavista~
+@22   = ~Golem di Pietra~
+@23   = ~Guardia Schiavista~
+@24   = ~Mago Schiavista~
+@25   = ~Uomo estremamente brutto~
+@26   = ~Uomo dall'aspetto trasandato~
+@27   = ~Sacerdote Schiavista~
+@28   = ~Ladro delle Ombre~
+@29   = ~Sottufficiale Schiavista~
+@30   = ~Stregone Schiavista~
+@31   = ~Vampiro~
+@32   = ~Vampiro Anziano~
+@33   = ~Kensai~
+@34   = ~KENSAI: Questa classe è nota anche come il 'Santo della Spada',e consiste di un guerriero appositamente addestrato per essere una cosa sola con la sua spada. Questi guerrieri sono mortali e veloci e addestrati a combattere senza intralcio.
+
+Vantaggi:
+-  Bonus +1 per colpire e +1 al danno per ogni 3 livelli
+-  Bonus -2 alla CA
+-  Bonus -1 al fattore di velocità ogni 4 livelli
+-  Può usare il 'colpo kai' una volta al giorno ogni 4 livelli (parte al primo livello con un uso): questa abilità dura 10 secondi e fa sì che tutti gli attacchi andati a segno infliggano danno pieno.
+
+Svantaggi:
+-  Non può usare armi da lancio o a proiettile
+-  Non può indossare armature
+-  Non può indossare guanti o bracciali~
+@35   = ~(Sigh) Sto per addormentarmi qui. Abbiamo bisogno di accamparci presto.~ [CHLOEC]
+@36   = ~Possiamo fare qualsiasi altra cosa piuttosto che starcene qui in piedi a far niente, PER FAVORE?~ [CHLOED]
+@37   = ~Tu non puoi battere una Yr'Kai!~ [CHLOE8]
+@38   = ~Non riceverai alcuna pietà da me!~ [CHLOE9]
+@39   = ~Prova la furia di Akadia!~ [CHLOEA]
+@40   = ~Angh...~ [CHLOEL]
+@41   = ~Akadia... Io ritorno da te...~ [CHLOEM]
+@42   = ~Anngh... ho bisogno di aiuto, sacerdote...~ [CHLOEE]
+@43   = ~Aaahh... annusa l'aria fresca... senti questi morsi di insetto... sì, questa è una camminata nella foresta, che GRANDE idea...~ [CHLOEN]
+@44   = ~Le città mi affascinano. C'è sempre un'opportunità ad ogni angolo... e un ladro pronto a portartela via.~ [CHLOEO]
+@45   = ~C'è un bel buio qui... spero che la mia eredità divina comprenda l'infravisione...!~ [CHLOEP]
+@46   = ~La luce del giorno. E' una benedizione... grazie, Lathander.~ [CHLOEQ]
+@47   = ~Qualcuno può accendere una lanterna o qualcosa di simile? Non riesco a vedere oltre il mio naso...~ [CHLOER]
+@48   = ~Sto ascoltando. Cosa vuoi?~ [CHLOE0]
+@49   = ~C'è qualcosa che vuoi dirmi?~ [CHLOEF]
+@50   = ~Sì?~ [CHLOEG]
+@51   = ~Smettila di cincischiare e dimmi cosa vuoi.~ [CHLOEH]
+@52   = ~Certo... cos'altro vuoi che faccia?~ [CHLOES]
+@53   = ~D'accordo. Lo farò subito.~ [CHLOEI]
+@54   = ~Sei sicuro che è questo che vuoi? Ok, ok...~ [CHLOEJ]
+@55   = ~Ci penso io, non ti preoccupare.~ [CHLOEK]
+@56   = ~Per la miseria! Sono una guerriera, non una serva! Smettila di darmi ordini.~ [CHLOE_]
+@57   = ~Zha'liis! Mandare avanti la Yr'kai... eccellente idea.~ [CHLOET]
+@58   = ~Mi metto subito all'opera.~ [CHLOEU]
+@59   = ~Ok... ma la prossima volta lo farai TU.~ [CHLOEV]
+@60   = ~Che c'è stavolta!?~ [CHLOEX]
+@61   = ~Lucy dice "ciao"!~ [CHLOEY]
+@62   = ~Prendi QUESTO nil'la fiem!~ [CHLOEZ]
+@63   = ~Shal'lach siev! L'ho mancato!?~ [CHLOE1]
+@64   = ~S'tekzhai è invulnerabile!~ [CHLOE2]
+@65   = ~Non pensi che stia portando con me troppa robaccia? Non sono un mulo da soma.~ [CHLOE3]
+@66   = ~Sono annoiata.~
+@67   = ~Sono molto, molto annoiata.~
+@68   = ~Ti pentirai di aver interrotto la mia concentrazione.~
+@69   = ~No, davvero, sono annoiata.~
+@70   = ~Luridi bastardi! Vi ucciderò tutti!!~ [CHLOEW]
+@71   = ~Chloe crebbe vicino a Neverwinter, in un piccolo orfanotrofio. Ella sostiene di essere la figlia bastarda di Akadia --dea dell'aria e dell'agilità-- e di un uomo mortale. Nonostante non abbia prove della sua discendenza, la sua abilità e velocità soprannaturali le danno certamente credibilità. Chloe è guidata da un qualche bisogno interiore a migliorare costantemente le proprie capacità, spendendo ore ogni giorno ad allenarsi ovunque possa farlo. Ti chiedi come possa essere in grado di combattere così bene quando molti sarebbero affaticati da un allenamento così costante, ma lei semplicemente ti sorride amichevolmente e ti dice che ciò è dovuto all'esercizio giornaliero e non alla sua eredità divina. Ella prova una certa affinità con te e con Imoen, a causa della vostra simile parentela divina.~
+@72   = ~Angh... Ti ucciderò per questo!~ [CHLOEL]
+@73   = ~Nota dello schiavista~
+@74   = ~Miei cari schiavisti,
+
+Sembra che voi teniate in vostro possesso un ragazzo che io e il mio esercito stiamo cercando. Vi offriremo 200 monete d'oro per quel ragazzo. Accettate il denaro, o la nostra prossima offerta saranno i vostri corpi che ricoprono il pavimento. Abbiamo distrutto La'risadiim, un intero villaggio, per questo ragazzo, e noi lo avremo. Prego accettate il denaro e consegnate il ragazzo a Illa-sera e dimenticate di averlo mai incontrato.
+             
+             -Y.S.~
+@75   = ~Miei cari schiavisti,
+
+Sembra che voi teniate in vostro possesso un ragazzo che io e il mio esercito stiamo cercando. Vi offriremo 200 monete d'oro per quel ragazzo. Accettate il denaro, o la nostra prossima offerta saranno i vostri corpi che ricoprono il pavimento. Abbiamo distrutto La'risadiim, un intero villaggio, per questo ragazzo, e noi lo avremo. Prego accettate il denaro e consegnate il ragazzo a Illa-sera e dimenticate di averlo mai incontrato. 
+             
+             -Y.S.~
+@76   = ~Strano pezzo di metallo~
+@77   = ~Lega di Metallo Lucente: Hai ricevuto questa lega metallica da Abagail. Risplende leggermente e pare possa essere forgiato in un'arma. Tuttavia, sei quasi sicuro che la magia abbia bisogno di una qualche sorta di focalizzatore per il suo potere. Che tu riesca a trovare qualcosa con cui usarlo durante i tuoi viaggi?~
+@78   = ~Furia di Akadia~
+@79   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+Furia di Akadia
+Tipo di arma: scimitarra
+Fattore di velocità: 3
+Thac0 bonus: +3 per colpire
+Danno: (1d8) tagliente +3 + (1d2 danno da elettricità)
+Effetto quando equipaggiata: Immunità alla cecità
+Speciale: Sfocatura una volta al giorno
+Utilizzabile solo da Chloe.~
+@80   = ~Rabbia di Akadia~
+@81   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+
+Rabbia di Akadia
+Tipo di arma: scimitarra
+Fattore di velocità: 2
+Thac0 bonus: +4 per colpire
+Danno: (1d8) tagliente +4 + (1d4 danno da elettricità) +10% probabilità di stordire
+Effetto quando equipaggiata: Immunità alla cecità e alla confusione
+Speciale: Alacrità Potenziata una volta al giorno, Sfocatura 3 volte al giorno
+
+Utilizzabile solo da Chloe.~
+@82   = ~Ira di Akadia~
+@83   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+
+Ira di Akadia
+Tipo di arma: scimitarra
+Fattore di velocità: 1
+Thac0 bonus: +6 per colpire
+Danno: (1d8) tagliente +6 + (1d6 danno da elettricità +10% probabilità di folgorare l'avversario (1d12 danno) e stordirlo
+Effetto quando equipaggiata: Immunità alla cecità, alla confusione e al blocco
+Speciale: Alacrità Potenziata 3 volte al giorno, Sfocatura 3 volte al giorno
+Utilizzabile solo da Chloe.~
+@84   = ~Fiamma di Lathandar~
+@85   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+
+Fiamma di Lathandar
+Tipo di arma: spada corta
+Fattore di velocità: 2
+Thac0 bonus: +2 per colpire
+Danno: (1d6) perforante +2 + (1d2 danno da fuoco)
+Effetto quando equipaggiata: 25% resistenza al fuoco
+Speciale: Freccia Infuocata 3 volte al giorno, Protezione dal Piano Negativo una volta al giorno
+
+Utilizzabile solo da Chloe.~
+@86   = ~Fuoco di Lathandar~
+@87   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+
+Fuoco di Lathandar	
+Tipo di arma: spada corta
+Fattore di velocità: 1
+Thac0 bonus: +3 per colpire
+Danno: (1d6) perforante +3 + (1d4 danno da fuoco) + 10% probabilità di accecare l'avversario
+Effetto quando equipaggiata: Protezione dal Piano Negativo, 50% resistenza al fuoco
+Effetto: Colpo di Fuoco una volta al giorno
+
+Utilizzabile solo da Chloe.~
+@88   = ~Inferno di Lathandar~
+@89   = ~Chloe ti ringhia contro quando tenti di esaminare la sua arma, ma con riluttanza accetta di dirti i suoi poteri:
+
+Inferno di Lathandar
+Tipo di arma: spada corta
+Fattore di velocità: 0
+Thac0 bonus: +5 per colpire
+Danno: (1d6) perforante +5 + (1d6 danno da fuoco) + 15% probabilità di infliggere un ulteriore 1d12 di danno da fuoco e di accecare l'avversario
+Effetto quando equipaggiata: Protezione dal Piano Negativo, 100% resistenza al fuoco, Fortuna
+Speciale: Finta Alba una volta al giorno, Raggio di Sole una volta al giorno
+
+Utilizzabile solo da Chloe.~
+

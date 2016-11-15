@@ -1,0 +1,15 @@
+IF
+   NumTimesTalkedTo(0)
+   Global("Talked0TimesCR","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("Talked0TimesCR","GLOBAL",1)
+END
+
+IF
+   !NumTimesTalkedTo(0)
+   Global("Talked0TimesCR","GLOBAL",1)
+THEN
+   RESPONSE #100
+   SetGlobal("Talked0TimesCR","GLOBAL",10)
+END

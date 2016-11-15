@@ -1,0 +1,171 @@
+@0  = ~Chloe NPC mod~ 
+@1  = ~(Chloe os dedica una mirada con desdén cuando os devuelve la espada.)~
+@2  = ~Recoged esto del suelo AHORA y dejadlo en su sitio.~ 
+@3  = ~Es mejor que quedarme esto en MI inventario.~
+@4  = ~Esta espada me fue otorgada por los mismos dioses. Así pues NO, gracias, no quiero abandonarla en el suelo.~ 
+@5  = ~No. Toquéis. Mis espadas. ¡NUNCA!.~
+@6  = ~Por alguna extraña razón parece que creéis que podéis manejar esta espada a vuestro antojo.~
+@7  = ~Creo que *esto* ME pertenece.~ 
+@8  = ~No juguéis con eso, desobediente.~
+@9  = ~Mantened vuestros sucios dedos lejos de mi espada.~ 
+@10 = ~¡Jaja! ¿¡Habláis en serio!?.~
+@11 = ~No toquéis la espada. ¡Muerde!.~
+@12 = ~¿Qué creéis que estáis haciendo? ¡Devolvedla!.~ 
+@13 = ~La hija de Aran Linvail ha sido secuestrada.
+
+   Hallé un pequeño nido de vampiros al norte del Estado de Balthis. Ahí debe ser donde Abagail fue hecha prisionera. Así pues veamos si sigue allí.~
+@14 = ~¡Señor!.~ 
+@15 = ~¡Piedad! ¡¡Nu quero morir!!.~
+@16 = ~¿Queréis que YO tome el mando? De acuerdo, si es lo que queréis...~ [CHLOEB]
+@17 = ~Chloe.~
+@18 = ~TakerCR.~ 
+@19 = ~Abagail.~
+@20 = ~Akadia.~ 
+@21 = ~Caudillo esclavizador.~ 
+@22 = ~Gólem de piedra.~
+@23 = ~Guarda esclavizador.~ 
+@24 = ~Hechicero esclavizador.~
+@25 = ~Hombre extremadamente feo.~
+@26 = ~Hombre desaliñado.~
+@27 = ~Clérigo esclavizador.~
+@28 = ~Ladrón de las Sombras.~
+@29 = ~Oficial esclavizador.~
+@30 = ~Mago esclavizador.~
+@31 = ~Vampiro.~
+@32 = ~Vampiro Anciano.~
+@33 = ~Kensai.~
+@34 = ~KENSAI: Esta clase, también conocida como 'Santo Espadachín', se basa en un guerrero que ha sido especialmente entrenado para ser uno con su espada.  Son rápidos y mortales y han sido adiestrados para luchar sin que sus sentimientos interfieran.
+
+Ventajas:
+-  Bonificador +1 a golpear y +1 de daño cada 3 niveles
+-  Bonificador -2 a la Clase de Armadura
+-  Bonificador -1 al factor de velocidad cada 4 niveles
+-  Puede usar la habilidad 'kai' una vez al día cada 4 niveles (empieza en el 1º nivel con un sólo uso): esta habilidad dura 10 segundos y hace que todos los ataques provoquen daño máximo.
+
+Inconvenientes:
+-  No puede usar armas a distancia.
+-  No puede llevar armadura.
+-  No puede usar guantes o brazaletes.~
+@35 = ~(Suspiro) Estoy a punto de caer de sueño aquí mismo. Necesitamos acampar pronto.~ [CHLOEC]
+@36 = ~¿Podemos hacer algo más que quedarnos pasmados como idiotas, POR FAVOR?.~ [CHLOED]
+@37 = ~¡No podéis derrotar a un Yr'Kai!.~ [CHLOE8]
+@38 = ~¡No hallaréis piedad en mí!.~ [CHLOE9]
+@39 = ~¡Sentid la cólera de Akadia!.~ [CHLOEA]
+@40 = ~Argh...~ [CHLOEL]
+@41 = ~Akadia... Vuelvo a vos...~ [CHLOEM]
+@42 = ~Arggh... necesito ayuda, clérigo, aquí...~ [CHLOEE]
+@43 = ~Aaahh... oled el aire fresco... sentid las picadas de los insectos... sí, esto es una excursión por el bosque, qué GENIAL idea...~ [CHLOEN]
+@44 = ~Las ciudades me fascinan. Encontráis cosas nuevas en cada esquina... y un ladrón para llevárselas.~ [CHLOEO]
+@45 = ~Esto está muy oscuro... ¡hubiera deseado que mi herencia divina incluyera infravisión...!~ [CHLOEP]
+@46 = ~El amanecer. Qué bendición... gracias, Lathander.~ [CHLOEQ]
+@47 = ~¿No puede alguien encender una linterna o algo? No puedo ver más allá de mi nariz...~ [CHLOER]
+@48 = ~Os escucho. ¿Qué es lo que queréis?.~ [CHLOE0]
+@49 = ~¿Queríais algo?.~ [CHLOEF]
+@50 = ~¿Sí?.~ [CHLOEG]
+@51 = ~Dejad de picarme y decid simplemente lo que queréis.~ [CHLOEH]
+@52 = ~Claro... ¿qué queréis que vuelva a hacer?.~ [CHLOES]
+@53 = ~Muy bien. Me encargaré de ello.~ [CHLOEI]
+@54 = ~Seguro que eso es lo que queréis. Vale, vale...~ [CHLOEJ]
+@55 = ~Podré manejarlo, no os preocupéis.~ [CHLOEK]
+@56 = ~¡Maldita sea, soy un guerrero no un sirviente! Dejad de darme órdenes continuamente.~ [CHLOE_]
+@57 = ~¡Zha'liis! El Yr'kai... qué gran idea.~ [CHLOET]
+@58 = ~Me encargaré de ello.~ [CHLOEU]
+@59 = ~Vale... pero la próxima vez hacedlo VOS.~ [CHLOEV]
+@60 = ~¿¡Qué queréis ESTA vez!?.~ [CHLOEX]
+@61 = ~¡Lucy dice "hola"!.~ [CHLOEY]
+@62 = ~¡Chupaos ÉSTA nil'la fiem!.~ [CHLOEZ]
+@63 = ~¡Shal'lach siev! ¿¡He fallado!?.~ [CHLOE1]
+@64 = ~¡S'tekzhai es invulnerable!.~ [CHLOE2]
+@65 = ~¿No creéis que ya está bien de tonterías? No soy un burro de carga.~ [CHLOE3]
+@66 = ~Me aburro.~
+@67 = ~Estoy muy pero que muy aburrida.~
+@68 = ~Os arrepentiréis de haber roto mi concentración.~
+@69 = ~No, de verdad, estoy ABURRIDA.~
+@70 = ~¡Bastardos! ¡¡Os mataré a todos!!.~ [CHLOEW]
+@71 = ~Chloe creció cerca de Noyvern en un pequeño orfanato. Se proclama a sí misma la vástago bastarda de Akadia --diosa del aire y la rapidez de movimiento-- aunque mortal. A pesar de no tener pruebas de su legado, su velocidad sobrenatural y su habilidad le otorgan cierta credibilidad. Chloe se siente empujada por una fuerza interior a mejorar sus habilidades constantemente, empleando muchas horas del día en entrenarse. Si le preguntáis cómo ha llegado a luchar tan bien cuando muchos estarían exhaustos de tan constante entrenamiento, ella sonríe amablemente y dice que se debe sencillamente a la práctica diaria y no a su legado divino. Ella siente cierta afinidad hacia vos y hacia Imoen, a causa de vuestro particular parentesco divino.~
+@72 = ~Argh... ¡Os mataré por esto!.~ [CHLOEL]
+@73 = ~Nota de los esclavizadores.~
+@74 = ~Queridos esclavizadores,
+
+Al parecer estáis en posesión de un niño que mi ejército y yo estamos buscando. Os ofrecemos 200 monedas de oro a cambio. Tomad el dinero o nuestra siguiente oferta será vuestros cadáveres manchando el suelo. Arrasamos La'risadiim, un pueblo entero, a causa de este niño y lo tendremos. Por favor, tomad el dinero y entregad al niño a Illa-sera y olvidaremos que alguna vez hayáis tenido contacto con él.
+
+             -Y.S.~
+@75 = ~Queridos esclavizadores,
+
+Al parecer estáis en posesión de un niño que mi ejército y yo estamos buscando. Os ofrecemos 200 monedas de oro a cambio. Tomad el dinero o nuestra siguiente oferta será vuestros cadáveres manchando el suelo. Arrasamos La'risadiim, un pueblo entero, a causa de este niño y lo tendremos. Por favor, tomad el dinero y entregad al niño a Illa-sera y olvidaremos que alguna vez hayáis tenido contacto con él.
+
+             -Y.S.~
+@76 = ~Trozo de metal extraño.~
+@77 = ~Aleación de metal radiante: Recibisteis esta aleación de metal de manos de Abagail. Brilla levemente y parece que pudiera ser forjado como un arma. Sin embargo, tenéis bastante claro que su magia necesita algún tipo de foco para extraer su poder. Quizás encontréis algo que podáis usar por el camino.~
+@78 = ~Cólera de Akadia.~
+@79 = ~Chloe refunfuña cuando tratáis de estudiar sus armas, pero a regañadientes acepta explicaros sus características:
+
+Cólera de Akadia
+Tipo de arma: Cimitarra
+Factor de velocidad: 3
+TAC0 y bonificación de daño: +3 a golpear +3 como arma
+Daño: (1d8) cortante +3 +(1d2 daño eléctrico)
+Efecto equipada: Inmunidad a la Ceguera.
+Efecto: Borroso una vez al día.
+
+Sólo utilizable por Chloe...~
+@80 = ~Ira de Akadia.~
+@81 = ~Chloe refunfuña cuando tratáis de estudiar su arma, pero a regañadientes acepta explicaros sus características:
+
+Ira de Akadia
+Tipo de arma: Cimitarra.
+Factor de velocidad: 2
+TAC0 y bonificador de daño: +4 a golpear y +4 como arma
+Daño: (1d8) cortante +4 + (1d4 eléctrico) +10% de atontar
+Efecto equipada: Inmunidad a la Ceguera, Confusión.
+Efecto: Celeridad Mejorada una vez al día, Borroso 3 veces al día.
+
+Sólo utilizable por Chloe...~
+@82 = ~Furia de Akadia.~
+@83 = ~Chloe refunfuña cuando tratáis de estudiar su arma, pero a regañadientes acepta explicaros sus características:
+
+Furia de Akadia
+Tipo de arma: Cimitarra
+Factor de velocidad: 1
+TAC0 y bonificador de daño: +6 a golpear y +6 como arma
+Daño: (1d8) cortante +6 + (1d6 eléctrico) +10% de posibilidad de electroshock 1d12 daño y atontar
+Efecto equipada: Inmunidad a la Ceguera, Confusión y parálisis
+Efecto: Celeridad Mejorada 3 veces al día, Borroso 3 veces al día
+
+Solo utilizable por Chloe.~
+@84 = ~Llama de Lathander.~
+@85 = ~Chloe refunfuña cuando tratáis de estudiar su arma, pero a regañadientes acepta explicaros sus características:
+
+Llama de Lathander
+Tipo de arma: Espada corta.
+Factor de velocidad: 2
+TAC0 y bonificador de daño: +2 a golpear y +2 como arma
+Daño: (1d6) perforante +2 + (1d2 fuego)
+Efecto equipada: 25% Resistencia al fuego.
+Efecto: Flecha de fuego una vez al día, Protección contra el Plano Negativo una vez al día.
+
+Sólo utilizable por Chloe...~
+@86 = ~Resplandor de Lathander.~
+@87 = ~Chloe refunfuña cuando tratáis de estudiar su arma, pero a regañadientes acepta explicaros sus características:
+
+Resplandor de Lathander
+Tipo de arma: Espada corta.
+Factor de velocidad: 1
+TAC0 y bonificador de daño: +3 a golpear y +3 como arma
+Daño: (1d6) perforante +3 + (1d4 fuego) + 10% cegar oponente
+Efecto equipada: Protección contra el Plano Negativo, 50% Resistencia al fuego.
+Efecto: Flecha certera una vez al día.
+
+Sólo utilizable por Chloe...~
+@88 = ~Infierno de Lathander.~
+@89 = ~Chloe refunfuña cuando tratáis de estudiar su arma, pero a regañadientes acepta explicaros sus características:
+
+Infierno de Lathander
+Tipo de arma: Espada corta.
+Factor de velocidad: 0
+TAC0 y bonificador de daño: +5 a golpear y +5 como arma
+Daño: (1d6) perforante +5 + (1d6 fuego) + 15% de oportunidades de 1d12 fuego y cegar oponente.
+Efecto equipada: Protección contra el Plano Negativo, 100% de Resistencia al fuego, Suerte.
+Efecto: Falso Amanecer una vez al día, Rayo solar una vez al día.
+
+Sólo utilizable por Chloe...~

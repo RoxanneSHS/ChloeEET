@@ -1,0 +1,27 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneId(Player1)
+   FadeToColor([30.0],0)
+   Wait(3)
+   ActionOverride("AbbyVaCR",MoveBetweenAreas("AR0307",[4610.2006],4))
+   LeaveAreaLUAPanic("AR0307","",[4525.2040],12)
+   LeaveAreaLUA("AR0307","",[4525.2040],12)
+   ActionOverride(Player2,LeaveAreaLUAPanic("AR0307","",[4525.2006],12))
+   ActionOverride(Player2,LeaveAreaLUA("AR0307","",[4525.2006],12))
+   ActionOverride(Player3,LeaveAreaLUAPanic("AR0307","",[4525.2075],12))
+   ActionOverride(Player3,LeaveAreaLUA("AR0307","",[4525.2075],12))
+   ActionOverride(Player4,LeaveAreaLUAPanic("AR0307","",[4480.2040],12))
+   ActionOverride(Player4,LeaveAreaLUA("AR0307","",[4480.2040],12))
+   ActionOverride(Player5,LeaveAreaLUAPanic("AR0307","",[4480.2006],12))
+   ActionOverride(Player5,LeaveAreaLUA("AR0307","",[4480.2006],12))
+   ActionOverride(Player6,LeaveAreaLUAPanic("AR0307","",[4480.2075],12))
+   ActionOverride(Player6,LeaveAreaLUA("AR0307","",[4480.2075],12))
+   Wait(1)
+   MoveViewObject(Player1,0)
+   FadeFromColor([30.0],0)
+   Wait(2)
+   ActionOverride("Aran",StartDialog("ARAN",Player1))
+END
+
