@@ -31,7 +31,7 @@ LANGUAGE ~Russian (by aerie.ru)~
          ~Chloe/Language/Russian/setup.tra~
 
 
-BEGIN ~Chloe for EET~
+BEGIN ~Chloe for EET (Original Contents)~
 
 //\\//\\//\\//\\//\\//\\//\\//\
 // ~~ Compiling dialogues ~~ \\
@@ -40,14 +40,11 @@ ACTION_IF FILE_EXISTS_IN_GAME ~k#telbgt.bcs~ THEN BEGIN
 COMPILE ~Chloe/D/ChloeDia.d~
 COMPILE ~Chloe/D/BanterCR.d~
 PRINT ~EET Version~
-END
-ELSE BEGIN
+END ELSE BEGIN
 COMPILE ~Chloe/EEPlain/CChloeDia.d~
 COMPILE ~Chloe/EEPlain/BanterCR.d~
 PRINT ~BG2EE Version~
 END
-
-COMPILE ~Chloe/D/BanterCR.d~
 
 //\\//\\\//\\//\\//\\//\\//\\
 // ~~ Compile scripts ~~   //
@@ -65,8 +62,7 @@ COMPILE EVALUATE_BUFFER ~Chloe/ChloeD.baf~
 ACTION_IF FILE_EXISTS_IN_GAME ~k#telbgt.bcs~ THEN BEGIN
 COMPILE EVALUATE_BUFFER ~Chloe/Chloe.baf~
 PRINT ~EET Version~
-END
-ELSE BEGIN
+END ELSE BEGIN
 COMPILE EVALUATE_BUFFER ~Chloe/EEPlain/Chloe.baf~
 PRINT ~BG2EE Version~
 END
@@ -572,6 +568,10 @@ END
 AT_INTERACTIVE_UNINSTALL ~Chloe/Bat/WavDelCR.bat~
 
 
+
+BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
+
+COMPILE ~Chloe/D/SoANew.d~
 
 
 

@@ -1,6 +1,6 @@
 Version 1.6 EE
 ------------------------------------
-
+Base EET version
 - Mod adopted by Roxanne@SHS
 - compatibility with BG2EE and EET
 - Revised personal items useable only by Chloe
@@ -11,3 +11,6 @@ Version 1.6 EE
 - minor bug fixes
 - Imoen banters fixed for EET
 - Weidu setup updated to 2.40
+
+Extra
+- New contents (currently only available in English)
