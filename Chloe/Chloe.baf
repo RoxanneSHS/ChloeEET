@@ -2258,7 +2258,7 @@ END
 
 IF
   Global("ImmyJonnyboyCR","LOCALS",0)
-  InParty("Imoen")  // ~Imoen~
+  InParty("Imoen2")  // ~Imoen~
   InParty("RChloe")  // RChloe
 THEN
   RESPONSE #100
@@ -2323,14 +2323,14 @@ IF
   RealGlobalTimerExpired("ImmyJonnyboyTimerCR","GLOBAL")
   CombatCounter(0)
   !Detect([ENEMY])
-  InParty("Imoen")  // ~Imoen~
-  See("Imoen")  // ~Imoen~
-  !Dead("Imoen")  // ~Imoen~
+  InParty("Imoen2")  // ~Imoen~
+  See("Imoen2")  // ~Imoen~
+  !Dead("Imoen2")  // ~Imoen~
   Global("ImoenYouDontLookSoGoodCR","GLOBAL",0)
 THEN
   RESPONSE #100
     SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",1)
-    StartDialogue("RCHLOEJ","Imoen")
+    StartDialogue("RCHLOEJ","Imoen2")
 END
 
 IF
