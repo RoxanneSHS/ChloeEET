@@ -36,8 +36,17 @@ BEGIN ~Chloe for EET~
 //\\//\\//\\//\\//\\//\\//\\//\
 // ~~ Compiling dialogues ~~ \\
 ////\\//\\//\\//\\//\\//\\//\//
-
+ACTION_IF FILE_EXISTS_IN_GAME ~k#telbgt.bcs~ THEN BEGIN
 COMPILE ~Chloe/D/ChloeDia.d~
+COMPILE ~Chloe/D/BanterCR.d~
+PRINT ~EET Version~
+END
+ELSE BEGIN
+COMPILE ~Chloe/EEPlain/CChloeDia.d~
+COMPILE ~Chloe/EEPlain/BanterCR.d~
+PRINT ~BG2EE Version~
+END
+
 COMPILE ~Chloe/D/BanterCR.d~
 
 //\\//\\\//\\//\\//\\//\\//\\
@@ -51,9 +60,16 @@ ADD_MUSIC ~ChGTKUCR~ ~Chloe/Music/CRblank1.mus~
 ADD_MUSIC ~ChLoveCR~ ~Chloe/Music/CRblank2.mus~
 ADD_MUSIC ~ChImCR~ ~Chloe/Music/CRblank3.mus~
 
-// Note : compilation of Chloe.baf and ChloeD.baf must be AFTER the ADD_MUSIC in order to update the music code assigned at installation
-
 COMPILE EVALUATE_BUFFER ~Chloe/ChloeD.baf~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~k#telbgt.bcs~ THEN BEGIN
+COMPILE EVALUATE_BUFFER ~Chloe/Chloe.baf~
+PRINT ~EET Version~
+END
+ELSE BEGIN
+COMPILE EVALUATE_BUFFER ~Chloe/EEPlain/Chloe.baf~
+PRINT ~BG2EE Version~
+END
 
 //\\//\\//\\//\\//\\//\\
 //  ~~ Creatures ~~   //
@@ -176,63 +192,38 @@ COPY ~Chloe/Creatures/VElderCR.cre~ ~override/VElderCR.cre~
 // ~~ Chloe's undualable Yr'Kai Kensai Kit ~~ \\
 ////\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//
 
-ADD_KIT ~YRKENSAI~ /* this is the "internal" name of your kit, like
-                  * BERSERKER or LATHANDER */
+ADD_KIT ~YRKENSAI~
 
-/* this line is appened to CLASWEAP.2DA */
 ~YRKENSAI               1           1           1           1           1           1           1           1~
 
-/* this string is appened column-wise to WEAPPROF.2DA, starting with the
- * third line*/
 ~YRKENSAI 5 5 0 5 5 5 5 0 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 5 0 5 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5~
 
-/* this line is appened to ABCLASRQ.2DA */
 ~YRKENSAI               9       0       0       0       0       0~
 
-/* this line is appened to ABCLSMOD.2DA */
 ~YRKENSAI               0       0       0       0       0       0~
 
-/* this line is appened to ABDCDSRQ.2DA */
 ~YRKENSAI               17      0       0       0       0       0~
 
-/* this line is appened to ABDCSCRQ.2DA */
 ~YRKENSAI               15      0       0       0       0       0~
 
-
-/* this line is appened to ALIGNMNT.2DA */
 ~YRKENSAI               1       1       1       1       1       1       0       0       0~
 
-
-/* this line goes to DUALCLAS.2DA */
 ~YRKENSAI               0       0       0       0       0       0~
 
-
-/* this is the name of your abilities 2DA file, in the style of
- * clabrn02.2da */
 ~Chloe/YRKENSAI.2da~
-
-/* These are the 2da files listed in KITTABLE.2DA that you want your kit to
- * be a part of. List as many as you like. This particular layout allows
- * the Generic Archer to a kit for any race of fighter. */
 ~~
-
-/* This is the "unusable" value you want for you kit and also the class
- * value. These would normally appear at the end of KITLIST.2DA */
 ~0x00000004     2~
-
-/* This is the High Level Ability Abbreviation (see LUABBR.2DA)
- * Normal values are Fi0, Pa0, etc. */
 ~Fi0~
-
-/* This is the TOB starting equipment list. Put a * if you don't want 
- * something. See 25STWEAP.2DA. */
 ~* * HELM07 BAG26 RING06 RING31 CLCK27 BOOT01 AMUL19 BRAC10 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 BOW11 BOW19 XBOW06~
-
-/* These are the strings you want for the lower, mixed and help
- * descriptions for your kit. */
 SAY @33
 SAY @33
 SAY @34
+
+INCLUDE ~Chloe/Spells/fl#add_kit_ee.tpa~
+LAF fl#add_kit_ee 
+STR_VAR 
+kit_name = YRKensai
+END
 
 COPY ~Chloe/Creatures/CHLOE7.cre~ ~override/CHLOE7.cre~
   WRITE_SHORT   0x244 0
@@ -570,6 +561,8 @@ APPEND ~pdialog.2da~
 ~RCHLOE       RCHLOEP            RCHLOEJ           CHLOED         RCHLOEP            RCHLOEJ               RCHLOE25D             ***~
    UNLESS ~RCHLOE~
    IF ~25POST~
+   
+ADD_JOURNAL @01 @02 @03 @07 @04 @05 @06  USING ~Chloe/language/%LANGUAGE%/ChloeDia.tra~
 
 ACTION_IF NOT FILE_EXISTS ~override/ChGTKUCR.wav~
    THEN BEGIN

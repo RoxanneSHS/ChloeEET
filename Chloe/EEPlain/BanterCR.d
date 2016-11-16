@@ -13,21 +13,21 @@
 
 CHAIN IF WEIGHT #-10 ~Global("ImoenYouDontLookSoGoodCR","GLOBAL",1)~ THEN RCHLOEJ ImPre1
 @0 DO ~FaceObject("Imoen")~
-== IMOEN2J @1 DO ~SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",2) FaceObject("RChloe")~
+== IMOENJ @1 DO ~SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",2) FaceObject("RChloe")~
 == RCHLOEJ @2
-== IMOEN2J @3
+== IMOENJ @3
 == RCHLOEJ @4
-== IMOEN2J @5
+== IMOENJ @5
 == RCHLOEJ @6
-== IMOEN2J @7
+== IMOENJ @7
 == RCHLOEJ @8
-== IMOEN2J @9
+== IMOENJ @9
 == RCHLOEJ @10
-== IMOEN2J @11
+== IMOENJ @11
 == RCHLOEJ @12
-== IMOEN2J @13
+== IMOENJ @13
 == RCHLOEJ @14
-== IMOEN2J @15
+== IMOENJ @15
 EXIT
 
 // ~~ First ~~ (if PC-Chloe romance active)

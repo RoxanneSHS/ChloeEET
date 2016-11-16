@@ -1,3 +1,6 @@
+
+// pretty long script, huh? Well, most of it is copy/pasting... making random things is kinda easy, but takes a LOT of space and time!
+
 // ||| RChloe Questions and Flirts |||
 
 IF
@@ -54,6 +57,19 @@ THEN
   RESPONSE #100
     SetGlobal("ChloeJoinedCR","LOCALS",0)
     SetGlobal("ChloeKickedOutCR","LOCALS",1)
+END
+
+
+// ||| Imoen doesn't have her script assigned |||
+
+IF
+  InParty("Imoen2")  // Imoen2
+  InParty("RChloe")  // RChloe
+  Global("AssigningImoenScriptCR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("AssigningImoenScriptCR","GLOBAL",1)
+    ActionOverride("Imoen2",ChangeAIScript("Imoen2",OVERRIDE))
 END
 
 
@@ -670,7 +686,7 @@ END
 IF
   InParty("RChloe")  // RChloe
   Global("FirstTimerThingCR","LOCALS",0)
-  GGT("Chapter",13)
+  GGT("Chapter",1)
 THEN
   RESPONSE #100
     SetGlobal("FirstTimerThingCR","LOCALS",1)
@@ -718,7 +734,7 @@ IF
   CombatCounter(0)
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeIsAngryCR","GLOBAL",1)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
   OR(14)
     Global("ChloeGTKUCR","GLOBAL",1)
     Global("ChloeGTKUCR","GLOBAL",3)
@@ -747,8 +763,8 @@ IF
   CombatCounter(0)
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeIsAngryCR","GLOBAL",1)
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
   OR(14)
     Global("ChloeGTKUCR","GLOBAL",1)
     Global("ChloeGTKUCR","GLOBAL",3)
@@ -771,7 +787,7 @@ END
 
 IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
   OR(2)
     Global("ChloeGTKUCR","GLOBAL",2)
     Global("ChloeGTKUCR","GLOBAL",26)
@@ -783,8 +799,8 @@ END
 
 IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
   OR(2)
     Global("ChloeGTKUCR","GLOBAL",2)
     Global("ChloeGTKUCR","GLOBAL",26)
@@ -809,7 +825,7 @@ END
 IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",4)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",5)
@@ -822,8 +838,8 @@ END
 IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",4)
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",5)
@@ -837,7 +853,7 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",6)
   Global("WeHad8CR","GLOBAL",1)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",9)
@@ -848,8 +864,8 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",6)
   Global("WeHad8CR","GLOBAL",1)
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",9)
@@ -860,7 +876,7 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",6)
   !Global("WeHad8CR","GLOBAL",1)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",7)
@@ -871,8 +887,8 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",6)
   !Global("WeHad8CR","GLOBAL",1)
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",7)
@@ -883,7 +899,7 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",8)
   !Global("WeHad6CR","GLOBAL",1)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",5)
@@ -894,8 +910,8 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",8)
   !Global("WeHad6CR","GLOBAL",1)
-  GGT("Chapter",15)
-  !GGT("Chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",5)
@@ -906,7 +922,7 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",8)
   Global("WeHad6CR","GLOBAL",1)
-  !GGT("Chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",9)
@@ -917,8 +933,8 @@ IF
   RealGlobalTimerExpired("GTKUTimerCR","GLOBAL")
   Global("ChloeGTKUCR","GLOBAL",8)
   Global("WeHad6CR","GLOBAL",1)
-  GGT("Chapter",16)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",9)
@@ -935,7 +951,7 @@ IF
   !Global("WeHad12","GLOBAL",1)
   !Global("WeHad14","GLOBAL",1)
   !Global("WeHad16","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -954,8 +970,8 @@ IF
   !Global("WeHad12","GLOBAL",1)
   !Global("WeHad14","GLOBAL",1)
   !Global("WeHad16","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -973,7 +989,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   !Global("WeHad14CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -988,8 +1004,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   !Global("WeHad14CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -1004,7 +1020,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   !Global("WeHad14CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -1016,8 +1032,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   !Global("WeHad14CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -1029,7 +1045,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   Global("WeHad14CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",15)
@@ -1041,8 +1057,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   Global("WeHad14CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",15)
@@ -1054,7 +1070,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   Global("WeHad14CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1066,8 +1082,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",12)
   Global("WeHad14CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1079,7 +1095,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   !Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1094,8 +1110,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   !Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1110,7 +1126,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   !Global("WeHad12CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1122,8 +1138,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   !Global("WeHad12CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1135,7 +1151,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",15)
@@ -1147,8 +1163,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",15)
@@ -1160,7 +1176,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   Global("WeHad12CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1172,8 +1188,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",14)
   Global("WeHad12CR","GLOBAL",1)
   Global("WeHad16CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1185,7 +1201,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   !Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad14CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1200,8 +1216,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   !Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad14CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1216,7 +1232,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   !Global("WeHad12CR","GLOBAL",1)
   Global("WeHad14CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1228,8 +1244,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   !Global("WeHad12CR","GLOBAL",1)
   Global("WeHad14CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",11)
@@ -1241,7 +1257,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad14CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -1253,8 +1269,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   Global("WeHad12CR","GLOBAL",1)
   !Global("WeHad14CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",13)
@@ -1266,7 +1282,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   Global("WeHad12CR","GLOBAL",1)
   Global("WeHad14CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1278,8 +1294,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",16)
   Global("WeHad12CR","GLOBAL",1)
   Global("WeHad14CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",17)
@@ -1298,7 +1314,7 @@ IF
   !Global("WeHad20","GLOBAL",1)
   !Global("WeHad22","GLOBAL",1)
   !Global("WeHad24","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1317,8 +1333,8 @@ IF
   !Global("WeHad20","GLOBAL",1)
   !Global("WeHad22","GLOBAL",1)
   !Global("WeHad24","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1336,7 +1352,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   !Global("WeHad22CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1351,8 +1367,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   !Global("WeHad22CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1367,7 +1383,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   !Global("WeHad22CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1379,8 +1395,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   !Global("WeHad22CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1392,7 +1408,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   Global("WeHad22CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1404,8 +1420,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   Global("WeHad22CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1417,7 +1433,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   Global("WeHad22CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1429,8 +1445,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",20)
   Global("WeHad22CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1442,7 +1458,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   !Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1457,8 +1473,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   !Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1473,7 +1489,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   !Global("WeHad20CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1485,8 +1501,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   !Global("WeHad20CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1498,7 +1514,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1510,8 +1526,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",23)
@@ -1523,7 +1539,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   Global("WeHad20CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1535,8 +1551,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",22)
   Global("WeHad20CR","GLOBAL",1)
   Global("WeHad24CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1548,7 +1564,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   !Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad22CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1563,8 +1579,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   !Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad22CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1579,7 +1595,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   !Global("WeHad20CR","GLOBAL",1)
   Global("WeHad22CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1591,8 +1607,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   !Global("WeHad20CR","GLOBAL",1)
   Global("WeHad22CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",19)
@@ -1604,7 +1620,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad22CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1616,8 +1632,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   Global("WeHad20CR","GLOBAL",1)
   !Global("WeHad22CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",21)
@@ -1629,7 +1645,7 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   Global("WeHad20CR","GLOBAL",1)
   Global("WeHad22CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1641,8 +1657,8 @@ IF
   Global("ChloeGTKUCR","GLOBAL",24)
   Global("WeHad20CR","GLOBAL",1)
   Global("WeHad22CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUCR","GLOBAL",25)
@@ -1654,7 +1670,7 @@ END
 
 IF
   Global("Had18CR","GLOBAL",1)
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
 THEN
   RESPONSE #100
     SetGlobal("Had18CR","GLOBAL",2)
@@ -1663,8 +1679,8 @@ END
 
 IF
   Global("Had18CR","GLOBAL",1)
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
 THEN
   RESPONSE #100
     SetGlobal("Had18CR","GLOBAL",2)
@@ -1691,7 +1707,7 @@ END
 // The RChloe match...
 
 IF
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
   Global("GTKUfinishedCR","GLOBAL",1)
   Gender(Player1,FEMALE)
   CheckStatGT(Player1,9,CHR)
@@ -1714,8 +1730,8 @@ THEN
 END
 
 IF
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
   Global("GTKUfinishedCR","GLOBAL",1)
   Gender(Player1,FEMALE)
   CheckStatGT(Player1,9,CHR)
@@ -1853,7 +1869,7 @@ THEN
 END
 
 IF
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
   RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
   OR(2)
     Global("ChLovetalksCR","GLOBAL",2)
@@ -1865,8 +1881,8 @@ THEN
 END
 
 IF
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
   RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
   OR(2)
     Global("ChLovetalksCR","GLOBAL",2)
@@ -1878,7 +1894,7 @@ THEN
 END
 
 IF
-  !GGT("chapter",15)
+  !GGT("Chapter",3)
   RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
   Global("ChLovetalksCR","GLOBAL",6)
 THEN
@@ -1888,8 +1904,8 @@ THEN
 END
 
 IF
-  GGT("chapter",15)
-  !GGT("chapter",16)
+  GGT("Chapter",3)
+  !GGT("Chapter",4)
   RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
   Global("ChLovetalksCR","GLOBAL",6)
 THEN
@@ -2278,7 +2294,7 @@ END
 
 IF
   Global("BanterFirstThingCR","LOCALS",0)
-  GGT("Chapter",13)
+  GGT("Chapter",1)
   NumInPartyGT(2)
 THEN
   RESPONSE #100
@@ -3794,7 +3810,7 @@ END
 
 IF
   InParty("Imoen2")  // Imoen2
-  GGT("Chapter",14)
+  GGT("Chapter",2)
   Global("ImoenIsInPartyCR","GLOBAL",0)
 THEN
   RESPONSE #100

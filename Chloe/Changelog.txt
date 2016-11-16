@@ -1,0 +1,13 @@
+Version 1.6 EE
+------------------------------------
+
+- Mod adopted by Roxanne@SHS
+- compatibility with BG2EE and EET
+- Revised personal items useable only by Chloe
+- Repaired 1st meeting cuts
+- New portrait for Chloe
+- Journal adaptation for EE
+- Kit adapted to EE
+- minor bug fixes
+- Imoen banters fixed for EET
+- Weidu setup updated to 2.40

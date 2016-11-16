@@ -3,6 +3,7 @@ IF
 THEN
    RESPONSE #100
    SetGlobal("TheDoorIsOpenedCR","GLOBAL",1)
+   SetGlobal("A7-Cutscene","ar0602",11)
    Unlock("DOOR0601")
    OpenDoor("DOOR0601")
 END
