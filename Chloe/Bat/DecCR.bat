@@ -1,16 +1,8 @@
-:: Isaya : complete change to operate from the Chloe directory instead of copying first to the override
 @echo off
-
-:: Sounds
-
-:sounds_check
 
 IF NOT EXIST "override\chloe0.wav" goto sounds_add
 
 goto music_check
-
-:sounds_add
-
 
 oggdec c*.ogg
 
@@ -74,24 +66,16 @@ oggdec c*.ogg
 "Chloe\Sounds\oggdec.exe" "Chloe\Sounds\chloez.ogg"
 "Chloe\Sounds\oggdec.exe" "Chloe\Sounds\chloe_.ogg"
 
-:: Move the resulting wav files to the Override directory
 move "Chloe\Sounds\c*.wav" "override" > nul
-
-:: Music
-
-:music_check
 
 IF NOT EXIST "override\ChGTKUCR.wav" goto music_add
 
 goto end
 
-:music_add
-
 "Chloe\Sounds\oggdec.exe" "Chloe\Music\ChGTKUCR.crm"
 "Chloe\Sounds\oggdec.exe" "Chloe\Music\ChImCR.crm"
 "Chloe\Sounds\oggdec.exe" "Chloe\Music\ChLoveCR.crm"
 
-:: Move the resulting wav files to the Override directory
 move "Chloe\Music\ChGTKUCR.wav" "override" > nul
 move "Chloe\Music\ChImCR.wav" "override" > nul
 move "Chloe\Music\ChLoveCR.wav" "override" > nul
