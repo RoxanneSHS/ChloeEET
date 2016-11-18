@@ -36,10 +36,8 @@ THEN
 END
 
 
-// ||| RChloe's Kick out thingies |||
-
 IF
-  InParty("RChloe")  // RChloe
+  InParty("RChloe") 
   Global("ChloeJoinedCR","LOCALS",0)
 THEN
   RESPONSE #100
@@ -48,7 +46,7 @@ THEN
 END
 
 IF
-  !InParty("RChloe")  // RChloe
+  !InParty("RChloe") 
   Global("ChloeJoinedCR","LOCALS",1)
 THEN
   RESPONSE #100
@@ -60,7 +58,7 @@ END
 // ||| Akadia shows up |||
 
 IF
-  InParty("RChloe")  // RChloe
+  InParty("RChloe") 
   AreaCheck("AR1512")
   Global("AkadiaPreShowCR","GLOBAL",0)
 THEN
@@ -70,11 +68,11 @@ THEN
 END
 
 IF
-  InParty("RChloe")  // RChloe
+  InParty("RChloe") 
   RealGlobalTimerExpired("AkadiaShowBeginsCR","GLOBAL")
   OR(2)
-    InParty("Imoen2")  // Imoen2
-    !Detect("Imoen2")  // Imoen2
+    InParty("Imoen2") 
+    !Detect("Imoen2") 
   AreaCheck("AR1512")
   Global("AkadiaPreShowCR","GLOBAL",1)
 THEN
@@ -87,8 +85,6 @@ END
 
 
 // ||| RChloe's Undroppable weapons |||
-
-// ~~ First, let's stabilish which "level" of the swords is she wielding ~~
 
 IF
   HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
@@ -170,11 +166,6 @@ THEN
     SetGlobal("IHaveSW6CR","LOCALS",1)
 END
 
-// ~~ That done, now it can be known when the weapons are dropped instead of replaced by new ones ~~
-
-
-// SW 1
-
 IF
   !HasItem("CHLOSW1",Myself)  // ~Wrath of Akadia~
   OR(6)
@@ -198,7 +189,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
     ActionOverride(Player5,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
     ActionOverride(Player6,GiveItem("CHLOSW1","RChloe"))  // ~Wrath of Akadia~
-    DisplayStringHead(Myself,@1) // ~(Chloe throws you a withering glare when she takes her weapon back from you)~
+    DisplayStringHead(Myself,@1) 
 END
 
 IF
@@ -218,10 +209,8 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW1"))
     ActionOverride(Player5,PickUpItem("CHLOSW1"))
     ActionOverride(Player6,PickUpItem("CHLOSW1"))
-    DisplayStringHead(Myself,@2) // ~Take that from the ground NOW and give it back~
+    DisplayStringHead(Myself,@2) 
 END
-
-// SW 2
 
 IF
   !HasItem("CHLOSW2",Myself)  // ~Rage of Akadia~
@@ -246,7 +235,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
     ActionOverride(Player5,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
     ActionOverride(Player6,GiveItem("CHLOSW2","RChloe"))  // ~Rage of Akadia~
-    DisplayStringHead(Myself,@3) // ~Better to keep this in MY inventory~
+    DisplayStringHead(Myself,@3) 
 END
 
 IF
@@ -266,10 +255,8 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW2"))
     ActionOverride(Player5,PickUpItem("CHLOSW2"))
     ActionOverride(Player6,PickUpItem("CHLOSW2"))
-    DisplayStringHead(Myself,@4) // ~That sword was given to me by the gods themselves. So NO, thanks, I don't want to leave it on the ground~
+    DisplayStringHead(Myself,@4) 
 END
-
-// SW 3
 
 IF
   !HasItem("CHLOSW3",Myself)  // ~Fury of Akadia~
@@ -294,7 +281,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
     ActionOverride(Player5,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
     ActionOverride(Player6,GiveItem("CHLOSW3","RChloe"))  // ~Fury of Akadia~
-    DisplayStringHead(Myself,@5) // ~Don't. Touch. My swords. NEVER!~
+    DisplayStringHead(Myself,@5)
 END
 
 IF
@@ -314,10 +301,8 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW3"))
     ActionOverride(Player5,PickUpItem("CHLOSW3"))
     ActionOverride(Player6,PickUpItem("CHLOSW3"))
-    DisplayStringHead(Myself,@6) // ~For some strange reason you seem to think this sword is yours to play with~
+    DisplayStringHead(Myself,@6) 
 END
-
-// SW 4
 
 IF
   !HasItem("CHLOSW4",Myself)  // ~Lathandar's Flame~
@@ -342,7 +327,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
     ActionOverride(Player5,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
     ActionOverride(Player6,GiveItem("CHLOSW4","RChloe"))  // ~Lathandar's Flame~
-    DisplayStringHead(Myself,@7) // ~I think *this* belongs to ME~
+    DisplayStringHead(Myself,@7) 
 END
 
 IF
@@ -362,10 +347,8 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW4"))
     ActionOverride(Player5,PickUpItem("CHLOSW4"))
     ActionOverride(Player6,PickUpItem("CHLOSW4"))
-    DisplayStringHead(Myself,@8) // ~Don't play with that, naughty <PRO_GIRLBOY>~
+    DisplayStringHead(Myself,@8) 
 END
-
-// SW 5
 
 IF
   !HasItem("CHLOSW5",Myself)  // ~Lathandar's Blaze~
@@ -390,7 +373,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
     ActionOverride(Player5,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
     ActionOverride(Player6,GiveItem("CHLOSW5","RChloe"))  // ~Lathandar's Blaze~
-    DisplayStringHead(Myself,@9) // ~Keep those curious fingers away from my sword~
+    DisplayStringHead(Myself,@9) 
 END
 
 IF
@@ -410,10 +393,7 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW5"))
     ActionOverride(Player5,PickUpItem("CHLOSW5"))
     ActionOverride(Player6,PickUpItem("CHLOSW5"))
-    DisplayStringHead(Myself,@10) // ~Hahah! Are you serious!?~
-END
-
-// SW 6
+    DisplayStringHead(Myself,@10) 
 
 IF
   !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
@@ -438,7 +418,7 @@ THEN
     ActionOverride(Player4,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
     ActionOverride(Player5,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
     ActionOverride(Player6,GiveItem("CHLOSW6","RChloe"))  // ~Lathandar's Inferno~
-    DisplayStringHead(Myself,@11) // ~Don't touch the sword. It bites!~
+    DisplayStringHead(Myself,@11)
 END
 
 IF
@@ -458,7 +438,7 @@ THEN
     ActionOverride(Player4,PickUpItem("CHLOSW6"))
     ActionOverride(Player5,PickUpItem("CHLOSW6"))
     ActionOverride(Player6,PickUpItem("CHLOSW6"))
-    DisplayStringHead(Myself,@12) // ~What do you think you are doing? Give it back!~
+    DisplayStringHead(Myself,@12) 
 END
 
 IF
@@ -513,7 +493,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("InAbagailQuestCR","GLOBAL",3)
-    AddJournalEntry(@13,INFO) // ~Aran Linvail's daughter has been abducted. I found a small nest of vampires north of the Balthis Estate. This must be where Abagail was taken. Now to see if she is still here.~
+    AddJournalEntry(@13,INFO) 
 END
 
 IF
@@ -2062,7 +2042,7 @@ THEN
 END
 
 IF
-  Dead("MAN2CR")  // ~Scruffy-looking man~
+  Dead("MAN2CR") 
   Global("NoRepeatDammitCR","GLOBAL",1)
 THEN
   RESPONSE #100
@@ -2072,8 +2052,8 @@ THEN
 END
 
 IF
-  InParty("Imoen2")  // Imoen2
-  InParty("RChloe")  // RChloe
+  InParty("Imoen2")  
+  InParty("RChloe") 
   Detect(Player1)
   RealGlobalTimerExpired("ChloeComplainCR","GLOBAL")
   !GGT("ChLovetalksQuestCR",0)
@@ -2090,19 +2070,19 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("YouMustBeStupidManCR","GLOBAL",3)
-    CreateCreature("SUBMANCR",[1000.1000],3)  // ~Slaver Subcommander~
-    CreateCreature("MAGMANCR",[1000.1000],3)  // ~Slaver Mage~
-    CreateCreature("PRIMANCR",[1000.1000],3)  // ~Slaver Priest~
-    CreateCreature("SLAMANCR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("GUAMANCR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("SLMAN1CR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("SLMAN2CR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("SLMAN3CR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("SLMAN4CR",[1000.1000],3)  // ~Slaver Guard~
-    CreateCreature("WIZMANCR",[1000.1000],11)  // ~Slaver Wizard~
-    CreateCreature("COMMANCR",[1000.1000],3)  // ~Slaver Commander~
-    CreateCreature("SLMAN6CR",[1000.1000],2)  // ~Slaver Guard~
-    CreateCreature("SLMAN5CR",[1000.1000],13)  // ~Slaver Guard~
+    CreateCreature("SUBMANCR",[1000.1000],3)  
+    CreateCreature("MAGMANCR",[1000.1000],3)  
+    CreateCreature("PRIMANCR",[1000.1000],3) 
+    CreateCreature("SLAMANCR",[1000.1000],3) 
+    CreateCreature("GUAMANCR",[1000.1000],3)  
+    CreateCreature("SLMAN1CR",[1000.1000],3) 
+    CreateCreature("SLMAN2CR",[1000.1000],3) 
+    CreateCreature("SLMAN3CR",[1000.1000],3) 
+    CreateCreature("SLMAN4CR",[1000.1000],3)  
+    CreateCreature("WIZMANCR",[1000.1000],11) 
+    CreateCreature("COMMANCR",[1000.1000],3)  
+    CreateCreature("SLMAN6CR",[1000.1000],2) 
+    CreateCreature("SLMAN5CR",[1000.1000],13) 
     ActionOverride("SUBMANCR",MoveBetweenAreas("AR0501",[391.404],3))
     ActionOverride("MAGMANCR",MoveBetweenAreas("AR0501",[590.218],3))
     ActionOverride("PRIMANCR",MoveBetweenAreas("AR0501",[370.211],3))
@@ -2119,7 +2099,7 @@ THEN
 END
 
 IF
-  InParty("Imoen2")  // Imoen2
+  InParty("Imoen2") 
   AreaCheck("AR0501")
   GGT("ChLovetalksCR",11)
   Global("ChLovetalksQuestCR","GLOBAL",0)
@@ -2132,20 +2112,20 @@ END
 
 IF
   Global("ScreamForMercyDogCR","GLOBAL",0)
-  !HPPercentGT("SUBMANCR",95)  // ~Slaver Subcommander~
-  !Dead("RChloe")  // RChloe
+  !HPPercentGT("SUBMANCR",95)  
+  !Dead("RChloe") 
 THEN
   RESPONSE #100
     SetGlobal("ScreamForMercyDogCR","GLOBAL",1)
-    DisplayStringHead("SUBMANCR",@15) // ~Mercy! I dun wanta die!!~
+    DisplayStringHead("SUBMANCR",@15) 
 END
 
 IF
-  Dead("SUBMANCR")  // ~Slaver Subcommander~
-  Dead("SLAMANCR")  // ~Slaver Guard~
-  Dead("PRIMANCR")  // ~Slaver Priest~
-  Dead("MAGMANCR")  // ~Slaver Mage~
-  !Dead("RChloe")  // RChloe
+  Dead("SUBMANCR") 
+  Dead("SLAMANCR") 
+  Dead("PRIMANCR") 
+  Dead("MAGMANCR")  
+  !Dead("RChloe") 
   Global("KilledFirstSlaversCR","GLOBAL",0)
 THEN
   RESPONSE #100
@@ -2165,13 +2145,13 @@ THEN
     SetGlobal("ChLovetalksQuestCR","GLOBAL",3)
     StartCutSceneMode()
     Wait(2)
-    ActionOverride("GUAMANCR",FaceObject("RCHLOEJ"))
+    ActionOverride("GUAMANCR",FaceObject("RCHLOE"))
     SmallWait(7)
-    ActionOverride("SLMAN1CR",FaceObject("RCHLOEJ"))
-    ActionOverride("SLMAN2CR",FaceObject("RCHLOEJ"))
-    ActionOverride("SLMAN3CR",FaceObject("RCHLOEJ"))
+    ActionOverride("SLMAN1CR",FaceObject("RCHLOE"))
+    ActionOverride("SLMAN2CR",FaceObject("RCHLOE"))
+    ActionOverride("SLMAN3CR",FaceObject("RCHLOE"))
     SmallWait(7)
-    ActionOverride("SLMAN4CR",FaceObject("RCHLOEJ"))
+    ActionOverride("SLMAN4CR",FaceObject("RCHLOE"))
     SmallWait(20)
     EndCutSceneMode()
     ActionOverride("GUAMANCR",StartDialogue("GUAMANCR","RChloe"))
@@ -3802,10 +3782,10 @@ THEN
 END
 
 IF
-  !InParty("Imoen2")  // Imoen2
-  !Dead("Imoen2")  // Imoen2
-  !See("Imoen2")  // Imoen2
-  InParty("RChloe")  // RChloe
+  !InParty("Imoen2") 
+  !Dead("Imoen2")  
+  !See("Imoen2") 
+  InParty("RChloe") 
   Detect(Player1)
   !StateCheck(Player1,STATE_SLEEPING)
   Global("ImoenIsInPartyCR","GLOBAL",1)
@@ -3818,7 +3798,7 @@ END
 
 IF
   Global("KillImoenCR","GLOBAL",1)
-  Exists("Imoen2")  // Imoen2
+  Exists("Imoen2")  
 THEN
   RESPONSE #100
     ActionOverride("Imoen2",DestroySelf())
@@ -3842,7 +3822,7 @@ IF
   Global("EdwinChloeToDeathCR","GLOBAL",1)
   !Dead("Edwin")  // Edwin
   !Dead("RChloe")  // RChloe
-  !StateCheck("RChloe",STATE_SLEEPING)  // RChloe
+  !StateCheck("RChloe",STATE_SLEEPING) 
   RealGlobalTimerExpired("ATFEBCR","GLOBAL")
 THEN
   RESPONSE #100
@@ -3852,9 +3832,9 @@ END
 
 IF
   Global("EdwinChloeToDeathCR","GLOBAL",1)
-  Dead("Edwin")  // Edwin
-  !Dead("RChloe")  // RChloe
-  !StateCheck("RChloe",STATE_SLEEPING)  // RChloe
+  Dead("Edwin") 
+  !Dead("RChloe") 
+  !StateCheck("RChloe",STATE_SLEEPING) 
   Global("ChloeWonEdwinCR","GLOBAL",0)
 THEN
   RESPONSE #100
@@ -3863,14 +3843,4 @@ THEN
     Dialog(Player1)
 END
 
-
-// A piece "borrowed" from Kelsey-ToB mod. I don't really know if it IS necessary, since it's set already in the install, but just in case!
-
-IF
-  Global("ChloeSoundsCR","LOCALS",0)
-THEN
-  RESPONSE #100
-    SetPlayerSound(Myself,@16,LEADER) // ~You want ME to lead? All right, if you say so...~ [CHLOEB]
-    SetGlobal("ChloeSoundsCR","LOCALS",1)
-END
 

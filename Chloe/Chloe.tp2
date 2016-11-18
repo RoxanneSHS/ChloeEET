@@ -560,6 +560,8 @@ APPEND ~pdialog.2da~
    
 ADD_JOURNAL @01 @02 @03 @07 @04 @05 @06  USING ~Chloe/language/%LANGUAGE%/ChloeDia.tra~
 
+ADD_JOURNAL @13 USING ~Chloe/language/%LANGUAGE%/setup.tra~
+
 ACTION_IF NOT FILE_EXISTS ~override/ChGTKUCR.wav~
    THEN BEGIN
       AT_INTERACTIVE_EXIT ~Chloe/Bat/DecCR.bat~
