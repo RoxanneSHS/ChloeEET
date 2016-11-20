@@ -8,7 +8,7 @@ IF~Global("RCAnath","Locals",1)~THEN RCHLOEJ Anath1
 ~I never sided with a werewolf before, <CHARNAME>. Life at your side never gets boring (grins).~
 DO~SetGlobal("RCAnath","Locals",2)~
 END
-++~Rather ally with them then to fight him AND this Shade Lord.~EXIT
+++~Rather ally with them than to fight him AND this Shade Lord.~EXIT
 ++~You are not too uninteresting yourself (wink).~EXIT
 ++~Adventuring has taught me not to always believe the obvious.~EXIT
 
