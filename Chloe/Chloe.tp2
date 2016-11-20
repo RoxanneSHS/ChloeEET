@@ -574,6 +574,7 @@ AT_INTERACTIVE_UNINSTALL ~Chloe/Bat/WavDelCR.bat~
 BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
 
 COMPILE ~Chloe/D/SoANew.d~
+EXTEND_BOTTOM ~Chloe.bcs~ ~Chloe/Scripts/Extending/ChloeNewSoa.baf~
 PRINT ~New SoA contents added~
 
 

@@ -1,0 +1,22 @@
+IF
+Global("AnathTemple","GLOBAL",1)
+Global("RCAnath","Locals",0)
+OR(2)
+AreaCheck("ar1403")
+AreaCheck("ar1404")
+THEN
+RESPONSE #100
+SetGlobal("RCAnath","Locals",1)
+END
+
+IF
+Global("RCAnath","Locals",1)
+InParty(Myself)
+!See([ENEMY])
+CombatCounter(0)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+RESPONSE #100
+StartDialog("RChloeJ",Player1)
+END
