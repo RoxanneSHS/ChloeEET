@@ -1,0 +1,21 @@
+Version 1.6 EE
+------------------------------------
+Base EET version
+- Mod adopted by Roxanne@SHS
+- compatibility with BG2EE and EET
+- Revised personal items useable only by Chloe
+- Repaired 1st meeting cuts
+- New portrait for Chloe
+- Journal adaptation for EE
+- Kit adapted to EE
+- Personal weapons repaired
+- minor bug fixes + removal of unused code
+- Imoen banters fixed for EET
+- EE/EET issue with mod for skipping Irenicus Dungeon solved
+- Weidu setup updated to 2.40
+
+Extra
+- New contents (currently only available in English)
+
+Planned
+- ToB continuation
