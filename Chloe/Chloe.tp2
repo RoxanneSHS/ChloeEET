@@ -577,7 +577,8 @@ COMPILE ~Chloe/D/SoANew.d~
 EXTEND_BOTTOM ~Chloe.bcs~ ~Chloe/Scripts/Extending/ChloeNewSoa.baf~
 PRINT ~New SoA contents added~
 
-
+COMPILE ~CHLOE/D/RChloeToB.d~
+PRINT ~New ToB contents added~
 
 
 

@@ -10,6 +10,18 @@ SetGlobal("RCAnath","Locals",1)
 END
 
 IF
+Global("RChloeTOB","Global",0)
+AreaCheck("ar4500")
+GlobalGT("BeginChallenge4","GLOBAL",4)
+CombatCounter(0)
+THEN
+RESPONSE #100
+SetGlobal("RChloeTOB","Global",1)
+END
+
+IF
+OR(2)
+Global("RChloeTOB","Global",1)
 Global("RCAnath","Locals",1)
 InParty(Myself)
 !See([ENEMY])

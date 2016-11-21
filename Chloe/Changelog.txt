@@ -1,7 +1,7 @@
 Version 1.6 EE
 ------------------------------------
 Base EET version
-- Mod adopted by Roxanne@SHS
+ Mod adopted by Roxanne@SHS
 - compatibility with BG2EE and EET
 - Revised personal items useable only by Chloe
 - Repaired 1st meeting cuts
@@ -15,7 +15,6 @@ Base EET version
 - Weidu setup updated to 2.40
 
 Extra
-- New contents (currently only available in English)
-
-Planned
-- ToB continuation
+ New contents (currently only available in English)
+- additional SoA banters
+- ToB contents (to be expanded)

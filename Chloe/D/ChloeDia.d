@@ -1,5 +1,3 @@
-
-  
 BEGIN ~RChloe~
 BEGIN ~RCHLOEP~
 BEGIN ~SUBMANCR~
