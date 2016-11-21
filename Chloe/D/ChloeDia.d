@@ -2426,7 +2426,7 @@ CHAIN RCHLOEJ GTKU59b2
 @736
 = @737
 == AERIEJ IF ~IsValidForPartyDialog("Aerie")~ THEN @738
-== RCHLOEJ @739 DO ~IncrementGlobal("ChloeInterest","GLOBAL",1)~
+== RCHLOEJ @739 DO ~IncrementGlobal("ChloeInterest","GLOBAL",1) RestParty()~
 EXIT
 
 
