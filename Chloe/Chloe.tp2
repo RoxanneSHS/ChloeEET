@@ -575,6 +575,8 @@ BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
 
 COMPILE ~Chloe/D/SoANew.d~
 EXTEND_BOTTOM ~Chloe.bcs~ ~Chloe/Scripts/Extending/ChloeNewSoa.baf~
+EXTEND_TOP ~AR0900.bcs~ ~Chloe/Scripts/Extending/AR0900CR.baf~
+
 PRINT ~New SoA contents added~
 
 COMPILE ~CHLOE/D/RChloeToB.d~

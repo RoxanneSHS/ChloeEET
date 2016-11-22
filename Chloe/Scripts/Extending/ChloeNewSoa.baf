@@ -43,3 +43,12 @@ THEN
 RESPONSE #100
 StartDialog("RChloeJ",Player1)
 END
+
+IF
+Global("RChloeForLatha","Global",3)
+Global("JoinLathander","GLOBAL",1)
+Global("PlayerHasStronghold","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("PlayerHasStronghold","GLOBAL",0)
+END

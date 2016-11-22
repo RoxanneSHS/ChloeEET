@@ -38,3 +38,27 @@ CHAIN
 IF~~THEN RCHLOEJ TemplPray3
 ~Sometimes I ask myself why I even talk to you at all, idiot.~EXIT
 
+CHAIN
+IF WEIGHT #-8~NumberOfTimesTalkedTo(0) Global("CDSpawnArval","GLOBAL",0) AreaCheck("AR0900") InParty("RChloe")~THEN BHARVAL Yrkai
+~No, no, no, this will not do at all. We cannot have the slim of faith lured away by such talk. They must be nurtured that they might choose the righteous path.~
+DO~SetGlobal("RChloeForLatha","Global",1)~
+==RChloeJ ~The Yr'kai serve Lathander, good priest, tell us what must be done.~
+==BHARVAL~Child, you are certainly on your way to visit the temple of the Morninglord. I would ask your service for a time, in exchange for the favor of the temple.~EXTERN BHARVAL 2
+
+CHAIN
+IF WEIGHT #-7~Global("RChloeForLatha","Global",1) InParty("RChloe") Global("BeholderPlot","GLOBAL",0) Global("NoHelpBeholder","GLOBAL",0) Global("CDWorkingForHelm","GLOBAL",0)~THEN BHARVAL Yrkai2
+~I had worried you would not come. But your Yr'kai companion has a positive influence on you, the Morninglord be praised. Despite this, you have the look of a servant of light, a <PRO_MANWOMAN> of charity.~
+DO~SetGlobal("RChloeForLatha","Global",2)~
+==RChloeJ ~Normally we work for money but I hope this time <CHARNAME> will take the benefit of serving my God into account as well.~EXTERN BHARVAL 6
+
+EXTEND_BOTTOM BHARVAL 29
+IF~Global("RChloeForLatha","Global",2)~THEN GOTO Yrkai3
+END
+
+CHAIN
+IF~~THEN BHARVAL Yrkai3
+~To your reward then, for you and your friends have performed admirably, Chloe. You are to receive the greatest gift that we can bestow, one that transcends mere coin or purse.~
+DO~SetGlobal("RChloeForLatha","Global",3)~
+==RChloeJ ~I...I have...We have done what the Morninglord would expect an Yr'kai to do.~
+==BHARVAL~In this, there is allegiance. Your faith is aligned as ours, though it lacks direction yet.~
+==RChloeJ ~It would be a great honor to serve. With <CHARNAME>'s help we will not disgrace Lathander.~EXTERN BHARVAL 33

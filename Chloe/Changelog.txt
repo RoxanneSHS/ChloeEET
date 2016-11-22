@@ -17,4 +17,5 @@ Base EET version
 Extra
  New contents (currently only available in English)
 - additional SoA banters
+- Chloe works for Lathander against the beholder cult and may gain the temple stronghold on behalf of the party (if Player does not qualify in the first place)
 - ToB contents (to be expanded)
