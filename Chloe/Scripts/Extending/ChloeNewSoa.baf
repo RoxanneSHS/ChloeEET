@@ -48,6 +48,11 @@ IF
 Global("RChloeForLatha","Global",3)
 Global("JoinLathander","GLOBAL",1)
 Global("PlayerHasStronghold","GLOBAL",1)
+!Global("PaladinOrder","GLOBAL",1)
+!Global("PCSphere","GLOBAL",1)
+!Global("PCKeepOwner","GLOBAL",1)
+!Global("PlayerThiefGuild","GLOBAL",1)
+!Global("RangerProtector","GLOBAL",1)
 THEN
 RESPONSE #100
 SetGlobal("PlayerHasStronghold","GLOBAL",0)
