@@ -41,7 +41,7 @@ COMPILE ~Chloe/D/ChloeDia.d~
 COMPILE ~Chloe/D/BanterCR.d~
 PRINT ~EET Version~
 END ELSE BEGIN
-COMPILE ~Chloe/EEPlain/CChloeDia.d~
+COMPILE ~Chloe/EEPlain/ChloeDia.d~
 COMPILE ~Chloe/EEPlain/BanterCR.d~
 PRINT ~BG2EE Version~
 END
