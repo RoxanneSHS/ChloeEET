@@ -562,13 +562,7 @@ ADD_JOURNAL @01 @02 @03 @07 @04 @05 @06  USING ~Chloe/language/%LANGUAGE%/ChloeD
 
 ADD_JOURNAL @13 USING ~Chloe/language/%LANGUAGE%/setup.tra~
 
-ACTION_IF NOT FILE_EXISTS ~override/ChGTKUCR.wav~
-   THEN BEGIN
-      AT_INTERACTIVE_EXIT ~Chloe/Bat/DecCR.bat~
-END
-
-AT_INTERACTIVE_UNINSTALL ~Chloe/Bat/WavDelCR.bat~
-
+COPY ~Chloe/Sounds~ ~override~
 
 
 BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
