@@ -57,7 +57,7 @@ Disadvantages:
 @43   = ~Aaahh... smell that fresh air... feel those bugbites... yes, that's a walk around the forest, such a GREAT idea...~ [CHLOEN]
 @44   = ~Cities fascinate me. Always an opportunity around every corner... and a thief to take it away.~ [CHLOEO]
 @45   = ~It's pretty dark in here... I so wish my divine heritage included nightvision...!~ [CHLOEP]
-@46   = ~Daylight. Such a blessing... thank you, Lathandar.~ [CHLOEQ]
+@46   = ~Daylight. Such a blessing... thank you, Lathander.~ [CHLOEQ]
 @47   = ~Can't someone light a lantern or something? I can't see past my nose...~ [CHLOER]
 @48   = ~I'm listening. What do you want?~ [CHLOE0]
 @49   = ~Is there something you wanted?~ [CHLOEF]
@@ -130,10 +130,10 @@ Damage: (1d8) slashing +6 + (1d6 electrical) +10% chance of electroshock 1d12 da
 Equipped Effect: Immunity to blind, confusion, and hold
 Effect: Improved Haste 3 times daily, blur 3 times daily
 ~
-@84   = ~Lathandar's Flame~
+@84   = ~Lathander's Flame~
 @85   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
 
-Lathandar's Flame
+Lathander's Flame
 Weapon type: short sword
 Speed factor: 2
 Thac0 and damage bonus: +2 hits as +2 weapon
@@ -141,10 +141,10 @@ Damage: (1d6) piercing +2 + (1d2 fire)
 Equipped Effect: 25% Fire resistance
 Effect: Flame Arrow once daily, Protection from the Negative Plane once daily
 ~
-@86   = ~Lathandar's Blaze~
+@86   = ~Lathander's Blaze~
 @87   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
 
-Lathandar's Blaze
+Lathander's Blaze
 Weapon type: short sword
 Speed factor: 1
 Thac0 and damage bonus: +3 hits as +3 weapon
@@ -152,10 +152,10 @@ Damage: (1d6) piercing +3 + (1d4 fire) + 10% of blinding opponent
 Equipped Effect: Negative Plane Protection, 50% fire resistance
 Effect: Flame strike once daily
 ~
-@88   = ~Lathandar's Inferno~
+@88   = ~Lathander's Inferno~
 @89   = ~Chloe growls at you when you try to look at her weapon, but reluctantly agrees to tell you what it does:
 
-Lathandar's Inferno
+Lathander's Inferno
 Weapon type: short sword
 Speed Factor: 0
 Thac0 and damage bonus: +5 hits as +5 weapon

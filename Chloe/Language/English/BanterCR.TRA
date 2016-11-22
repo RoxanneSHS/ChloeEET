@@ -38,7 +38,7 @@
 @37   = ~Wow. And how did you gain Lathander's favor?~
 @38   = ~I slept with his high priestess.~
 @39   = ~WHAT?!~
-@40   = ~Haha. Only joking. The Yr'kai pay homage to both Akadia and Lathandar. Lathandar bestowed this short sword to me upon my 17th winter. I had already become the greatest torque in my tribe. Torque is like master, and also teacher.~
+@40   = ~Haha. Only joking. The Yr'kai pay homage to both Akadia and Lathander. Lathander bestowed this short sword to me upon my 17th winter. I had already become the greatest torque in my tribe. Torque is like master, and also teacher.~
 @41   = ~Wow. And you slept with the high priestess.~
 @42   = ~Of course. (grin) I'll tell you all about it tonight at camp.~
 @43   = ~(giggle)~
@@ -479,7 +479,7 @@
 @478  = ~Though I trust you little on other matters, I trust you with my training. That is enough.~
 @479  = ~You know... we're not so different, you and I.~
 @480  = ~I beg your pardon, my lady?! I find myself insulted by your comment!~
-@481  = ~Oh, don't get your breeches in a twist. I meant no offense. I was referring to the fact that we both fight in the service of our gods. I for Akadia and Lathandar, and you for Torm. There is a kinship, in that. I may not be a paladin, but I suppose I am a holy warrior in my own right.~
+@481  = ~Oh, don't get your breeches in a twist. I meant no offense. I was referring to the fact that we both fight in the service of our gods. I for Akadia and Lathander, and you for Torm. There is a kinship, in that. I may not be a paladin, but I suppose I am a holy warrior in my own right.~
 @482  = ~I beg to differ with the holy part, but you are definitely a great warrior and a boon to your gods. Any further similarity you feel you see between us, I would rather you kept your tongue on.~
 @483  = ~As you would have it, paladin.~
 @484  = ~So tell me, tiny one, why are you not a paladin? You're a holy warrior, your god Arvoreen even grants you some special abilities for your devotion, and yet you're still nothing more than a common warrior. Does Arvoreen not like you?~
@@ -600,15 +600,15 @@
 @594  = ~There's always someone better out there. The quest for self-perfection is endless and grueling.~
 @595  = ~Which brings up a question I've been meaning to ask you. Your mother was Akadia, goddess of the air, correct?~
 @596  = ~Yes. What about it?~
-@597  = ~But you worship Lathandar and not your mother. May I ask why?~
+@597  = ~But you worship Lathander and not your mother. May I ask why?~
 @598  = ~Your father was Bhaal. Do you worship him?~
 @599  = ~Bhaal was an evil god. Besides, he's dead. Even if he weren't, I could never worship such as he.~
 @600  = ~I don't believe in evil. But that's a conversation for another day.~
 @601  = ~Yes. Now back to my question, and please give me your reasoning, and not ask for mine. (Smile)~
-@602  = ~Of course. My self-improvement and body are in honor of Lathandar. My skills and my battles honor Akadia. I worship both, in a manner of speaking.~
+@602  = ~Of course. My self-improvement and body are in honor of Lathander. My skills and my battles honor Akadia. I worship both, in a manner of speaking.~
 @603  = ~How so? I'm intrigued.~
-@604  = ~My practices are dedicated to Lathandar, to honor him. But when I pray, or when I battle, I call upon Akadia.~
-@605  = ~Lathandar is the god of self-perfection and skill, but Akadia's is the power behind my sword-strokes.~
+@604  = ~My practices are dedicated to Lathander, to honor him. But when I pray, or when I battle, I call upon Akadia.~
+@605  = ~Lathander is the god of self-perfection and skill, but Akadia's is the power behind my sword-strokes.~
 @606  = ~I don't really understand.~
 @607  = ~I.. I think I do. I worship Baervar Wildwanderer but Aerdrie Faenya will always be revered in my heart.~
 @608  = ~I didn't think you would. Tell you what, tomorrow night when I practice, practice with me. You'll understand when your mind becomes clear and your body moves on it's own.~
@@ -873,7 +873,7 @@
 @867  = ~Aran Linvail, why am I not surprised? I have had dealings with him in the past. For what it is worth, I think you made the best choice of allies.~
 @868  = ~Lucy?! By the gods, woman, I knew you were a beast, but a wyvern!? Are you spying on me again?! Hey... don't ignore me! Argh... stupid creature.~
 @869  = ~Whoa! <CHARNAME>, I don't particularly care for your faith but I had no real problems with it until now.~
-@870  = ~Worship how you please, but if you attack the temple of Lathandar, you will fight me as well. I will not turn a blind eye as you slaughter the followers of my god. Make your choice.~
+@870  = ~Worship how you please, but if you attack the temple of Lathander, you will fight me as well. I will not turn a blind eye as you slaughter the followers of my god. Make your choice.~
 @871  = ~You are right, I cannot follow through with this order. Glorifying Talos is one thing, but destroying an entire temple of another god? That is just suicide.~
 @872  = ~I must bring glory to Talos, and all who stand in my way shall perish! Oppose me if you must, I am going to slaughter everyone in Lathander's temple as Talos watches!~
 @873  = ~Thank you, <CHARNAME>. Let's get out of here.~

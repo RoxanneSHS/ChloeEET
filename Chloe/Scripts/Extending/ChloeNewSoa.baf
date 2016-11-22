@@ -10,6 +10,16 @@ SetGlobal("RCAnath","Locals",1)
 END
 
 IF
+Global("RCLathTempl","ar0902",0)
+AreaCheck("ar0902")
+GlobalLT("Chapter","Global",18)
+Delay(12)
+THEN
+RESPONSE #100
+SetGlobal("RCLathTempl","ar0902",1)
+END
+
+IF
 Global("RChloeTOB","Global",0)
 AreaCheck("ar4500")
 GlobalGT("BeginChallenge4","GLOBAL",4)
@@ -20,9 +30,10 @@ SetGlobal("RChloeTOB","Global",1)
 END
 
 IF
-OR(2)
+OR(3)
 Global("RChloeTOB","Global",1)
 Global("RCAnath","Locals",1)
+Global("RCLathTempl","ar0902",1)
 InParty(Myself)
 !See([ENEMY])
 CombatCounter(0)
