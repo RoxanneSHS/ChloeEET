@@ -567,6 +567,10 @@ COPY ~Chloe/Sounds~ ~override~
 
 BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
 
+ACTION_IF (DIRECTORY_EXISTS ~SkipChateauIrenicus/npc~) BEGIN
+  COPY ~Chloe/Scripts/Extending/chloe_sci.tph~ ~SkipChateauIrenicus/npc/chloe.tph~
+END
+
 COMPILE ~Chloe/D/SoANew.d~
 EXTEND_BOTTOM ~Chloe.bcs~ ~Chloe/Scripts/Extending/ChloeNewSoa.baf~
 EXTEND_TOP ~AR0900.bcs~ ~Chloe/Scripts/Extending/AR0900CR.baf~
