@@ -11,7 +11,6 @@ Base EET version
 - Personal weapons repaired
 - minor bug fixes + removal of unused code
 - Imoen banters fixed for EET
-- EE/EET issue with mod for skipping Irenicus Dungeon solved
 - Weidu setup updated to 2.40
 
 Extra
