@@ -394,6 +394,7 @@ THEN
     ActionOverride(Player5,PickUpItem("CHLOSW5"))
     ActionOverride(Player6,PickUpItem("CHLOSW5"))
     DisplayStringHead(Myself,@10) 
+END
 
 IF
   !HasItem("CHLOSW6",Myself)  // ~Lathandar's Inferno~
