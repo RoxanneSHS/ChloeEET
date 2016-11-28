@@ -39,6 +39,21 @@ IF~~THEN RCHLOEJ TemplPray3
 ~Sometimes I ask myself why I even talk to you at all, idiot.~EXIT
 
 CHAIN
+IF~Global("RChloeForLatha","Global",4)~ THEN RCHLOEJ GoToWar1
+~Ha! After all now I can REALLY prove myself to the Morninglord. The blood of our foe will flow!~
+DO~SetGlobal("RChloeForLatha","Global",5)~
+END
+++~I was no follower of Lathander so far, but our tasks for the temple have given me the impression that bloodshed is not the thing to impress your god.~+ GoToWar2
+++~Now my girl speaks to my heart...a fight is much better than all this wordy counselling.~+ GoToWar2
+
+CHAIN
+IF~~ THEN RCHLOEJ GoToWar2
+~(Sigh) The Morninglord may not be in favour of bloody battles, but he is not one to encourage cowardice. If a battle must be fought in his name, then he will bless our weapons.~
+END
+++~This battle is forced upon us and we will still be victorious.~EXIT
+++~Nobody will call the Lathandrites cowards if you and me represent the temple. Onward!~EXIT
+
+CHAIN
 IF WEIGHT #-8~NumberOfTimesTalkedTo(0) Global("CDSpawnArval","GLOBAL",0) AreaCheck("AR0900") InParty("RChloe")~THEN BHARVAL Yrkai
 ~No, no, no, this will not do at all. We cannot have the slim of faith lured away by such talk. They must be nurtured that they might choose the righteous path.~
 DO~SetGlobal("RChloeForLatha","Global",1)~

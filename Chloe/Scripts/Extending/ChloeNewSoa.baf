@@ -20,6 +20,15 @@ SetGlobal("RCLathTempl","ar0902",1)
 END
 
 IF
+Global("RChloeForLatha","Global",3)
+Global("Talonwar","Global",1)
+!AreaCheck("ar0902")
+THEN
+RESPONSE #100
+SetGlobal("RChloeForLatha","Global",4)
+END
+
+IF
 Global("RChloeTOB","Global",0)
 AreaCheck("ar4500")
 GlobalGT("BeginChallenge4","GLOBAL",4)
@@ -30,10 +39,11 @@ SetGlobal("RChloeTOB","Global",1)
 END
 
 IF
-OR(3)
+OR(4)
 Global("RChloeTOB","Global",1)
 Global("RCAnath","Locals",1)
 Global("RCLathTempl","ar0902",1)
+Global("RChloeForLatha","Global",4)
 InParty(Myself)
 !See([ENEMY])
 CombatCounter(0)
