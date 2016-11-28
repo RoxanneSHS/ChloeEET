@@ -337,7 +337,7 @@
 @336  = ~Is... there some problem between us that I am not aware of?~
 @337  = ~Damned right. If you abandon your child I will kill you. The choice is yours.~
 @338  = ~Nay, stay your sword. <CHARNAME>, the choice is yours my friend. Shall I rejoin you?~
-@339  = ~Cernd, the choice is *MINE*, not <PRO_HISHER>'s! If you take one step more away from your child I shall split you in twain and fertilize this grove with your bloody corpse. You have a responsibility towards your child which you shall not abandon in my presence.~
+@339  = ~Cernd, the choice is *MINE*, not <CHARNAME>'s! If you take one step more away from your child I shall split you in twain and fertilize this grove with your bloody corpse. You have a responsibility towards your child which you shall not abandon in my presence.~
 @340  = ~I... feel I should reconsider then. <CHARNAME>, always a pleasure to see you again my friend, but I feel I must stay here and tend to my child. Just as the...~
 @341  = ~Stay your tongue. If you're not in our party, we don't have to listen to your incessant metaphors. Be gone. Return to your child and apologize to him for even considering leaving.~
 @342  = ~Farewell, my friends.~
@@ -586,7 +586,7 @@
 @580  = ~What about it?~
 @581  = ~Well, <CHARNAME> has told me a little about <PRO_HISHER> childhood, but I'm interested in yours now.~
 @582  = ~Oh, ok. Well, like <CHARNAME> probably told you, we grew up together in Candlekeep.~
-@583  = ~Though I came later on... <CHARNAME> was very young when Gorion took <pro_himher> in. I was about 10 when I became Gorion's ward.~
+@583  = ~Though I came later on... <CHARNAME> was very young when Gorion took <PRO_HIMHER> in. I was about 10 when I became Gorion's ward.~
 @584  = ~Oh? Where did you live before that?~
 @585  = ~Oh I... um... actually I don't remember. I asked Gorion a few times, but he never really answered me straight-out so I figured it wasn't important.~
 @586  = ~But now you have me wondering. It's too bad too, because I can't exactly ask Gorion now.~
