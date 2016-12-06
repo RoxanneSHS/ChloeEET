@@ -1588,7 +1588,7 @@ END
 APPEND RENAL
 IF ~~ THEN BEGIN Shorty1
    SAY @837
-   IF ~~ THEN EXIT
+   IF ~~ THEN GOTO 1
    IF ~ReactionLT([PC],FRIENDLY_LOWER) !InParty("Yoshimo")~ THEN GOTO 0
    IF ~ReactionGT([PC],NEUTRAL_UPPER) !InParty("Yoshimo")~ THEN GOTO 1
    IF ~See("Yoshimo") InParty("Yoshimo")~ THEN GOTO 95
