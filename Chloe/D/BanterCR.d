@@ -382,8 +382,8 @@ EXIT
 
 
 CHAIN IF WEIGHT #-10 ~Global("AerieBanter1CR","GLOBAL",1)~ THEN RCHLOEJ b26
-@207 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
-== AERIEJ @208 DO ~SetGlobal("AerieBanter1CR","GLOBAL",2)~
+@207 DO ~SetGlobal("AerieBanter1CR","GLOBAL",2) RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+== AERIEJ @208 
 == RCHLOEJ @209
 == AERIEJ @210
 == AERIEJ @211
@@ -396,8 +396,8 @@ EXIT
 
 CHAIN IF WEIGHT #-10 ~Global("AerieBanter2CR","GLOBAL",1)~ THEN AERIEJ b27
 @214
-== RCHLOEJ @215 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
-== AERIEJ @216 DO ~SetGlobal("AerieBanter2CR","GLOBAL",2)~
+== RCHLOEJ @215 DO ~SetGlobal("AerieBanter2CR","GLOBAL",2) RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+== AERIEJ @216 
 == RCHLOEJ @217
 == AERIEJ @218
 == RCHLOEJ @219
@@ -417,9 +417,9 @@ EXIT
 // ~~ Third ~~
 
 CHAIN IF WEIGHT #-10 ~Global("AerieBanter3CR","GLOBAL",1)~ THEN RCHLOEJ b28
-@230 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
-== AERIEJ @231 DO ~SetGlobal("AerieBanter3CR","GLOBAL",2)~
-== RCHLOEJ @232 DO ~SetGlobal("NoMoreAerieBantersCR","GLOBAL",1)~
+@230 DO ~SetGlobal("AerieBanter3CR","GLOBAL",2) SetGlobal("NoMoreAerieBantersCR","GLOBAL",1) RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+== AERIEJ @231 
+== RCHLOEJ @232 
 == AERIEJ @233
 == RCHLOEJ @234
 == AERIEJ @235
