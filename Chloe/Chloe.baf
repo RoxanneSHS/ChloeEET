@@ -2638,6 +2638,7 @@ IF
   !Dead("Imoen2")  // Imoen2
   Global("ImoenBanter1CR","GLOBAL",0)
   !Global("ChloeRomanceActiveCR","GLOBAL",1)
+AreaType(OUTDOOR)
 THEN
   RESPONSE #100
     SetGlobal("ImoenBanter1CR","GLOBAL",2)
@@ -2916,6 +2917,7 @@ IF
   !Dead("Imoen2")  // Imoen2
   Global("ImoenBanter1CR","GLOBAL",2)
   Global("ImoenBanter2CR","GLOBAL",0)
+AreaType(OUTDOOR)
 THEN
   RESPONSE #100
     SetGlobal("ImoenBanter2CR","GLOBAL",1)

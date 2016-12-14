@@ -34,8 +34,8 @@ EXIT
 
 
 CHAIN IF WEIGHT #-10 ~Global("ImoenBanter1CR","GLOBAL",1)~ THEN RCHLOEJ b1
-@16 DO ~SetGlobal("ImoenBanter1CR","GLOBAL",2)~
-== IMOEN2J @17 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+@16 DO ~SetGlobal("ImoenBanter1CR","GLOBAL",2) RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+== IMOEN2J @17 
 == RCHLOEJ @18
 == IMOEN2J @19
 == RCHLOEJ @20
@@ -52,8 +52,8 @@ EXIT
 
 
 CHAIN IF WEIGHT #-10 ~Global("ImoenBanter2CR","GLOBAL",1)~ THEN RCHLOEJ b2
-@28 DO ~SetGlobal("ImoenBanter2CR","GLOBAL",2)~
-== IMOEN2J @29 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+@28 DO ~SetGlobal("ImoenBanter2CR","GLOBAL",2)RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~ 
+== IMOEN2J @29 
 == RCHLOEJ @30
 == IMOEN2J @31
 == RCHLOEJ @32
@@ -75,9 +75,9 @@ EXIT
 
 
 CHAIN IF WEIGHT #-10 ~Global("ImoenBanter3CR","GLOBAL",1)~ THEN RCHLOEJ b3
-@44 DO ~RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
-== IMOEN2J @45 DO ~SetGlobal("ImoenBanter3CR","GLOBAL",2)~
-== RCHLOEJ @46 DO ~SetGlobal("NoMoreImoenBantersCR","GLOBAL",1)~
+@44 DO ~SetGlobal("ImoenBanter3CR","GLOBAL",2) RealSetGlobalTimer("BanteringTimerCR","GLOBAL",2400)~
+== IMOEN2J @45 
+== RCHLOEJ @46 
 == IMOEN2J @47
 == RCHLOEJ @48
 == IMOEN2J @49
