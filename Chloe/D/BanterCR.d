@@ -1032,7 +1032,7 @@ CHAIN IF WEIGHT #-3 ~Global("ImoenChloeLovetalksCR","GLOBAL",6)~ THEN RCHLOEJ Im
 == IMOEN2J @606
 == AERIEJ IF ~IsValidForPartyDialog("Aerie")~ THEN  @607
 == RCHLOEJ @608
-== IMOEN2J @609
+== IMOEN2J @609 DO~RestParty()~
 EXIT
 
 
