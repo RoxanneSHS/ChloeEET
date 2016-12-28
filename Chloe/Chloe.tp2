@@ -568,6 +568,7 @@ REQUIRE_COMPONENT ~Chloe.tp2~ 0 ~Main component required.~
 COMPILE ~Chloe/D/SoANew.d~
 EXTEND_BOTTOM ~Chloe.bcs~ ~Chloe/Scripts/Extending/ChloeNewSoa.baf~
 EXTEND_TOP ~AR0900.bcs~ ~Chloe/Scripts/Extending/AR0900CR.baf~
+EXTEND_BOTTOM ~AR2804.bcs~ ~Chloe/Scripts/Extending/AR2804CR.baf~
 
 PRINT ~New SoA contents added~
 

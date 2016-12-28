@@ -1,0 +1,11 @@
+IF
+!GGT("ChloeInterest",8)
+InParty("RChloe")
+OR(2)
+InParty("CVSandr")
+InParty("Imoen2")
+Gender(Player1,MALE)
+THEN
+RESPONSE #100
+SetGlobal("ChloeInterest","Global",9)
+END
