@@ -39,8 +39,20 @@ SetGlobal("RChloeTOB","Global",1)
 END
 
 IF
-OR(4)
+Global("RChloeTOB","Global",2)
+!AreaCheck("ar4500")
+Global("MelissanYagaKillJob","GLOBAL",1)
+!AreaType(OUTDOOR)
+CombatCounter(0)
+THEN
+RESPONSE #100
+SetGlobal("RChloeTOB","Global",3)
+END
+
+IF
+OR(5)
 Global("RChloeTOB","Global",1)
+Global("RChloeTOB","Global",3)
 Global("RCAnath","Locals",1)
 Global("RCLathTempl","ar0902",1)
 Global("RChloeForLatha","Global",4)
