@@ -31,7 +31,7 @@ END
 IF
 Global("RChloeTOB","Global",0)
 AreaCheck("ar4500")
-GlobalGT("BeginChallenge4","GLOBAL",4)
+GlobalGT("BeginChallenge1","GLOBAL",4)
 CombatCounter(0)
 THEN
 RESPONSE #100
