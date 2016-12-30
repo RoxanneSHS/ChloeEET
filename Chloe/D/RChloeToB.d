@@ -82,8 +82,8 @@ END
 CHAIN
 IF~~THEN Sarvolo Volclo1
 ~Another godchild, a daughter of Arkadia travelling in your company. Can this be coincidence?~
-==RChloeJ~It may or it may be not. In your version it has a reasonm even if you have to invent it yourself, sells more copies, doesn't it?~
+==RChloeJ~It may be or it may be not. In your version it has a reason even if you have to invent it yourself, sells more copies, doesn't it?~
 ==Sarvolo~Always the sellsword and by this you estimate other people, too...~
-==RChloeJ~An what would you call yourself then, a *sell pen*. Oh, come, <CHARNAME>, we write the history with our swords - not this pencil pusher with his quilt.~
+==RChloeJ~And what would you call yourself then, a *sell pen*. Oh, come, <CHARNAME>, history is written by US with our swords - not by this pencil pusher with his quilt.~
 END
-++~His quilt is supposed to write what our swords do, thus that further generations may learn about it.~+ 9
+++~His quilt is supposed to write what our swords do, so that further generations may learn about it.~+ 9
