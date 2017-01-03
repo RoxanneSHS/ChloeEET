@@ -572,7 +572,14 @@ EXTEND_BOTTOM ~AR2804.bcs~ ~Chloe/Scripts/Extending/AR2804CR.baf~
 
 PRINT ~New SoA contents added~
 
-COMPILE ~CHLOE/D/RChloeToB.d~
+COMPILE ~CHLOE/D/RChloeToB.d~  
+EXTEND_TOP ~AR5201.bcs~ ~Chloe/Scripts/Extending/AR5201CR.baf~
+COPY ~Chloe/Creatures/RCMasem.cre~ ~override~
+    SAY NAME1 ~Masemeron~
+    SAY NAME2 ~Masemeron~
+COPY ~Chloe/Items/CHLOSW7.itm~ ~override~
+COPY ~Chloe/Items/CHLOSW9.itm~ ~override~
+
 PRINT ~New ToB contents added~
 
 

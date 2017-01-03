@@ -1,4 +1,5 @@
 //TOB Chloe
+BEGIN RCMasem 
 
 CHAIN
 IF~Global("RChloeTOB","Global",1)~ THEN RCHLOEJ InToBPlane1
@@ -87,3 +88,44 @@ IF~~THEN Sarvolo Volclo1
 ==RChloeJ~And what would you call yourself then, a *sell pen*. Oh, come, <CHARNAME>, history is written by US with our swords - not by this pencil pusher with his quilt.~
 END
 ++~His quilt is supposed to write what our swords do, so that further generations may learn about it.~+ 9
+
+CHAIN
+IF~Global("RCChloeFather","Global",1)~THEN RCMasem meetda1
+~(Sigh) You have come far, Bhaalspawn, but it is my obligation to stop you from what you are about to do with my liege lord's heart.~
+DO~SetGlobal("RCChloeFather","Global",2)~
+==RChloeJ~Beware, <CHARNAME>, an Yr'Kai in the service of Yaga-Shura. I know he will not let us pass without a fight, even if this case is surely a lost one on his side.~
+==RCMasem~Girl? You're an Yr'Kai yourself. What a dilemma, we both swore our allegiance to a spawn of murder. I hope at least you are aware of whom you serve.~
+==RChloeJ~This sounds like you found out about the one you serve too late. Still you swore an oath and you will keep it. Wish we had met under better circumstances.~
+==RCMasem~I do not recognise you, girl. You must have been born after I left the tribe for this contract.~
+=~This campaign is lost and Yaga-Shura will fall at your forces after my inevitable death.~
+==RChloeJ~Your honor - our honor - demands that you fight this battle you cannot win...I challenge you to fight against me alone, Yr'Kai against Yr'Kai - sword against sword.~
+=~I am Chloe, daughter of Arkadia.~
+==RCMasem~I am...what, daughter of Arkadia? You?~
+=~I am Masemeron...~
+==RChloeJ~Masmeron,...father...I never expected to meet you. This is what kept you from the tribe all this time. We find each other and we loose each other on the same day.~
+==RCMasem~Give me the honor to see that my only daughter is worth my seed in true Yr'Kai tradition.~
+==RChloeJ~So be it.~
+END
+++~Stop this madness! Daughter will not kill father over a fated bhaalspawn and a void contract...~+ meetda2
+++~Come to your senses. Masmeron's fight is in vain and you both know it. Celebrate a family having found each other.~+ meetda2
+++~*You remain silent in respect for the two Yr'Kai. This is their affair alone.*~DO~AddXPObject(Player1,8000)~+ meetda2
+
+CHAIN
+IF~~THEN RCMasem meetda2
+~*The two Yr'Kai seem to completely ignore you and everything else in their surrounding.*~
+=~They ceremoniously shake each other's hand, pick their weapons, and after a bow to each other they start their combat.~DO~ ClearAllActions() StartCutSceneMode()
+ActionOverride(Player1,MakeUnselectable(3600000))
+ActionOverride(Player2,MakeUnselectable(3600000))
+ActionOverride(Player3,MakeUnselectable(3600000))
+ActionOverride(Player4,MakeUnselectable(3600000))
+ActionOverride(Player5,MakeUnselectable(3600000))
+ActionOverride(Player6,MakeUnselectable(3600000))
+ActionOverride("Haiass",MakeUnselectable(3600000))
+ActionOverride("Pellig",MakeUnselectable(3600000))
+Wait(2)
+ActionOverride("RChloe",MakeUnselectable(1))
+Wait(1)
+Enemy()
+ActionOverride("RChloe",Attack("RCMasem"))
+ActionOverride("RCMasem",Attack("RChloe"))
+EndCutSceneMode()~EXIT

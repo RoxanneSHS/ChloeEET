@@ -1,0 +1,30 @@
+IF
+Global("RCChloeFather","Global",0)
+InParty("RChloe")
+CombatCounter(0)
+!StateCheck("RChloe",CD_STATE_NOTVALID)
+PartyHasItem("hgheart2")
+THEN
+RESPONSE #100
+SetGlobal("RCChloeFather","Global",1)
+CreateCreature("RCMasem",[2033.1149],S)
+END
+
+IF
+Global("RCChloeFather","Global",2)
+OR(2)
+Dead("RChloe")
+Dead("RCMasem")
+THEN
+RESPONSE #100
+SetGlobal("RCChloeFather","Global",3)
+ActionOverride(Player1,MakeUnselectable(0))
+ActionOverride(Player2,MakeUnselectable(0))
+ActionOverride(Player3,MakeUnselectable(0))
+ActionOverride(Player4,MakeUnselectable(0))
+ActionOverride(Player5,MakeUnselectable(0))
+ActionOverride(Player6,MakeUnselectable(0))
+ActionOverride("Haiass",MakeUnselectable(0))
+ActionOverride("Pellig",MakeUnselectable(0))
+ActionOverride("RCMasem",EscapeArea())
+END
