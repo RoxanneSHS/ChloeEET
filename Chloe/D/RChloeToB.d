@@ -135,3 +135,30 @@ Enemy()
 ActionOverride("RChloe",Attack("RCMasem"))
 ActionOverride("RCMasem",Attack("RChloe"))
 EndCutSceneMode()~EXIT
+
+CHAIN
+IF WEIGHT #-3~IsGabber(Player1) Global("RCChloeFather","Global",3)~THEN RChloeJ meetda4
+~(Sigh) You will ask me the inevitable now, right?~
+DO~SetGlobal("RCChloeFather","Global",4)~
+END
+++~Was there no way to spare your father's life?~+ meetda5
+++~Do you think you will end like your father one day?~+ meetda6
+++~Yes. Why not.~+ meetda5
+
+CHAIN
+IF~~THEN RChloeJ meetda6
+~I have come to trust my judgement about you, <CHARNAME>. You will not lead me to such an end. And even if...~
+END
+++~Yes?~+ meetda5
+
+CHAIN
+IF~~THEN RChloeJ meetda5
+~My father's end was that of a honorable Yr'Kai. It matters not what Yaga-Shura was standing for but what Masemeron was standing for. Our tribe members live and do their training and praying for the purpose of honor.~
+=~I will keep his memory and his swords the way they deserve to be kept. With a daughter's love.~
+END
+++~A daughter's love? Maybe your society has no other way of family life, I should have guessed from the way you once described it to me.~+ meetda7
+++~I will never end to learn how different an Yr'Kai's view are from the <PRO_RACE> ways.~+ meetda7
+
+CHAIN
+IF~~THEN RChloeJ meetda7
+~Whatever. I am content that I now know my parents and I am proud to be their daughter.~EXIT
