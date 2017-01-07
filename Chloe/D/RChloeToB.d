@@ -89,6 +89,12 @@ IF~~THEN Sarvolo Volclo1
 END
 ++~His quilt is supposed to write what our swords do, so that further generations may learn about it.~+ 9
 
+I_C_T Hgwra01 18 RCloGoriWraith
+==RChloeJ IF~InParty("RChloe")~THEN~I can see little of that *father* Gorion you told me so much about in this hate spitting moroon, <CHARNAME>.~
+==HGwra01 IF~InParty("RChloe")~THEN~Dare not speak, bastard daughter of Arkadia, bloody murderer of your poor father.~
+==RChloeJ IF~InParty("RChloe")~THEN~You curse at everyone you see trying to make us hate each other. But you know nothing, creature, you will not divide this party of friends. We need no further proof that you are anyone but Gorion.~
+END
+
 CHAIN
 IF~Global("RCChloeFather","Global",1)~THEN RCMasem meetda1
 ~(Sigh) You have come far, Bhaalspawn, but it is my obligation to stop you from what you are about to do with my liege lord's heart.~
