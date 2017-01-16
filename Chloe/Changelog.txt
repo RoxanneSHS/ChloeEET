@@ -18,7 +18,11 @@ Extra
 - additional SoA banters
 - Chloe works for Lathander against the beholder cult and may gain the temple stronghold on behalf of the party (if Player does not qualify in the first place)
 - Chloe stays in male party at tree of life if Imoen or Sandrah is with you
+
 ToB contents
-- ToB banters (to be expanded)
+- Chloe cannot be summoned into ToB by fate spirit
+- several ToB banters (to be expanded)
 - Volo recognises Chloe
+- Gorion wraith recognises Chloe
 - Chloe finds her father and her final set of swords
+- Reactions on Charname's decision at ToB final

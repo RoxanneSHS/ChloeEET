@@ -3786,6 +3786,7 @@ END
 
 IF
   !InParty("Imoen2") 
+  Global("InToB","Global",0)
   !Dead("Imoen2")  
   !See("Imoen2") 
   InParty("RChloe") 
