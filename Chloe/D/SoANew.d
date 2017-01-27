@@ -4,7 +4,7 @@ INTERJECT Bregg 0 RChloeBregg
 END Cohrvale 1
 
 CHAIN
-IF~Global("RCAnath","Locals",1)~THEN RCHLOEJ Anath1
+IF WEIGHT #-1~Global("RCAnath","Locals",1)~THEN RCHLOEJ Anath1
 ~I never sided with a werewolf before, <CHARNAME>. Life at your side never gets boring (grins).~
 DO~SetGlobal("RCAnath","Locals",2)~
 END
@@ -13,7 +13,7 @@ END
 ++~Adventuring has taught me not to always believe the obvious.~EXIT
 
 CHAIN
-IF~Global("RCLathTempl","ar0902",1) ~THEN RCHLOEJ TemplPray1
+IF WEIGHT #-1~Global("RCLathTempl","ar0902",1) ~THEN RCHLOEJ TemplPray1
 ~Excuse me for a minute, <CHARNAME>, it is not too often that our journeys give me the chance to say my prayer to the Morninglord in his temple.~
 DO~SetGlobal("RCLathTempl","ar0902",2) ~
 END
@@ -39,7 +39,7 @@ IF~~THEN RCHLOEJ TemplPray3
 ~Sometimes I ask myself why I even talk to you at all, idiot.~EXIT
 
 CHAIN
-IF~Global("RChloeForLatha","Global",4)~ THEN RCHLOEJ GoToWar1
+IF WEIGHT #-1~Global("RChloeForLatha","Global",4)~ THEN RCHLOEJ GoToWar1
 ~Ha! After all now I can REALLY prove myself to the Morninglord. The blood of our foe will flow!~
 DO~SetGlobal("RChloeForLatha","Global",5)~
 END

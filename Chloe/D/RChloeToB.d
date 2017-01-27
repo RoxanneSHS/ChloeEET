@@ -2,7 +2,7 @@
 BEGIN RCMasem 
 
 CHAIN
-IF~Global("RChloeTOB","Global",1)~ THEN RCHLOEJ InToBPlane1
+IF WEIGHT #-1~Global("RChloeTOB","Global",1)~ THEN RCHLOEJ InToBPlane1
 ~A cosy little place here you call your own, <CHARNAME>.~
 DO~SetGlobal("RChloeTOB","Global",2)~
 ==RCHLOEJ IF~OR(2)Global("ChloeRomanceActiveCR","GLOBAL",1)Global("ImoenChloeRomanceActiveCR","GLOBAL",1) ~THEN~ A lover's nest like I always dreamt to have. Who can ask for more (grin).~
@@ -13,7 +13,7 @@ END
 ++~If I had more time, I would give it some more personal touches here and there. Guess, we have to live with it with our quests pressing.~ + InToBPlane2
 
 CHAIN
-IF~Global("RChloeTOB","Global",3)~ THEN RCHLOEJ InToBQuest1
+IF WEIGHT #-1~Global("RChloeTOB","Global",3)~ THEN RCHLOEJ InToBQuest1
 ~It seems that your destiny as a godchild becomes clearer now with every day. Mine stays hidden still.~
 DO~SetGlobal("RChloeTOB","Global",4)~
 END
