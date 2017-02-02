@@ -12,6 +12,7 @@ Base EET version
 - minor bug fixes + removal of unused code
 - Imoen banters fixed for EET
 - Weidu setup updated to 2.40
+- Added HANDLE_CHARSETS
 
 Extra
  New contents (currently only available in English)

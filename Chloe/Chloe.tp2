@@ -4,6 +4,19 @@ AUTHOR ~Lucythebeast@hotmail.com~
 
 VERSION ~v1.6 EE~
 
+ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charset = 1
+    STR_VAR
+      tra_path = EVAL ~Chloe/Language~
+      noconvert_array = fl#noconvert
+      reload_array = fl#reload
+      default_language = english
+  END
+
+
 AUTO_TRA ~Chloe/Language/%s~
 
 LANGUAGE ~English~
