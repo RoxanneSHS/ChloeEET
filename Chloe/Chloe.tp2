@@ -4,17 +4,17 @@ AUTHOR ~Lucythebeast@hotmail.com~
 
 VERSION ~v1.6 EE~
 
-ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
-
+ALWAYS
+  ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
   LAF HANDLE_CHARSETS
     INT_VAR
       infer_charset = 1
     STR_VAR
-      tra_path = EVAL ~Chloe/Language~
-      noconvert_array = fl#noconvert
+      tra_path = ~Chloe/Language~
       reload_array = fl#reload
-      default_language = english
+      default_language = ~English~
   END
+END
 
 
 AUTO_TRA ~Chloe/Language/%s~
