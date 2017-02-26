@@ -20,6 +20,17 @@ SetGlobal("RCLathTempl","ar0902",1)
 END
 
 IF
+AreaCheck("ar0902")
+Global("SainSpawn","GLOBAL",0)
+InParty("RChloe")
+GlobalGT("RCLathTempl","ar0902",1)
+THEN
+RESPONSE #100
+SetGlobal("SainSpawn","GLOBAL",1)
+CreateCreature("SCSAIN",[642.627],0)
+END
+
+IF
 Global("RChloeForLatha","Global",3)
 Global("Talonwar","Global",1)
 !AreaCheck("ar0902")
