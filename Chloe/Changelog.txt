@@ -13,6 +13,7 @@ Base EET version
 - Imoen banters fixed for EET
 - Weidu setup updated to 2.40
 - Added HANDLE_CHARSETS
+- updated fl#add_kit_ee.tpa
 
 Extra
  New contents (currently only available in English)
