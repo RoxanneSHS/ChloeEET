@@ -23,7 +23,7 @@ END
 CHAIN
 IF~~THEN RCHLOEJ TemplPray1a
 ~*She stands silently for a minute with her eyes closed and her lips moving to unheard words.*~
-=~Sorry for the short delay - or rather not, I'm not sorry but quite happy for it. You know that most of our culture is based on two things: Perfecting ourselves by training the body and the mind daily; and the worship of Akadia and Lathander.~
+=~Sorry for the short delay - or rather not, I'm not sorry but quite happy for it. You know that most of our culture is based on two things: Perfecting ourselves by training the body and the mind daily; and the worship of Akadia and Lathandar.~
 END
 ++~No problem at all. I'm curious though, why do you worship both Akadia and Lathander?~+ TemplPray2
 ++~Yes, I noticed that. Did you ask him to send us some better tasting rations?~+ TemplPray3
@@ -57,7 +57,7 @@ CHAIN
 IF WEIGHT #-8~NumberOfTimesTalkedTo(0) Global("CDSpawnArval","GLOBAL",0) AreaCheck("AR0900") InParty("RChloe")~THEN BHARVAL Yrkai
 ~No, no, no, this will not do at all. We cannot have the slim of faith lured away by such talk. They must be nurtured that they might choose the righteous path.~
 DO~SetGlobal("RChloeForLatha","Global",1)~
-==RChloeJ ~The Yr'kai serve Lathander, good priest, tell us what must be done.~
+==RChloeJ ~The Yr'kai serve Lathandar, good priest, tell us what must be done.~
 ==BHARVAL~Child, you are certainly on your way to visit the temple of the Morninglord. I would ask your service for a time, in exchange for the favor of the temple.~EXTERN BHARVAL 2
 
 CHAIN
@@ -76,4 +76,4 @@ IF~~THEN BHARVAL Yrkai3
 DO~SetGlobal("RChloeForLatha","Global",3)~
 ==RChloeJ ~I...I have...We have done what the Morninglord would expect an Yr'kai to do.~
 ==BHARVAL~In this, there is allegiance. Your faith is aligned as ours, though it lacks direction yet.~
-==RChloeJ ~It would be a great honor to serve. With <CHARNAME>'s help we will not disgrace Lathander.~EXTERN BHARVAL 33
+==RChloeJ ~It would be a great honor to serve. With <CHARNAME>'s help we will not disgrace Lathandar.~EXTERN BHARVAL 33
