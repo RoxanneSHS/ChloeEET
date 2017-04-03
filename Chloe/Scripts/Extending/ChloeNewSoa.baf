@@ -1,4 +1,12 @@
 IF
+Global("SlavQRC","Global",0)
+AreaCheck("ar0500")
+THEN
+RESPONSE #100
+SetGlobal("SlavQRC","Global",1)
+END
+
+IF
 Global("AnathTemple","GLOBAL",1)
 Global("RCAnath","Locals",0)
 OR(2)
@@ -40,6 +48,14 @@ SetGlobal("RChloeForLatha","Global",4)
 END
 
 IF
+Global("RChloeVillageR","Global",1)
+Dead("Illasera")
+THEN
+RESPONSE #100
+SetGlobal("RChloeVillageR","Global",2)
+END
+
+IF
 Global("RChloeTOB","Global",0)
 AreaCheck("ar4500")
 GlobalGT("BeginChallenge1","GLOBAL",4)
@@ -61,12 +77,13 @@ SetGlobal("RChloeTOB","Global",3)
 END
 
 IF
-OR(5)
+OR(6)
 Global("RChloeTOB","Global",1)
 Global("RChloeTOB","Global",3)
 Global("RCAnath","Locals",1)
 Global("RCLathTempl","ar0902",1)
 Global("RChloeForLatha","Global",4)
+Global("RChloeVillageR","Global",2)
 InParty(Myself)
 !See([ENEMY])
 CombatCounter(0)

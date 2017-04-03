@@ -38,3 +38,16 @@ THEN
     PlaySound("ChImCR")
     StartDialog("RCHLOEJ","Imoen2")
 END
+
+IF
+Global("SlavQRC","Global",9)
+IsValidForPartyDialog(Player1)
+Detect(Player1)
+!Detect([ENEMY])
+CombatCounter(0)
+THEN
+RESPONSE #100
+PlaySong(%ChGTKUCR%)
+PlaySound("ChGTKUCR")
+StartDialog("RCHLOEJ",Player1)
+END

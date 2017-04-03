@@ -3606,7 +3606,7 @@ END
 
 // ~~ 6th Lovetalk ~~  -- not really a lovetalk, heh... event.
 
-CHAIN IF ~Global("ChLovetalksCR","GLOBAL",12)~ THEN MAN1CR lt31
+CHAIN IF ~OR(2) Global("ChLovetalksCR","GLOBAL",12) Global("SlavQRC","Global",2)~ THEN MAN1CR lt31
 @1113
 == MAN2CR IF ~Global("FreeSlaves","GLOBAL",1)~ THEN @1114
 == MAN2CR IF ~Global("FreeSlaves","GLOBAL",0)~ THEN @1115
@@ -3619,7 +3619,7 @@ END RCHLOEJ lt32
 APPEND RCHLOEJ
 IF ~~ THEN BEGIN lt32
    SAY @1119 
-   IF ~~ THEN DO ~SetGlobal("CutSceneApproachGlobalCR","GLOBAL",1)~ EXTERN MAN1CR lt33
+   IF ~~ THEN DO ~SetGlobal("CutSceneApproachGlobalCR","GLOBAL",1) SetGlobal("SlavQRC","Global",3)~ EXTERN MAN1CR lt33
 END
 END
 
@@ -3764,7 +3764,11 @@ door spells.
 Scene: Wizard and commander dimension door out. A paper is left on the ground.
 */
 
-CHAIN IF WEIGHT #50 ~Global("ChLovetalksQuestCR","GLOBAL",7)~ THEN RCHLOEJ lt43
+CHAIN IF WEIGHT #50 ~Global("ChLovetalksQuestCR","GLOBAL",7) Global("SlavQRC","Global",3)~ THEN RCHLOEJ lt43a
+@1161 
+DO ~SetGlobal("WeMustReadItCR","GLOBAL",1) SetGlobal("ChLovetalksQuestCR","GLOBAL",8) SetGlobal("SlavQRC","Global",4) StartCutSceneMode() StartCutScene("Kill4CR")~ EXIT
+
+CHAIN IF WEIGHT #50 ~Global("ChLovetalksQuestCR","GLOBAL",7) !Global("SlavQRC","Global",3)~ THEN RCHLOEJ lt43b
 @1161 
 DO ~SetGlobal("WeMustReadItCR","GLOBAL",1) SetGlobal("ChLovetalksQuestCR","GLOBAL",8) SetGlobal("ChLovetalksCR","GLOBAL",15) StartCutSceneMode() StartCutScene("Kill4CR")~ EXIT
 /*
@@ -4099,14 +4103,6 @@ IF ~~ THEN BEGIN ToL1aFin
    COPY_TRANS PLAYER1 33
 END
 END
-
-
-
-
-
-
-
-
 
 // ||| This dialogue shouldn't have a flag! |||
 

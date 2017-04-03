@@ -1942,8 +1942,6 @@ IF
   !Detect([ENEMY])
   CombatCounter(0)
   RealGlobalTimerExpired("ChLovetalksTimerCR","GLOBAL")
-  InParty("Imoen2")  // Imoen2
-  See("Imoen2")  // Imoen2
   !Dead("Imoen2")  // Imoen2
   Global("ChloeRomanceActiveCR","GLOBAL",1)
   !Global("ChloeIsAngryCR","GLOBAL",1)
@@ -2011,7 +2009,29 @@ THEN
 END
 
 IF
-  InParty("Imoen2")  // Imoen2
+GlobalGT("MatronJob","GLOBAL",0)
+Global("SlavQRC","Global",1)
+InParty("RChloe") 
+Detect(Player1)
+!StateCheck(Player1,STATE_SLEEPING)
+!Detect([ENEMY])
+CombatCounter(0)
+!Global("ChLovetalksCR","GLOBAL",11)
+!Global("ChLovetalksCR","GLOBAL",12)
+OR(4)
+AreaCheck("AR0300")
+AreaCheck("AR0700")
+AreaCheck("AR0400")
+AreaCheck("AR0500")
+THEN
+RESPONSE #100
+SetGlobal("SlavQRC","Global",2)
+CreateCreatureObjectOffScreen("MAN1CR","RChloe",5,0,0)  
+CreateCreatureObject("MAN2CR","MAN1CR",15,0,0) 
+Continue()
+END
+
+IF
   InParty("RChloe")  // RChloe
   Detect(Player1)
   !StateCheck(Player1,STATE_SLEEPING)
@@ -2100,10 +2120,11 @@ THEN
 END
 
 IF
-  InParty("Imoen2") 
-  AreaCheck("AR0501")
-  GGT("ChLovetalksCR",11)
-  Global("ChLovetalksQuestCR","GLOBAL",0)
+AreaCheck("AR0501")
+OR(2)
+GGT("ChLovetalksCR",11)
+Global("SlavQRC","Global",3)
+Global("ChLovetalksQuestCR","GLOBAL",0)
 THEN
   RESPONSE #100
     SetGlobal("ChLovetalksQuestCR","GLOBAL",1)
@@ -2139,7 +2160,6 @@ END
 
 IF
   AreaCheck("AR0502")
-  GGT("ChLovetalksCR",11)
   Global("ChLovetalksQuestCR","GLOBAL",2)
 THEN
   RESPONSE #100
@@ -2176,7 +2196,6 @@ END
 
 IF
   AreaCheck("AR0503")
-  GGT("ChLovetalksCR",11)
   Global("ChLovetalksQuestCR","GLOBAL",4)
 THEN
   RESPONSE #100
@@ -2230,6 +2249,48 @@ THEN
     RealSetGlobalTimer("ComplainingAboutRestCR","GLOBAL",1000)
     SetGlobal("FeelingSickLikeHellCR","LOCALS",0)
     StartDialogue("RCHLOEJ",Player1)
+END
+
+IF
+Global("SlavQRC","Global",4)
+InParty("RChloe") 
+GlobalLT("ChLovetalksCR","GLOBAL",15)
+OR(17)
+AreaCheck("ar0314")
+AreaCheck("ar0406")
+AreaCheck("ar0509")
+AreaCheck("ar0511")
+AreaCheck("ar0513")
+AreaCheck("ar0704")
+AreaCheck("ar0709")
+AreaCheck("ar1105")
+AreaCheck("ar1602")
+AreaCheck("ar2010")
+AreaCheck("ar2203")
+AreaCheck("ar4267")
+AreaCheck("dd3302")
+AreaCheck("ra5104")
+AreaCheck("ar7100")
+AreaCheck("ys0396")
+AreaCheck("rr3305")
+THEN
+RESPONSE #100
+SetGlobal("SlavQRC","Global",9)
+END
+
+IF
+Global("SlavQRC","Global",10)  
+InParty("RChloe")  
+Detect(Player1)
+!StateCheck(Player1,STATE_SLEEPING)
+!Detect([ENEMY])
+CombatCounter(0)
+PartyRested()
+THEN
+RESPONSE #100
+PlaySong(%ChGTKUCR%)
+PlaySound("ChLoveCR")
+StartDialogue("RCHLOEJ",Player1)
 END
 
 // |||  In-Party Banters |||

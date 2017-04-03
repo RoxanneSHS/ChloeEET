@@ -1,6 +1,37 @@
 //TOB Chloe
 BEGIN RCMasem 
 
+INTERJECT Illasera 6 RChloeVillageR
+==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~The same Illasera who destroyed the village La'risadiim? To find an elven boy...~
+==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Those stupid Yr'kai. They really tried to resist us and protect that little bhaalspawn bastard. There was no choice.~
+==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~You eliminated a whole population to get your hands one a little boy, you soom-to-be-dead killer?~
+==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Those Yr'kai gave my army very little chance. They would not negotiate. It was us or them.~
+==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~To be precise, it was most of us - as my army was destroyed - and it was ALL of them.~ 
+==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Ha, your army is gone and you are alone here today, just...it was NOT all of them. You soon wish it had been all of them. Bad for you that this here Yr'kai is very much alive.~
+==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~You are...~ 
+==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~For Lathandar and Akadia...For La'risadiim!!!~END Illasera 8
+
+CHAIN
+IF WEIGHT #-1~Global("RChloeVillageR","Global",2)~ THEN RCHLOEJ Villend
+~A bhaalspawn is responsible for the death of all my people...and I trust a bhaalspawn to guide me through all of this? Is that what my mother Akadia has intended for me?~
+DO~SetGlobal("RChloeVillageR","Global",3)~
+END
+++~Chloe, trust me. If there ever was a reason to pick up the fight against these monsters, we have one. We must stop them, or your village will not be the last to suffer such a fate.~+ Villend2
+IF~GlobalLT("ChLovetalksCR","GLOBAL",16)~THEN REPLY~What was that about the elven boy who caused Illasera to attack your village?~+ Villend3
+IF~GlobalGT("ChLovetalksCR","GLOBAL",16)~THEN REPLY~So that bloodthirsty elfish boy you told me about was a bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
+
+CHAIN
+IF ~~ THEN RCHLOEJ Villend2
+~I will be glad to fight at your side to bring this to an end. Now more than ever.~EXIT
+
+CHAIN
+IF ~~ THEN RCHLOEJ Villend3
+~I never understood how I could lose everyone I loved in one single night in a battle over a boy!~
+=~I asked myself how could a boy be so important that an army would raze an entire village to the ground and slaughter every living person in it to reach him? I believe I know what boy it was too... an Elfish boy. He was odd all his life. He always seemed more... aggressive than everyone else. More... bloodthirsty. Which, for a Yr'kai to say that means something.~
+END
+++~Now we know it, he was a bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
+++~Chloe, trust me. If there ever was a reason to pick up the fight against these monsters, we have one. We must stop them, or your village will not be the last to suffer such a fate.~+ Villend2
+
 CHAIN
 IF WEIGHT #-1~Global("RChloeTOB","Global",1)~ THEN RCHLOEJ InToBPlane1
 ~A cosy little place here you call your own, <CHARNAME>.~
