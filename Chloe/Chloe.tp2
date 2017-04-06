@@ -66,10 +66,6 @@ END
 COMPILE ~Chloe/Scripts~
     USING ~Chloe/Language/%s/Scripts.tra~
 
-ADD_MUSIC ~ChGTKUCR~ ~Chloe/Music/CRblank1.mus~
-ADD_MUSIC ~ChLoveCR~ ~Chloe/Music/CRblank2.mus~
-ADD_MUSIC ~ChImCR~ ~Chloe/Music/CRblank3.mus~
-
 COMPILE EVALUATE_BUFFER ~Chloe/ChloeD.baf~
 
 ACTION_IF FILE_EXISTS_IN_GAME ~k#telbgt.bcs~ THEN BEGIN
@@ -457,13 +453,6 @@ COPY ~Chloe/Creatures/CHLOE15.cre~ ~override/CHLOE15.cre~
 ////\\//\\//\\//\\//
 
 COPY ~Chloe/Spells~ ~override~
-
-//\\//\\//\\//\\//\\//\\//\\//
-//  ~~ Music and sounds ~~  //
-////\\//\\//\\//\\//\\//\\//\\
-
-COPY ~Chloe/Sounds/NOSOUND.wav~ ~override~
-
 
 //\\//\\//\\//\\//\\//
 //  ~~ Portraits ~~ //

@@ -10,7 +10,6 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("ChloeGTKUwhenCampingCR","GLOBAL",1)
-    PlaySong(%ChGTKUCR%)
     PlaySound("ChGTKUCR")
     StartDialog("RCHLOEJ",Player1)
 END
@@ -34,7 +33,6 @@ THEN
   RESPONSE #100
     IncrementGlobal("ImoenChloeLovetalksCR","GLOBAL",1)
     RealSetGlobalTimer("ImoenChloeTimerCR","GLOBAL",3500)
-    PlaySong(%ChImCR%)
     PlaySound("ChImCR")
     StartDialog("RCHLOEJ","Imoen2")
 END
@@ -47,7 +45,19 @@ Detect(Player1)
 CombatCounter(0)
 THEN
 RESPONSE #100
-PlaySong(%ChGTKUCR%)
 PlaySound("ChGTKUCR")
+StartDialog("RCHLOEJ",Player1)
+END
+
+IF
+Global("RChloeVillageR","Global",3)
+Global("RChloeTOB","Global",4)
+OR(2)
+GlobalGT("BeginChallenge3","GLOBAL",1)
+Global("Chapter","Global",21)
+THEN
+RESPONSE #100
+SetGlobal("RChloeVillageR","Global",4)
+PlaySound("ChLoveCR")
 StartDialog("RCHLOEJ",Player1)
 END

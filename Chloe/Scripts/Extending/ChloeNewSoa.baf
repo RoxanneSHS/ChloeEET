@@ -56,6 +56,17 @@ SetGlobal("RChloeVillageR","Global",2)
 END
 
 IF
+Global("RChloeVillageR","Global",3)
+!Global("ChloeRomanceActiveCR","GLOBAL",2)
+Gender(Player1,FEMALE)
+CheckStatGT(Player1,9,CHR)
+CheckStatGT(Player1,8,INT)
+THEN
+RESPONSE #100
+SetGlobal("ChloeRomanceActiveCR","GLOBAL",2)
+END
+
+IF
 Global("RChloeTOB","Global",0)
 AreaCheck("ar4500")
 GlobalGT("BeginChallenge1","GLOBAL",4)

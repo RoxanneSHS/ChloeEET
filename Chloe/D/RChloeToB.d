@@ -36,7 +36,7 @@ CHAIN
 IF WEIGHT #-1~Global("RChloeTOB","Global",1)~ THEN RCHLOEJ InToBPlane1
 ~A cosy little place here you call your own, <CHARNAME>.~
 DO~SetGlobal("RChloeTOB","Global",2)~
-==RCHLOEJ IF~OR(2)Global("ChloeRomanceActiveCR","GLOBAL",1)Global("ImoenChloeRomanceActiveCR","GLOBAL",1) ~THEN~ A lover's nest like I always dreamt to have. Who can ask for more (grin).~
+==RCHLOEJ IF~OR(2)Global("ChloeRomanceActiveCR","GLOBAL",2)Global("ImoenChloeRomanceActiveCR","GLOBAL",1) ~THEN~ A lover's nest like I always dreamt to have. Who can ask for more (grin).~
 ==RCHLOEJ~This is supposed to be a part of you, a glimpse into your soul.~
 END
 ++~This is what I have to live with, yes. Does it shock you, Chloe?~ + InToBPlane2
@@ -86,6 +86,44 @@ CHAIN
 IF~~THEN RCHLOEJ InToBPlane2
 ~It gives me some hope. To have something like this to cope with and still be the person you are...that is quite something. It requires strength and willpower. Something both the kensai and the Yr'kai in me can relate to.~
 =~Anyway, we have a task at hand, right?~EXIT
+
+CHAIN
+IF WEIGHT #-1~Global("RChloeVillageR","Global",4)~ THEN RCHLOEJ WhatafterAll1
+~Do you think you will ever return to live quietly at Candlekeep?~
+DO~SetGlobal("RChloeVillageR","Global",5)~
+END
+++~Even if we survive all of this - too much has changed already, I cannot pretend I will ever be happy as the person I left behind long ago.~ + WhatafterAll2
+++~Hard to say. With your own loss of any place to return to, would you think of going to Candlekeep with me?~ + WhatafterAll2
+++~Wjat brings such a question to your mind right now, Chloe?~ + WhatafterAll2
+
+CHAIN
+IF ~~ THEN RCHLOEJ WhatafterAll2
+~You must know that when a Yr'kai reaches young adulthood, they are expected to go out into the world and fight as mercenaries. They send a portion of their earnings back to support their village and the village uses that money to buy the food, medicine, and livestock they require to live. This is how we met first of all.~
+=~An Yr'kai's "wandering" phase of life can be short or last a lifetime. A Yr'kai returning to settle down often takes a role best suited to their natural talents and interests. This is usually when they start having children as well. ~
+END
+++~I guess I see your point. You lost that choice for a return.~ + WhatafterAll3
+++~Are you afraid to be doomed to lifetime wandering?~ + WhatafterAll3
+IF~Global("ChloeRomanceActiveCR","GLOBAL",2)~THEN REPLY~Apart from that *having children* and apart from neither of us having a home to return to...~ + WhatafterAll3
+++~There will come a time when you need to consider your options - just in case you decide the wadering days are over for you.~ + WhatafterAll3
+
+CHAIN
+IF ~~ THEN RCHLOEJ WhatafterAll3
+~We are both in the same boat, as the saying goes. But that alone is not basis for a decision, right?~
+END
+++~It is a starting point, Chloe. Only...with the future as uncertain as it is for us right now, I'd prefer to postpone common plans for the moment.~  + WhatafterAll4
+++~If we come to a point where we can make common plans for the future, I swear it, Chloe, we will make them together.~ + WhatafterAll4
+++~You know well that in the end each of us has to come to the final decision alone.~ + WhatafterAll5
+++~Help me to keep our boat afloat, Chloe, it's the prerequisite for any common plans we may consider after all this is done and over.~ + WhatafterAll4
+
+CHAIN
+IF ~~ THEN RCHLOEJ WhatafterAll4
+~*Common plans*, it is a vague expression - and still, it is all we in fact can say about our future with a minimum of certainty. ~
+=~(She takes your hand and smiles at you.) For others that may mean little - for us it means that we have all we need.~EXIT
+
+CHAIN
+IF ~~ THEN RCHLOEJ WhatafterAll5
+~You have come so far, <CHARNAME> and still have learned so little. Being Yr'kai and being alone is...our tribe is our family, the community ia our strength, friends - companions - lovers - the elders and the children... ~
+=~Alone - we are nothing. ~EXIT
 
 I_C_T Finsol01 27 RChloeSol1
 ==RChloeJ IF~InParty("RChloe")~THEN~Your decision is not really made today. You know for quite a time now what you will do with your heritage. You have anticipated this moment and you are ready to give the celestials your answer.~
