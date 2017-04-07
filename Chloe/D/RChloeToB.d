@@ -94,7 +94,7 @@ DO~SetGlobal("RChloeVillageR","Global",5)~
 END
 ++~Even if we survive all of this - too much has changed already, I cannot pretend I will ever be happy as the person I left behind long ago.~ + WhatafterAll2
 ++~Hard to say. With your own loss of any place to return to, would you think of going to Candlekeep with me?~ + WhatafterAll2
-++~Wjat brings such a question to your mind right now, Chloe?~ + WhatafterAll2
+++~What brings such a question to your mind right now, Chloe?~ + WhatafterAll2
 
 CHAIN
 IF ~~ THEN RCHLOEJ WhatafterAll2
@@ -122,7 +122,7 @@ IF ~~ THEN RCHLOEJ WhatafterAll4
 
 CHAIN
 IF ~~ THEN RCHLOEJ WhatafterAll5
-~You have come so far, <CHARNAME> and still have learned so little. Being Yr'kai and being alone is...our tribe is our family, the community ia our strength, friends - companions - lovers - the elders and the children... ~
+~You have come so far, <CHARNAME> and still have learned so little. Being Yr'kai and being alone is...our tribe is our family, the community is our strength, friends - companions - lovers - the elders and the children... ~
 =~Alone - we are nothing. ~EXIT
 
 I_C_T Finsol01 27 RChloeSol1
@@ -168,18 +168,36 @@ CHAIN
 IF~Global("RCChloeFather","Global",1)~THEN RCMasem meetda1
 ~(Sigh) You have come far, Bhaalspawn, but it is my obligation to stop you from what you are about to do with my liege lord's heart.~
 DO~SetGlobal("RCChloeFather","Global",2)~
-==RChloeJ~Beware, <CHARNAME>, an Yr'Kai in the service of Yaga-Shura. I know he will not let us pass without a fight, even if this case is surely a lost one on his side.~
-==RCMasem~Girl? You're an Yr'Kai yourself. What a dilemma, we both swore our allegiance to a spawn of murder. I hope at least you are aware of whom you serve.~
-==RChloeJ~This sounds like you found out about the one you serve too late. Still you swore an oath and you will keep it. Wish we had met under better circumstances.~
-==RCMasem~I do not recognise you, girl. You must have been born after I left the tribe for this contract.~
-=~This campaign is lost and Yaga-Shura will fall at your forces after my inevitable death.~
-==RChloeJ~Your honor - our honor - demands that you fight this battle you cannot win...I challenge you to fight against me alone, Yr'Kai against Yr'Kai - sword against sword.~
-=~I am Chloe, daughter of Arkadia.~
-==RCMasem~I am...what, daughter of Arkadia? You?~
-=~I am Masemeron...~
-==RChloeJ~Masmeron,...father...I never expected to meet you. This is what kept you from the tribe all this time. We find each other and we loose each other on the same day.~
-==RCMasem~Give me the honor to see that my only daughter is worth my seed in true Yr'Kai tradition.~
-==RChloeJ~So be it.~
+==RChloeJ~Hold a moment, <CHARNAME>. That's no mere warrior, he is Yr'kai, though one I am unfamiliar with.~
+==RCMasem~Another Yr'kai... it has been too long since I have stood on a battlefield with one of my brethren. A pity we find ourselves on opposing sides.-
+=~I hope at least you are aware of whom you serve, girl.~
+==RChloeJ~I am fully aware and <PRO_HESHE> has earned my loyalty. This is a most unfortunate turn of events, but one we must face honorably.~
+==RCMasem~Indeed. We rarely know the measure of our patron until blood has been shed. But an oath is an oath.~
+=~I am Masemeron out of Brenna of Yr'kai-Shen-Do.~
+==RChloeJ~Masemeron! I was told this was my father's name. ~
+==RChloeJ~Our gods weep when father and daughter shed each other's blood, but they understand it is at times necessary. *sighs*~
+=~I am Chloe out of Akadia of Yr'kai-Razin-Do. I will bear your swords honorably to Shen-do's Great Hall after this is all finished.~
+==RCMasem~Hmph. Confident, just like a true... wait. Akadia? No... this tragedy is all the more bitter.~
+=~It is my seed from which you sprung, Chloe.~
+==RChloeJ~Then why? Why is this the first time we meet? Why did you... abandon me?~
+==RCMasem~I did not even know you existed. There was a moot in Yr'kai-Do followed by a great revelry.~
+=~I was among the warriors being honored for my deeds. During the revelry there was this woman... your mother.~
+=~The most beautiful woman I had ever seen... eyes like lightning. I was deep in my cups and she was a force of nature.~
+=~As the light of dawn approached her true nature became apparent. She smiled at me and then in a gust of wind was gone.~
+=~I was never quite sure if it was simply too much mead, or if what I had experienced happened. But... here you are.~
+==RChloeJ~Word never reached you of a daughter of Akadia? I find that difficult to believe.~
+==RCMasem~It doesn't matter now. We have a sworn duty to fight to the death. Don't complicate matters, child.~
+==RChloeJ~My entire village was wiped out, everyone I knew and loved lies dead.~
+=~And now I am to slay my own father moments after meeting him?~
+==RCMasem~It is our way. Remember, as long as even a single Yr'kai survives, we survive. Let us end this.~
+==RChloeJ~Please, don't make me do this. Break your vow. I've lost almost everything, don't make me lose you too.~
+==RCMasem~And now you learn your final lesson. Honor is sacrifice, and sacrifice is love.~
+==RChloeJ~Your honor means more to you than your life?~
+==RCMasem~Of course. I am Yr'kai, as are you.~
+==RChloeJ~And it means more than sparing me the pain of another loss? I mean so little to you?~
+==RCMasem~One of us will feast in Lathandar's Great Hall tonight. You will understand someday. Let us begin.~
+==RChloeJ~*sighs* You stubborn bastard. So be it.~
+END
 END
 ++~Stop this madness! Daughter will not kill father over a fated bhaalspawn and a void contract...~+ meetda2
 ++~Come to your senses. Masmeron's fight is in vain and you both know it. Celebrate a family having found each other.~+ meetda2
@@ -230,4 +248,4 @@ END
 
 CHAIN
 IF~~THEN RChloeJ meetda7
-~Whatever. I am content that I now know my parents and I am proud to be their daughter.~EXIT
+~Whatever. I am content that at least I now know my parents and I am proud to be their daughter.~EXIT
