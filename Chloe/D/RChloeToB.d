@@ -173,13 +173,15 @@ DO~SetGlobal("RCChloeFather","Global",2)~
 =~I hope at least you are aware of whom you serve, girl.~
 ==RChloeJ~I am fully aware and <PRO_HESHE> has earned my loyalty. This is a most unfortunate turn of events, but one we must face honorably.~
 ==RCMasem~Indeed. We rarely know the measure of our patron until blood has been shed. But an oath is an oath.~
-=~I am Masemeron out of Brenna of Yr'kai-Shen-Do.~
-==RChloeJ~Masemeron! I was told this was my father's name. ~
-==RChloeJ~Our gods weep when father and daughter shed each other's blood, but they understand it is at times necessary. *sighs*~
+=~I am Yngvar out of Brenna of Yr'kai-Shen-Do.~
+==RChloeJ~Our gods weep when brother and sister shed each other's blood, but they understand it is at times necessary. *sighs*~
 =~I am Chloe out of Akadia of Yr'kai-Razin-Do. I will bear your swords honorably to Shen-do's Great Hall after this is all finished.~
 ==RCMasem~Hmph. Confident, just like a true... wait. Akadia? No... this tragedy is all the more bitter.~
-=~It is my seed from which you sprung, Chloe.~
-==RChloeJ~Then why? Why is this the first time we meet? Why did you... abandon me?~
+=~It is my seed from which you sprung, Chloe. I am your father.~
+==RChloeJ~What? No, I was told my father's name is Masemeron.~
+==RCMasem~Silly girl, Masemeron is an Old Yr'kai term for a swordmaster. It is a title, not a name.~
+==RChloeJ~I... never realized that. No wonder no one outside of my village knew of you.-
+=~If what you say is true, then why? Why is this the first time we meet? Why did you... abandon me?~
 ==RCMasem~I did not even know you existed. There was a moot in Yr'kai-Do followed by a great revelry.~
 =~I was among the warriors being honored for my deeds. During the revelry there was this woman... your mother.~
 =~The most beautiful woman I had ever seen... eyes like lightning. I was deep in my cups and she was a force of nature.~
