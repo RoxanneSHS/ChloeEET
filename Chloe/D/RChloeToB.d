@@ -175,7 +175,7 @@ DO~SetGlobal("RCChloeFather","Global",2)~
 ==RCMasem~Indeed. We rarely know the measure of our patron until blood has been shed. But an oath is an oath.~
 =~I am Yngvar out of Brenna of Yr'kai-Shen-Do.~
 ==RChloeJ~Our gods weep when brother and sister shed each other's blood, but they understand it is at times necessary. *sighs*~
-=~I am Chloe out of Akadia of Yr'kai-Razin-Do. I will bear your swords honorably to Shen-do's Great Hall after this is all finished.~
+=~I am Chloe out of Akadia of La'risadiim. I will bear your swords honorably to Shen-do's Great Hall after this is all finished.~
 ==RCMasem~Hmph. Confident, just like a true... wait. Akadia? No... this tragedy is all the more bitter.~
 =~It is my seed from which you sprung, Chloe. I am your father.~
 ==RChloeJ~What? No, I was told my father's name is Masemeron.~
