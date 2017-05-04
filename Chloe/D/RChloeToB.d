@@ -169,7 +169,7 @@ IF~Global("RCChloeFather","Global",1)~THEN RCMasem meetda1
 ~(Sigh) You have come far, Bhaalspawn, but it is my obligation to stop you from what you are about to do with my liege lord's heart.~
 DO~SetGlobal("RCChloeFather","Global",2)~
 ==RChloeJ~Hold a moment, <CHARNAME>. That's no mere warrior, he is Yr'kai, though one I am unfamiliar with.~
-==RCMasem~Another Yr'kai... it has been too long since I have stood on a battlefield with one of my brethren. A pity we find ourselves on opposing sides.-
+==RCMasem~Another Yr'kai... it has been too long since I have stood on a battlefield with one of my brethren. A pity we find ourselves on opposing sides.~
 =~I hope at least you are aware of whom you serve, girl.~
 ==RChloeJ~I am fully aware and <PRO_HESHE> has earned my loyalty. This is a most unfortunate turn of events, but one we must face honorably.~
 ==RCMasem~Indeed. We rarely know the measure of our patron until blood has been shed. But an oath is an oath.~
