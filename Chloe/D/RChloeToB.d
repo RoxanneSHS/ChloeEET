@@ -180,7 +180,7 @@ DO~SetGlobal("RCChloeFather","Global",2)~
 =~It is my seed from which you sprung, Chloe. I am your father.~
 ==RChloeJ~What? No, I was told my father's name is Masemeron.~
 ==RCMasem~Silly girl, Masemeron is an Old Yr'kai term for a swordmaster. It is a title, not a name.~
-==RChloeJ~I... never realized that. No wonder no one outside of my village knew of you.-
+==RChloeJ~I... never realized that. No wonder no one outside of my village knew of you.~
 =~If what you say is true, then why? Why is this the first time we meet? Why did you... abandon me?~
 ==RCMasem~I did not even know you existed. There was a moot in Yr'kai-Do followed by a great revelry.~
 =~I was among the warriors being honored for my deeds. During the revelry there was this woman... your mother.~
@@ -199,7 +199,6 @@ DO~SetGlobal("RCChloeFather","Global",2)~
 ==RChloeJ~And it means more than sparing me the pain of another loss? I mean so little to you?~
 ==RCMasem~One of us will feast in Lathandar's Great Hall tonight. You will understand someday. Let us begin.~
 ==RChloeJ~*sighs* You stubborn bastard. So be it.~
-END
 END
 ++~Stop this madness! Daughter will not kill father over a fated bhaalspawn and a void contract...~+ meetda2
 ++~Come to your senses. Masmeron's fight is in vain and you both know it. Celebrate a family having found each other.~+ meetda2
