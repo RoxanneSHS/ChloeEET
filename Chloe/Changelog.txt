@@ -14,6 +14,7 @@ Base EET version
 - Weidu setup updated to 2.40
 - Added HANDLE_CHARSETS
 - updated fl#add_kit_ee.tpa
+- LoB flags added
 
 Extra
  New contents (currently only available in English)
