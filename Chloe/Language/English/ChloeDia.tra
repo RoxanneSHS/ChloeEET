@@ -264,9 +264,9 @@
 @250  = ~Ok, ok. Please don't finish that sentence. I think it's time to get back on the road. Ew.~
 @251  = ~No. I'm impressed by deeds, not bloodlines. Let's talk about this later.~
 @252  = ~Well, that would explain it. How do you feel about that?~
-@253  = ~Like I've missed all those father-son moments... playing pin the dagger in the Halfling, razing a town or two to the ground, sacrificing a few virgins, you know, the usual.~ ~Like I've missed all those father-daughter moments... playing pin the dagger in the Halfling, razing a town or two to the ground, sacrificing a few virgins, you know, the usual.~
+@253  = ~Like I've missed all those father-<PRO_SONDAUGHTER> moments... playing pin the dagger in the Halfling, razing a town or two to the ground, sacrificing a few virgins, you know, the usual.~ ~Like I've missed all those father-daughter moments... playing pin the dagger in the Halfling, razing a town or two to the ground, sacrificing a few virgins, you know, the usual.~
 @254  = ~How would YOU feel about being the child of the god of murder? I feel like everyone is always watching me, like I'm about to turn into some huge ugly monster at any time and start slaughtering everything in sight or something...~
-@255  = ~Well I wish I was just a blacksmith's son or something like that, but I've been dealing with it fairly well.~ ~Well I wish I was just a farmer's daughter or something like that, but I've been dealing with it fairly well.~
+@255  = ~Well I wish I was just a blacksmith's <PRO_SONDAUGHTER> or something like that, but I've been dealing with it fairly well.~ ~Well I wish I was just a farmer's daughter or something like that, but I've been dealing with it fairly well.~
 @256  = ~I know what you mean. My mother is Akadia, goddess of air. So we have that in common I guess.~
 @257  = ~Oh... that's um... what are the chances of two divine children running into each other?~
 @258  = ~That must be pretty nice.~
