@@ -1580,8 +1580,8 @@ END RCHLOEJ ShortySheSays
 APPEND RCHLOEJ
 IF ~~ THEN BEGIN ShortySheSays
    SAY @836
-   IF ~~ THEN EXIT
-   IF ~Global("Talked0TimesCR","GLOBAL",1)~ THEN EXTERN RENAL Shorty1
+   IF ~Global("Talked0TimesCR","GLOBAL",1)~ THEN EXIT
+   IF ~~ THEN EXTERN RENAL Shorty1
 END
 END
 
