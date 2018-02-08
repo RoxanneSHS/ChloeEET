@@ -81,7 +81,7 @@ DO~SetGlobal("RChloeForLatha","Global",3)~
 CHAIN
 IF WEIGHT #-1~Global("SlavQRC","Global",9) ~THEN RCHLOEJ Aftermath1
 ~(Chloe sits by the fireside alone, gazing into the flames and obviously still moved by the recent events.)~
-DO~SetGlobal("SlavQRC","Global",10)~
+DO~SetGlobal("SlavQRC","Global",10) SetGlobal("ComplainingAboutRestCR","GLOBAL",9)~
 END
 ++~(You sit down beside her and wordlessly hand her your half filled cup of heated red wine.)~ + Aftermath2
 ++~Good night, Chloe, do not let those dark thoughts haunt you too long.~+ Aftermath3
