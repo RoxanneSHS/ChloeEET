@@ -145,3 +145,13 @@ THEN
 RESPONSE #100
 SetGlobal("PlayerHasStronghold","GLOBAL",0)
 END
+
+IF
+GlobalGT("SlavQRC","Global",9)
+Global("MendPidCR","LOCALS",0) 
+THEN
+RESPONSE #100
+SetGlobal("MendPidCR","LOCALS",1) 	
+SetGlobal("ComplainingAboutRestCR","GLOBAL",9) 
+SetGlobal("FeelingSickLikeHellCR","LOCALS",9)
+END
