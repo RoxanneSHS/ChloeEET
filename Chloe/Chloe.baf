@@ -1936,7 +1936,8 @@ THEN
 END
 
 IF
-  InParty("RChloe")  // RChloe
+GlobalGT("AsylumPlot","GLOBAL",40)  
+InParty("RChloe")  // RChloe
   Detect(Player1)
   !StateCheck(Player1,STATE_SLEEPING)
   !Detect([ENEMY])
