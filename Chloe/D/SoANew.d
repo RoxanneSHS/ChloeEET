@@ -58,7 +58,7 @@ IF WEIGHT #-8~NumberOfTimesTalkedTo(0) Global("CDSpawnArval","GLOBAL",0) AreaChe
 ~No, no, no, this will not do at all. We cannot have the slim of faith lured away by such talk. They must be nurtured that they might choose the righteous path.~
 DO~SetGlobal("RChloeForLatha","Global",1)~
 ==RChloeJ ~The Yr'kai serve Lathandar, good priest, tell us what must be done.~
-==BHARVAL~Child, you are certainly on your way to visit the temple of the Morninglord. I would ask your service for a time, in exchange for the favor of the temple.~EXTERN BHARVAL 2
+==BHARVAL~Child, you are certainly on your way to visit the temple of the Morninglord. I would ask your service for a time, in exchange for the favour of the temple.~EXTERN BHARVAL 2
 
 CHAIN
 IF WEIGHT #-7~Global("RChloeForLatha","Global",1) InParty("RChloe") Global("BeholderPlot","GLOBAL",0) Global("NoHelpBeholder","GLOBAL",0) Global("CDWorkingForHelm","GLOBAL",0)~THEN BHARVAL Yrkai2
@@ -76,7 +76,7 @@ IF~~THEN BHARVAL Yrkai3
 DO~SetGlobal("RChloeForLatha","Global",3)~
 ==RChloeJ ~I...I have...We have done what the Morninglord would expect an Yr'kai to do.~
 ==BHARVAL~In this, there is allegiance. Your faith is aligned as ours, though it lacks direction yet.~
-==RChloeJ ~It would be a great honor to serve. With <CHARNAME>'s help we will not disgrace Lathandar.~EXTERN BHARVAL 33
+==RChloeJ ~It would be a great honour to serve. With <CHARNAME>'s help we will not disgrace Lathandar.~EXTERN BHARVAL 33
 
 CHAIN
 IF WEIGHT #-1~Global("SlavQRC","Global",9) ~THEN RCHLOEJ Aftermath1

@@ -3,7 +3,7 @@ BEGIN RCMasem
 
 INTERJECT Illasera 6 RChloeVillageR
 ==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~The same Illasera who destroyed the village La'risadiim? To find an elven boy...~
-==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Those stupid Yr'kai. They really tried to resist us and protect that little bhaalspawn bastard. There was no choice.~
+==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Those stupid Yr'kai. They really tried to resist us and protect that little Bhaalspawn bastard. There was no choice.~
 ==RChloeJ IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~You eliminated a whole population to get your hands one a little boy, you soom-to-be-dead killer?~
 ==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~Those Yr'kai gave my army very little chance. They would not negotiate. It was us or them.~
 ==Illasera IF~InParty("RChloe") Global("WeMustReadItCR","GLOBAL",1) ~THEN~To be precise, it was most of us - as my army was destroyed - and it was ALL of them.~ 
@@ -13,12 +13,12 @@ INTERJECT Illasera 6 RChloeVillageR
 
 CHAIN
 IF WEIGHT #-1~Global("RChloeVillageR","Global",2)~ THEN RCHLOEJ Villend
-~A bhaalspawn is responsible for the death of all my people...and I trust a bhaalspawn to guide me through all of this? Is that what my mother Akadia has intended for me?~
+~A Bhaalspawn is responsible for the death of all my people...and I trust a Bhaalspawn to guide me through all of this? Is that what my mother Akadia has intended for me?~
 DO~SetGlobal("RChloeVillageR","Global",3)~
 END
 ++~Chloe, trust me. If there ever was a reason to pick up the fight against these monsters, we have one. We must stop them, or your village will not be the last to suffer such a fate.~+ Villend2
 IF~GlobalLT("ChLovetalksCR","GLOBAL",16)~THEN REPLY~What was that about the elven boy who caused Illasera to attack your village?~+ Villend3
-IF~GlobalGT("ChLovetalksCR","GLOBAL",16)~THEN REPLY~So that bloodthirsty elfish boy you told me about was a bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
+IF~GlobalGT("ChLovetalksCR","GLOBAL",16)~THEN REPLY~So that bloodthirsty elfish boy you told me about was a Bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
 
 CHAIN
 IF ~~ THEN RCHLOEJ Villend2
@@ -29,7 +29,7 @@ IF ~~ THEN RCHLOEJ Villend3
 ~I never understood how I could lose everyone I loved in one single night in a battle over a boy!~
 =~I asked myself how could a boy be so important that an army would raze an entire village to the ground and slaughter every living person in it to reach him? I believe I know what boy it was too... an Elfish boy. He was odd all his life. He always seemed more... aggressive than everyone else. More... bloodthirsty. Which, for a Yr'kai to say that means something.~
 END
-++~Now we know it, he was a bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
+++~Now we know it, he was a Bhaalspawn. (Sigh) We bring murder with us, regardless of what we do.~+ Villend2
 ++~Chloe, trust me. If there ever was a reason to pick up the fight against these monsters, we have one. We must stop them, or your village will not be the last to suffer such a fate.~+ Villend2
 
 CHAIN
@@ -48,7 +48,7 @@ IF WEIGHT #-1~Global("RChloeTOB","Global",3)~ THEN RCHLOEJ InToBQuest1
 ~It seems that your destiny as a godchild becomes clearer now with every day. Mine stays hidden still.~
 DO~SetGlobal("RChloeTOB","Global",4)~
 END
-++~Maybe yours is to be here, at the side of the bhaalspawn that makes the difference.~+ InToBQuestbah
+++~Maybe yours is to be here, at the side of the Bhaalspawn that makes the difference.~+ InToBQuestbah
 ++~Must we assume that every godchild is destined for something big. Just take our Imoen - she just can enjoy life without needing to care about those *bigger things*.~+ InToBQuestspec
 ++~And who is better off by it? Do you envy me to be the *fuel* for some bloody god's return?~+ InToBQuestnos
 
@@ -72,7 +72,7 @@ END
 
 CHAIN
 IF~~ THEN RCHLOEJ InToBQuestreas
-~...if that bigmouthed bhaalspawn's destiny is to prevent <PRO_HISHER> father to return, this might really be the right place for me to be.~
+~...if that big-mouthed Bhaalspawn's destiny is to prevent <PRO_HISHER> father to return, this might really be the right place for me to be.~
 END
 ++~You will not regret it, take my promise.~+ InToBQuestfin
 ++~Be loyal to me now and I will do the same for you should it become necessary.~+ InToBQuestfin
@@ -104,7 +104,7 @@ END
 ++~I guess I see your point. You lost that choice for a return.~ + WhatafterAll3
 ++~Are you afraid to be doomed to lifetime wandering?~ + WhatafterAll3
 IF~Global("ChloeRomanceActiveCR","GLOBAL",2)~THEN REPLY~Apart from that *having children* and apart from neither of us having a home to return to...~ + WhatafterAll3
-++~There will come a time when you need to consider your options - just in case you decide the wadering days are over for you.~ + WhatafterAll3
+++~There will come a time when you need to consider your options - just in case you decide the wandering days are over for you.~ + WhatafterAll3
 
 CHAIN
 IF ~~ THEN RCHLOEJ WhatafterAll3
@@ -193,14 +193,14 @@ DO~SetGlobal("RCChloeFather","Global",2)~
 =~And now I am to slay my own father moments after meeting him?~
 ==RCMasem~It is our way. Remember, as long as even a single Yr'kai survives, we survive. Let us end this.~
 ==RChloeJ~Please, don't make me do this. Break your vow. I've lost almost everything, don't make me lose you too.~
-==RCMasem~And now you learn your final lesson. Honor is sacrifice, and sacrifice is love.~
-==RChloeJ~Your honor means more to you than your life?~
+==RCMasem~And now you learn your final lesson. Honour is sacrifice, and sacrifice is love.~
+==RChloeJ~Your honour means more to you than your life?~
 ==RCMasem~Of course. I am Yr'kai, as are you.~
 ==RChloeJ~And it means more than sparing me the pain of another loss? I mean so little to you?~
 ==RCMasem~One of us will feast in Lathandar's Great Hall tonight. You will understand someday. Let us begin.~
 ==RChloeJ~*sighs* You stubborn bastard. So be it.~
 END
-++~Stop this madness! Daughter will not kill father over a fated bhaalspawn and a void contract...~+ meetda2
+++~Stop this madness! Daughter will not kill father over a fated Bhaalspawn and a void contract...~+ meetda2
 ++~Come to your senses. Masmeron's fight is in vain and you both know it. Celebrate a family having found each other.~+ meetda2
 ++~*You remain silent in respect for the two Yr'Kai. This is their affair alone.*~DO~AddXPObject(Player1,8000)~+ meetda2
 
@@ -241,7 +241,7 @@ END
 
 CHAIN
 IF~~THEN RChloeJ meetda5
-~My father's end was that of a honorable Yr'Kai. It matters not what Yaga-Shura was standing for but what Masemeron was standing for. Our tribe members live and do their training and praying for the purpose of honor.~
+~My father's end was that of a honourable Yr'Kai. It matters not what Yaga-Shura was standing for but what Masemeron was standing for. Our tribe members live and do their training and praying for the purpose of honour.~
 =~I will keep his memory and his swords the way they deserve to be kept. With a daughter's love.~
 END
 ++~A daughter's love? Maybe your society has no other way of family life, I should have guessed from the way you once described it to me.~+ meetda7
