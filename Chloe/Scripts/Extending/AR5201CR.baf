@@ -7,7 +7,7 @@ PartyHasItem("hgheart2")
 THEN
 RESPONSE #100
 SetGlobal("RCChloeFather","Global",1)
-CreateCreature("RCMasem",[1791.1313],S)
+CreateCreature("RCMasem",[1791.1313],0)
 END
 
 IF
