@@ -520,7 +520,7 @@ COPY ~Chloe/Items/CHLOSW6.itm~ ~override/CHLOSW6.itm~
     SAY 0x476 Chloe
 
 
-COPY_EXISTING ~STATS.ids~ ~override~
+/*COPY_EXISTING ~STATS.ids~ ~override~
 COUNT_2DA_ROWS 2 "rows_cnt_ts"
 FOR(cnt=0; cnt<"%rows_cnt_ts%"; cnt=cnt+1 ) BEGIN
     READ_2DA_ENTRY cnt 0 0  "number"
@@ -528,7 +528,7 @@ FOR(cnt=0; cnt<"%rows_cnt_ts%"; cnt=cnt+1 ) BEGIN
         READ_2DA_ENTRY cnt 1 1  "State128"
     END
 END
-BUT_ONLY
+BUT_ONLY */
 
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//
 // ~~ Extending existing scripts ~~ \\
