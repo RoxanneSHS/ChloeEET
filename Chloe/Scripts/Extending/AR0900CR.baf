@@ -16,3 +16,15 @@ CreateCreature("bharval",[3077.1630],13)
 SetGlobal("GoodMask","AR0900",1)
 SetGlobal("GaalSpoke","AR0900",2)
 END
+
+IF
+Global("KishPriCho","ar0900",0)
+Global("GaalSpoke","AR0900",0)
+InParty("RChloe")
+THEN
+RESPONSE #100
+SetGlobal("KishPriCho","ar0900",1)
+SetGlobal("KishPEFLT","GLOBAL",2)
+SetGlobal("KishPEFHT","GLOBAL",2)
+SetGlobal("KishPEFTT","GLOBAL",2)
+END
