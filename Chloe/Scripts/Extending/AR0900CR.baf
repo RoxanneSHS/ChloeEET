@@ -21,6 +21,14 @@ IF
 Global("KishPriCho","ar0900",0)
 Global("GaalSpoke","AR0900",0)
 InParty("RChloe")
+!Class(Player1,CLERIC)
+!Class(Player1,FIGHTER_CLERIC)
+!Class(Player1,CLERIC_MAGE)
+!Class(Player1,CLERIC_THIEF)
+!Class(Player1,FIGHTER_MAGE_CLERIC)
+!Class(Player1,CLERIC_RANGER)
+!Kit(Player1,GODHELM)
+!Kit(Player1,GODTALOS)
 THEN
 RESPONSE #100
 SetGlobal("KishPriCho","ar0900",1)
