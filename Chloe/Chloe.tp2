@@ -2,7 +2,7 @@ BACKUP ~Chloe/backup~
 //AUTHOR ~Lucythebeast@hotmail.com~
 SUPPORT ~Roxanne - https://baldursextendedworld.com/Chloe/ or roxanne@baldursextendedworld.com~
 
-VERSION ~v1.6 EE~
+VERSION ~v1.7 EE~
 
 ALWAYS
   ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
@@ -563,7 +563,7 @@ ADD_JOURNAL @13 USING ~Chloe/language/%LANGUAGE%/setup.tra~
 COPY ~Chloe/Sounds~ ~override~
 
 
-BEGIN ~Chloe EET (Extended contents - ATTENTION ONLY ENGLISH)~
+BEGIN ~Chloe EET (Extended content)~
 
 REQUIRE_COMPONENT ~Chloe.tp2~ 0 ~Main component required.~
 
