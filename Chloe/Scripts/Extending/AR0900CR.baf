@@ -36,3 +36,13 @@ SetGlobal("KishPEFLT","GLOBAL",2)
 SetGlobal("KishPEFHT","GLOBAL",2)
 SetGlobal("KishPEFTT","GLOBAL",2)
 END
+
+IF
+Global("KishPriCho","ar0900",1) 
+Global("KishPEFLT","GLOBAL",2)
+Global("Beholderplot","Global",1)
+THEN
+RESPONSE #100
+SetGlobal("KishPriCho","ar0900",2) 
+SetGlobal("KishPEFLT","GLOBAL",1)
+END
