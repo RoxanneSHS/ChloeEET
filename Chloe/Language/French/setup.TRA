@@ -208,9 +208,8 @@ Type de dégâts : perforant
 Facteur de vitesse : 0
 Type de compétence : épée courte
 Type : arme à 1 main
-
-Utilisable uniquement par :
- Chloé~
+~
+@90  =~Yngvar~
 
 // WeiDU prompts
 @-1000= "Le mod %TP2_FILE_NAME% contient"
