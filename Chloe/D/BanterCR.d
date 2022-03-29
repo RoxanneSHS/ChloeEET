@@ -12,8 +12,8 @@
 // ~~ Pre-First ~~ : in Irenicus' dungeon
 
 CHAIN IF WEIGHT #-10 ~Global("ImoenYouDontLookSoGoodCR","GLOBAL",1)~ THEN RCHLOEJ ImPre1
-@0 DO ~FaceObject("Imoen")~
-== IMOEN2J @1 DO ~SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",2) FaceObject("RChloe")~
+@0 DO ~SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",2)FaceObject("Imoen")~
+== IMOEN2J @1 DO ~ FaceObject("RChloe")~
 == RCHLOEJ @2
 == IMOEN2J @3
 == RCHLOEJ @4

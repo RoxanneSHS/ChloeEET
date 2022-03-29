@@ -2343,6 +2343,7 @@ IF
   See("Imoen2")  // ~Imoen~
   !Dead("Imoen2")  // ~Imoen~
   Global("ImoenYouDontLookSoGoodCR","GLOBAL",0)
+  GlobalLT("AsylumPlot","GLOBAL",1)
 THEN
   RESPONSE #100
     SetGlobal("ImoenYouDontLookSoGoodCR","GLOBAL",1)
