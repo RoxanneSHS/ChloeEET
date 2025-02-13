@@ -42,7 +42,10 @@ LANGUAGE ~Francais (par Miry Wolfwood, Le Marquis et Magiere)~
 LANGUAGE ~Russian (by aerie.ru)~
          ~Russian~
          ~Chloe/Language/Russian/setup.tra~
-
+		 
+LANGUAGE ~Simplified Chinese~
+		 ~Schinese~
+		 ~Chloe/Language/Schinese/setup.tra~
 
 BEGIN ~Chloe for EET (Original Contents)~
 
