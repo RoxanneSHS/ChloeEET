@@ -2,7 +2,7 @@ BACKUP ~Chloe/backup~
 //AUTHOR ~Lucythebeast@hotmail.com~
 SUPPORT ~Roxanne - https://baldursextendedworld.com/Chloe/ or roxanne@baldursextendedworld.com~
 
-VERSION ~v1.8 EE~
+VERSION ~v1.9 EE~
 
 ALWAYS
   ACTION_DEFINE_ARRAY fl#reload BEGIN setup END
